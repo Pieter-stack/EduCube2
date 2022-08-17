@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EduCube.Components.SubjectCards"
+             >
+    <VerticalStackLayout Margin="0,0,0,20">
+
+            <Frame  BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" ZIndex="2" >
+            <VerticalStackLayout  HeightRequest="410">
+                <Frame  BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0"  Margin="0,0,-20,0" >
+                    <VerticalStackLayout HeightRequest="385" BackgroundColor="Transparent" >
+                        <Border 
+                       Padding="40"
+                       Stroke="#120B29"
+                       StrokeThickness="4"
+                       Background="#ffffff"
+                       HorizontalOptions="Start"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                       Margin="-15,-15,0,0">
+
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="15,15,15,15"/>
+                            </Border.StrokeShape>
+                            <Label Text="Hello" ZIndex="10"/>
+                        </Border>
+                        <Image Source="democodeicon.png" WidthRequest="50" Margin="0,-65,0,0" HorizontalOptions="Start" ZIndex="3" />
+
+                        <HorizontalStackLayout>
+                            <Label Text="Interactive Development" TextColor="White" ZIndex="3" Margin="90,-25,0,0" FontSize="20" FontFamily="Roboto-Regular" FontAttributes="Bold" />
+                            <Border 
+                       Padding="40"
+                       Stroke="Transparent"
+                       StrokeThickness="4"
+                       Background="#FC6923"
+                       HorizontalOptions="Start"
+                        WidthRequest="1.5"
+                        HeightRequest="25"
+                        ZIndex="2"
+                        Margin="10,-25,5,0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="1,1,1,1"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <Label Text="DV300" TextColor="White" ZIndex="3" Margin="5,-25,0,0" FontSize="20" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                        <Label Text="Armand Pretorious" TextColor="White" ZIndex="3" FontSize="16" Margin="90,5,0,0" FontFamily="Roboto-Regular" FontAttributes="None"/>
+
+                        <Grid>
+                            <!--New Grid Definitions-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="260"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame Grid.Column="0"  BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
+                                <VerticalStackLayout>
+                                    <Border 
+                                        Stroke="Transparent"
+                                        Background="#5D3AF3"
+                                        HorizontalOptions="FillAndExpand"
+                                        HeightRequest="5.5"
+                                        Margin="70,0,0,0">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="1,1,1,1"/>
+                                        </Border.StrokeShape>
+                                    </Border>
+                                    <FlexLayout Direction="Row"
+                                     AlignItems="End"
+                                    JustifyContent="SpaceBetween" >
+                                        <VerticalStackLayout>
+                                                <HorizontalStackLayout>
+                                                <Image Source="venueiconsubjects.png" WidthRequest="20" Margin="75,20,0,0"  HorizontalOptions="Start" ZIndex="3" />
+                                                <Label Text="Venue" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="100"/>
+                                                    <Border 
+                                            Padding="40"
+                                            Stroke="Transparent"
+                                            StrokeThickness="4"
+                                            Background="#FC6923"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="1.5"
+                                            HeightRequest="15"
+                                            ZIndex="2"
+                                            Margin="90,20,5,0">
+                                                        <Border.StrokeShape>
+                                                            <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                        </Border.StrokeShape>
+                                                    </Border>
+                                                <Label Text="C1 Bold" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="200" />
+                                                </HorizontalStackLayout>
+                                                <HorizontalStackLayout>
+                                                <Image Source="timeiconsubjects.png" WidthRequest="20" Margin="75,20,0,0"  HorizontalOptions="Start" ZIndex="3" />
+                                                <Label Text="Wednesday" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="100"/>
+                                                    <Border 
+                                            Padding="40"
+                                            Stroke="Transparent"
+                                            StrokeThickness="4"
+                                            Background="#FC6923"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="1.5"
+                                            HeightRequest="15"
+                                            ZIndex="2"
+                                            Margin="90,20,5,0">
+                                                        <Border.StrokeShape>
+                                                            <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                        </Border.StrokeShape>
+                                                    </Border>
+                                                <Label Text="13:00 - 14:00" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="200" />
+                                                </HorizontalStackLayout>
+                                                <HorizontalStackLayout>
+                                                <Image Source="creditsiconsubjects.png" WidthRequest="20" Margin="75,20,0,0"  HorizontalOptions="Start" ZIndex="3" />
+                                                <Label Text="Credits" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="100"/>
+                                                    <Border 
+                                            Padding="40"
+                                            Stroke="Transparent"
+                                            StrokeThickness="4"
+                                            Background="#FC6923"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="1.5"
+                                            HeightRequest="15"
+                                            ZIndex="2"
+                                            Margin="90,20,5,0">
+                                                        <Border.StrokeShape>
+                                                            <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                        </Border.StrokeShape>
+                                                    </Border>
+                                                <Label Text="25" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="200" />
+                                                </HorizontalStackLayout>
+                                                <HorizontalStackLayout>
+                                                <Image Source="hoursiconsubjects.png" WidthRequest="20" Margin="75,20,0,0"  HorizontalOptions="Start" ZIndex="3" />
+                                                <Label Text="Hours" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="100"/>
+                                                    <Border 
+                                            Padding="40"
+                                            Stroke="Transparent"
+                                            StrokeThickness="4"
+                                            Background="#FC6923"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="1.5"
+                                            HeightRequest="15"
+                                            ZIndex="2"
+                                            Margin="90,20,5,0">
+                                                        <Border.StrokeShape>
+                                                            <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                        </Border.StrokeShape>
+                                                    </Border>
+                                                <Label Text="40" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="200" />
+                                                </HorizontalStackLayout>
+                                                <HorizontalStackLayout>
+                                                <Image Source="priceiconsubjects.png" WidthRequest="20" Margin="75,20,0,0"  HorizontalOptions="Start" ZIndex="3" />
+                                                <Label Text="Price" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="100"/>
+                                                    <Border 
+                                            Padding="40"
+                                            Stroke="Transparent"
+                                            StrokeThickness="4"
+                                            Background="#FC6923"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="1.5"
+                                            HeightRequest="15"
+                                            ZIndex="2"
+                                            Margin="90,20,5,0">
+                                                        <Border.StrokeShape>
+                                                            <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                        </Border.StrokeShape>
+                                                    </Border>
+                                                <Label Text="R5500" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="200" />
+                                                </HorizontalStackLayout>
+
+
+                                            </VerticalStackLayout>
+                                        <Border
+                                            Padding="4"
+                                            Stroke="#FFBC24"
+                                            StrokeThickness="6"
+                                            Background="Transparent"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="420"
+                                            HeightRequest="180"
+                                            ZIndex="2">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="25,25,25,25"/>
+                                            </Border.StrokeShape>
+                                            <AbsoluteLayout>
+                                                <Label Text="Description"  TextColor="White" ZIndex="3" FontSize="12" Margin="15,15,0,0" FontFamily="Roboto-Regular" WidthRequest="370"  AbsoluteLayout.LayoutBounds="0,0"
+                                                    AbsoluteLayout.LayoutFlags="PositionProportional"  HeightRequest="140"/>
+                                            </AbsoluteLayout>
+                                        </Border>
+                                    </FlexLayout>
+
+
+
+
+                                </VerticalStackLayout>
+
+                            </Frame>
+
+                            <Frame Grid.Column="1"  BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" Margin="0,-60,0,0" >
+                                <FlexLayout Direction="Column"
+                                     AlignItems="End"
+                                    JustifyContent="SpaceBetween" >
+                                    <Border
+                                            Padding="0"
+                                            Stroke="#5D3AF3"
+                                            StrokeThickness="6"
+                                            Background="Transparent"
+                                            HorizontalOptions="Start"
+                                            WidthRequest="220"
+                                            HeightRequest="200"
+                                            ZIndex="2">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="20,20,20,20"/>
+                                        </Border.StrokeShape>
+                                        <FlexLayout Direction="Column"
+                                     AlignItems="Center"
+                                    JustifyContent="SpaceBetween" >
+                                            <Label Text="Students:"  TextColor="White" ZIndex="3" FontSize="30" Margin="0,20,0,0" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                            <Label Text="9"  TextColor="White" ZIndex="3" FontSize="76" Margin="0,0,0,20" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                        </FlexLayout>
+                                    </Border>
+                                    <Button Text="Edit" CornerRadius="10" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FC6923" Padding="15" HorizontalOptions="End" WidthRequest="220"  />
+                                </FlexLayout>
+
+                            </Frame>
+                        </Grid>
+                    </VerticalStackLayout>
+
+
+                </Frame>
+            </VerticalStackLayout>
+
+
+        </Frame>
+            
+            <Frame  BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" Margin="0,-450,0,0" ZIndex="1"  >
+                <VerticalStackLayout  HeightRequest="340">
+                    <Image Source="subjectcardslarge.png"  HeightRequest="330" Aspect="Fill" Margin="25,25,0,0"/>
+                </VerticalStackLayout>
+            </Frame>
+
+    </VerticalStackLayout>
+</ContentView>
+    
+

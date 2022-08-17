@@ -39,7 +39,6 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -49,12 +48,50 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Models\" />
-	  <Folder Include="ViewModels\" />
+	  <None Remove="Resources\Images\backdropadmin.png" />
+	  <None Remove="Resources\Images\cashin.png" />
+	  <None Remove="Resources\Images\cashout.png" />
+	  <None Remove="Resources\Images\creditsiconsubjects.png" />
+	  <None Remove="Resources\Images\dashboardicon.png" />
+	  <None Remove="Resources\Images\democodeicon.png" />
+	  <None Remove="Resources\Images\fundscards.png" />
+	  <None Remove="Resources\Images\fundsicon.png" />
+	  <None Remove="Resources\Images\hoursiconsubjects.png" />
+	  <None Remove="Resources\Images\logo.png" />
+	  <None Remove="Resources\Images\navbarbackground.png" />
+	  <None Remove="Resources\Images\priceiconsubjects.png" />
+	  <None Remove="Resources\Images\profilepic.png" />
+	  <None Remove="Resources\Images\searchicon.png" />
+	  <None Remove="Resources\Images\stafficon.png" />
+	  <None Remove="Resources\Images\studenticon.png" />
+	  <None Remove="Resources\Images\subjectcardslarge.png" />
+	  <None Remove="Resources\Images\subjecticon.png" />
+	  <None Remove="Resources\Images\timeiconsubjects.png" />
+	  <None Remove="Resources\Images\venueiconsubjects.png" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="LiveChartsCore.SkiaSharpView.Maui" Version="2.0.0-beta.350" />
+	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+	  <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.0" />
+	  <PackageReference Include="SQLitePCLRaw.core" Version="2.1.0" />
+	  <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.0" />
+	  <PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="2.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Components\Invoices.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Navbar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\SubjectCards.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AddUpdateViews\AddUpdateSubjectPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\DashboardPage.xaml">

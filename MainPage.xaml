@@ -1,41 +1,112 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EduCube.MainPage">
+             x:Class="EduCube.MainPage"
+             xmlns:mynamespace="clr-namespace:EduCube"
+             BackgroundColor="Aqua">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+    <!--Login Page-->
+    <Grid 
+        RowDefinitions="1*,8*,1*" 
+        HorizontalOptions="Fill" 
+        VerticalOptions="FillAndExpand">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+        <!--Navbar-->
+        <mynamespace:Navbar/>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+        <Frame 
+            CornerRadius="20" 
+            BackgroundColor="#5D3AF3"
+            Grid.Row="1"
+            WidthRequest="300"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            Margin="100,0,100,0"
+            >
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            <VerticalStackLayout 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" 
+                BackgroundColor="Transparent" 
+                Spacing="25">
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                <Image 
+                    Source="logo.png" 
+                    WidthRequest="100">
+                    <Image.Shadow>
+                        <Shadow 
+                            Brush="Black"
+                            Offset="1,2"
+                            Radius="5"
+                            Opacity="0.2"/>
+                    </Image.Shadow>
+                </Image>
 
-        </VerticalStackLayout>
-    </ScrollView>
+                <Frame 
+                    Padding="5" 
+                    BorderColor="Transparent" 
+                    CornerRadius="5" 
+                    BackgroundColor="#FFFFFF">
+                    <Grid 
+                        RowDefinitions="25,*" 
+                        RowSpacing="10">
+                        <Label 
+                            Text="Username" 
+                            FontSize="12" 
+                            FontAttributes="Bold" 
+                            TextColor="#FFFFFF" 
+                            />
+                        <Entry 
+                            VerticalOptions="Center" 
+                            Placeholder="Email" 
+                            FontSize="12" 
+                            Grid.Column="1" 
+                            TextColor="Black" />
+                    </Grid>
+                </Frame>
+
+                <Frame 
+                    Padding="5" 
+                    BorderColor="Transparent" 
+                    CornerRadius="5" 
+                    BackgroundColor="#FFFFFF">
+                    <Grid 
+                        RowDefinitions="25,*" 
+                        RowSpacing="10">
+                        <Label 
+                            Text="Password" 
+                            FontSize="12" 
+                            FontAttributes="Bold" 
+                            TextColor="#FFFFFF" />
+                        <Entry 
+                            VerticalOptions="Center" 
+                            Placeholder="Password" 
+                            FontSize="12" 
+                            Grid.Column="1" 
+                            TextColor="Black" />
+                    </Grid>
+                </Frame>
+
+                <Label 
+                    FontAttributes="None" 
+                    FontSize="12" 
+                    Text="Forgot Password?" 
+                    TextColor="Gray" 
+                    HorizontalTextAlignment="End" 
+                    />
+                <Button 
+                    CornerRadius="18" 
+                    HeightRequest="38" 
+                    Text="Sign In" 
+                    FontSize="16" 
+                    TextColor="#FFFFFF" 
+                    FontAttributes="None" 
+                    BackgroundColor="#FC6923" 
+                    />
+
+            </VerticalStackLayout>
+        </Frame>
+
+    </Grid>
 
 </ContentPage>
