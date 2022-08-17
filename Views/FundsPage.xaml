@@ -1,12 +1,212 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EduCube.FundsPage"
-             Title="FundsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:mynamespace="clr-namespace:EduCube"
+             xmlns:components="clr-namespace:EduCube.Components"
+             x:Class="EduCube.FundsPage">
+
+    <Grid>
+        <!--New Grid Definitions-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5.5*"/>
+        </Grid.ColumnDefinitions>
+        <!--Navbar-->
+        <mynamespace:Navbar/>
+
+        <!--Main Container-->
+        <Frame Grid.Column="1" BackgroundColor="Transparent" BorderColor="Transparent">
+            <Grid ColumnSpacing="30" RowSpacing="30">
+                <!--New Grid Definitions-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2.5*"/>
+                </Grid.RowDefinitions>
+
+                <!--Grid Content-->
+                <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="0,0,-20,0" >
+                    <FlexLayout Direction="Column"
+                AlignItems="End"
+                JustifyContent="SpaceBetween" BackgroundColor="Transparent">
+                        <StackLayout BackgroundColor="Transparent">
+                            <Border 
+                       Padding="35"
+                       Stroke="Transparent"
+                       Background="#FC6923"
+                                WidthRequest="1200"
+                       HorizontalOptions="End"
+                                Margin="0,0,-20,0" >
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="40,5,40,5"/>
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="Black"
+                                Offset="10,10"
+                                Radius="20"
+                                Opacity="0.3" />
+                                </Border.Shadow>
+                            </Border>
+                        </StackLayout>
+                        <FlexLayout Direction="Row"
+                AlignItems="End"
+                JustifyContent="SpaceBetween" BackgroundColor="Transparent">
+                            <Label  Text="Funds Pool" TextColor="#29233E" FontSize="48" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="0,0,0,0" />
+                           
+                        </FlexLayout>
+                    </FlexLayout>
+
+                </Frame>
+
+                <Frame  Grid.Row="1" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
+                    <Grid ColumnSpacing="20" RowSpacing="20">
+                        <!--New Grid Definitions-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.7*"/>
+                            <RowDefinition Height="0.7*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+
+
+
+                        <Frame  Grid.Row="0"  Grid.Column="0" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0" Padding="0" >
+                            <Border
+                                            Padding="0"
+                                            Stroke="Transparent"
+                                            Background="#070411"
+                                            HorizontalOptions="FillAndExpand"
+                                            ZIndex="2">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="15,15,15,15"/>
+                                </Border.StrokeShape>
+
+                                <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
+                                    <Image Margin="20" Source="cashin.png" WidthRequest="90"/>
+                                    <Label Margin="20"   Text="+4 000 000.00" TextColor="White" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" />
+                                </FlexLayout>
+
+
+                            </Border>
+                        </Frame>
+
+
+
+                        <Frame  Grid.Row="0"  Grid.Column="1" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0" Padding="0" >
+                            <Border
+                                            Padding="0"
+                                            Stroke="Transparent"
+                                            Background="#070411"
+                                            HorizontalOptions="FillAndExpand"
+                                            ZIndex="2">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="15,15,15,15"/>
+                                </Border.StrokeShape>
+
+                                <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
+                                    <Image Margin="20" Source="cashout.png" WidthRequest="90"/>
+                                    <Label Margin="20"  Text="-90 000" TextColor="White" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" />
+                                </FlexLayout>
+
+
+                            </Border>
+                        </Frame>
+
+
+
+                        <Frame  Grid.Row="1"  Grid.ColumnSpan="2" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0" Padding="0" >
+                            <Border
+                                            Padding="0"
+                                            Stroke="#5D3AF3"
+                                            StrokeThickness="6"
+                                            Background="#F2F1F8"
+                                            HorizontalOptions="FillAndExpand"
+                                            ZIndex="2">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="15,15,15,15"/>
+                                </Border.StrokeShape>
+
+                                <FlexLayout Direction="Row" AlignItems="Center">
+                                    <FlexLayout FlexLayout.Grow="1" AlignItems="Center">
+                                        <Image FlexLayout.Basis="Auto" FlexLayout.Order="-1"  Source="logo.png"/>
+                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="-1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="E" TextColor="#5D3AF3" FontFamily="Rubik-Bold" FontSize="36"></Label>
+                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="-1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="du" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36"></Label>
+                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="-1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="C" TextColor="#FC6923" FontFamily="Rubik-Bold" FontSize="36"></Label>
+                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="-1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="ube" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36"></Label>
+                                        <Label FontSize="18" BackgroundColor="Transparent" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FlexLayout.Grow="1" />
+                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="R5 000 000.00" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" ></Label>
+                                        <Label FlexLayout.Basis="20" FlexLayout.Order="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  TextColor="Black" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" ></Label>
+                                    </FlexLayout>
+                                </FlexLayout>
+
+
+                            </Border>
+                        </Frame>
+                        <Frame  Grid.Row="2" Grid.ColumnSpan="2" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
+                            <ScrollView >
+                                <VerticalStackLayout>
+                                <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
+                                    <Label Text="Invoice" FontSize="32" FontFamily="Roboto-Bold" FontAttributes="Bold"/>
+                                        <Label Text="Price" FontSize="32" FontFamily="Roboto-Bold" FontAttributes="Bold"/>
+
+                                </FlexLayout>
+                                <Border
+                                            Padding="0"
+                                            Stroke="Transparent"
+                                            Background="#5D3AF3"
+                                        HeightRequest="5"
+                                            HorizontalOptions="FillAndExpand"
+                                            ZIndex="2">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="15,15,15,15"/>
+                                    </Border.StrokeShape>
+                                </Border>
+
+                                    <VerticalStackLayout>
+                                        <components:Invoices/>
+                                        <components:Invoices/>
+                                    </VerticalStackLayout>
+
+                                </VerticalStackLayout>
+                            </ScrollView>
+                            
+                        </Frame>
+
+                        
+
+
+                    </Grid>
+
+
+                </Frame>
+            </Grid>
+        </Frame>
+
+
+
+
+
+        <!--- Reminder for later work with grids on all pages and have row and column defined-->
+    </Grid>
+
 </ContentPage>
+    
+    
+    <!--
+        
+                                   <FlexLayout  AlignItems="Center" BackgroundColor="Aqua" Direction="Row" JustifyContent="SpaceBetween"  >
+
+    <FlexLayout>
+        
+    </FlexLayout>
+    <Label  Text="R5 000 000.00" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" ></Label>
+
+    </FlexLayout>
+
+
+    -->
