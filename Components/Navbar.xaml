@@ -2,10 +2,80 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EduCube.Navbar">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid HorizontalOptions="Start">
+        <Image Source="navbarbackground.png" Margin="-85,0,0,0"/>
+        <VerticalStackLayout VerticalOptions="Start">
+            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Center" Margin="-45,50,0,0">
+                <Label Text="E" TextColor="#5D3AF3" FontFamily="Rubik-Bold" FontSize="30" ></Label>
+                <Label Text="du" TextColor="White"  FontFamily="Rubik-Bold" FontSize="30"></Label>
+                <Label Text="C" TextColor="#FC6923" FontFamily="Rubik-Bold" FontSize="30"></Label>
+                <Label Text="ube" TextColor="White" FontFamily="Rubik-Bold" FontSize="30"></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Start" Margin="40,120,0,0">
+                <Image Source="dashboardicon.png" WidthRequest="15" HeightRequest="15" Margin="0,40,0,0"></Image>
+                <Label Text="Dashboard" TextColor="White"  FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" Margin="15,40,0,0"></Label>
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="mainpageroute"/>
+                </HorizontalStackLayout.GestureRecognizers>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Start" Margin="40,0,0,0">
+                <Image Source="stafficon.png" WidthRequest="15" HeightRequest="15" Margin="0,40,0,0"></Image>
+                <Label Text="Staff" TextColor="White"  FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" Margin="15,40,0,0"></Label>
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="teacherpageroute"/>
+                </HorizontalStackLayout.GestureRecognizers>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Start" Margin="40,0,0,0">
+                <Image Source="studenticon.png" WidthRequest="15" HeightRequest="15"  Margin="0,40,0,0"></Image>
+                <Label Text="Students" TextColor="White"  FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" Margin="15,40,0,0"></Label>
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="studentpageroute"/>
+                </HorizontalStackLayout.GestureRecognizers>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Start" Margin="40,0,0,0">
+                <Image Source="subjecticon.png" WidthRequest="15" HeightRequest="15"  Margin="0,40,0,0"></Image>
+                <Label Text="Subjects" TextColor="White"  FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" Margin="15,40,0,0"></Label>
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="subjectpageroute"/>
+                </HorizontalStackLayout.GestureRecognizers>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Start" Margin="40,0,0,0">
+                <Image Source="fundsicon.png" WidthRequest="15" HeightRequest="15"  Margin="0,40,0,0"></Image>
+                <Label Text="Funds" TextColor="White"  FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" Margin="15,40,0,0"></Label>
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="fundspageroute"/>
+                </HorizontalStackLayout.GestureRecognizers>
+            </HorizontalStackLayout>
+
+
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout VerticalOptions="End" Margin="0,0,0,50">
+            <Border 
+                Padding="15"
+                Stroke="Transparent"
+                Background="#FC6923"
+                WidthRequest="280"
+                HorizontalOptions="Start"
+                >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="0,40,0,40"/>
+                </Border.StrokeShape>
+                <Label 
+                    Text="Log out"                
+                    FontSize="18"
+                    FontFamily="Roboto-Bold"
+                    FontAttributes="Bold"
+                    TextColor="White" />
+            </Border>
+        </VerticalStackLayout>
+
+        </Grid>
 </ContentView>

@@ -1,12 +1,73 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mynamespace="clr-namespace:EduCube"
              x:Class="EduCube.StudentsPage"
-             Title="StudentsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:handless="clr-namespace:EduCube.Handlers"
+             BackgroundColor="#FFFFFF">
+
+    <Grid>
+        <!--New Grid Definitions-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5.5*"/>
+        </Grid.ColumnDefinitions>
+        <!--Navbar-->
+        <mynamespace:Navbar/>
+
+        <!--Main Container-->
+        <Frame Grid.Column="1" BackgroundColor="Transparent" BorderColor="Transparent">
+            <Grid ColumnSpacing="30" RowSpacing="30">
+                <!--New Grid Definitions-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2.5*"/>
+                </Grid.RowDefinitions>
+
+                <!--Grid Content-->
+                <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="0,0,-20,0" >
+                    <FlexLayout Direction="Column" AlignItems="End" JustifyContent="SpaceBetween" BackgroundColor="Transparent">
+                        <StackLayout BackgroundColor="Transparent">
+                            <Border Padding="8" Stroke="Transparent" Background="#FC6923" HorizontalOptions="End" Margin="0,0,-20,0" WidthRequest="1200" >
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="40,5,40,5"/>
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="Black" Offset="10,10" Radius="20" Opacity="0.3" />
+                                </Border.Shadow>
+                                <HorizontalStackLayout>
+                                    <Image Source="searchicon.png" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" Margin="10"/>
+                                    <!--<handless:BorderlessEnrty Placeholder="Search Subjects by Name or ID" PlaceholderColor="Black" FontSize="16" FontFamily="Roboto-Regular" BackgroundColor="Transparent" WidthRequest="1030" VerticalOptions="Center" Margin="0,5,0,0" />-->
+                                    <Button Text="Search" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#29233E" Padding="15" HorizontalOptions="End"/>
+                                </HorizontalStackLayout>
+                            </Border>
+                        </StackLayout>
+                        <FlexLayout Direction="Row" AlignItems="End" JustifyContent="SpaceBetween" BackgroundColor="Blue">
+                            <Label  Text="Students" TextColor="#29233E" FontSize="48" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="0,0,0,0" />
+                            <Button Text="+ Add Student" CornerRadius="30" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FFBC24" Padding="15" HorizontalOptions="End"  />
+                        </FlexLayout>
+                    </FlexLayout>
+
+                </Frame>
+
+                <Frame Grid.Row="1" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
+
+                    <ScrollView>
+                        <VerticalStackLayout>
+
+                        </VerticalStackLayout>
+                    </ScrollView>
+                </Frame>
+            </Grid>
+        </Frame>
+    </Grid>
+
 </ContentPage>
+    
+    
+          
+        
+        
