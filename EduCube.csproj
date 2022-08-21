@@ -49,6 +49,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\backdropadmin.png" />
+	  <None Remove="Resources\Images\background.png" />
 	  <None Remove="Resources\Images\cashin.png" />
 	  <None Remove="Resources\Images\cashout.png" />
 	  <None Remove="Resources\Images\creditsiconsubjects.png" />

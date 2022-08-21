@@ -5,11 +5,12 @@
              xmlns:components="clr-namespace:EduCube.Components"
              xmlns:handless="clr-namespace:EduCube.Handlers"
              xmlns:viewModels="clr-namespace:EduCube.ViewModels"
+             xmlns:viewModel="clr-namespace:EduCube.ViewModels.AddUpdateViewModels"
              xmlns:models="clr-namespace:EduCube.Models"
              x:DataType="viewModels:SubjectViewModel"
              x:Class="EduCube.SubjectsPage">
- 
-<Grid>
+
+    <Grid>
         <!--New Grid Definitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -53,8 +54,8 @@
                                 </Border.Shadow>
                                 <HorizontalStackLayout>
                                     <Image Source="searchicon.png" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" Margin="10"/>
-                                    <handless:BorderlessEnrty Placeholder="Search Subjects by Name or ID" PlaceholderColor="Black" FontSize="16" FontFamily="Roboto-Regular" BackgroundColor="Transparent" WidthRequest="1030" VerticalOptions="Center" Margin="0,5,0,0" />
-                                    <Button Text="Search" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#29233E" Padding="15" HorizontalOptions="End"/>
+                                    <handless:BorderlessEnrty Placeholder="Search Subjects Title" PlaceholderColor="Black" FontSize="16" FontFamily="Roboto-Regular" BackgroundColor="Transparent" WidthRequest="1030" VerticalOptions="Center" Margin="0,5,0,0" />
+                                    <Button Command="{Binding GetSubjectListSearchCommand}" Text="Search" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#29233E" Padding="15" HorizontalOptions="End"/>
                                 </HorizontalStackLayout>
                             </Border>
                         </StackLayout>
@@ -63,36 +64,248 @@
                 JustifyContent="SpaceBetween" BackgroundColor="Blue">
                             <Label  Text="Subjects" TextColor="#29233E" FontSize="48" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="0,0,0,0" />
                             <!--Navigate to add update Subject screen-->
-                            <Button  Text="+ Add Subject" CornerRadius="30" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FFBC24" Padding="15" HorizontalOptions="End"  />
+                            <Button Command="{Binding AddUpdateSubjectCommand}"  Text="+ Add Subject" CornerRadius="30" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FFBC24" Padding="15" HorizontalOptions="End"  />
                         </FlexLayout>
                     </FlexLayout>
 
                 </Frame>
 
                 <Frame  Grid.Row="1" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
+                    <CollectionView ItemsSource="{Binding Subjects}">
+                        <CollectionView.ItemTemplate >
+                            <DataTemplate x:DataType="models:SubjectModel">
+                                <VerticalStackLayout Margin="0,0,0,20">
+                                    <Frame  BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" ZIndex="2" >
+                                        <VerticalStackLayout  HeightRequest="410">
+                                            <Frame  BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0"  Margin="0,0,-20,0" >
+                                                <VerticalStackLayout HeightRequest="385" BackgroundColor="Transparent" >
+                                                    <Border 
+                                                            Padding="40"
+                                                            Stroke="#120B29"
+                                                            StrokeThickness="4"
+                                                            Background="#ffffff"
+                                                            HorizontalOptions="Start"
+                                                            WidthRequest="80"
+                                                            HeightRequest="80"
+                                                            Margin="-15,-15,0,0">
+                                                        <Border.StrokeShape>
+                                                            <RoundRectangle CornerRadius="15,15,15,15"/>
+                                                        </Border.StrokeShape>
+                                                        <Label Text="Hello" ZIndex="10"/>
+                                                    </Border>
+                                                    <Image Source="democodeicon.png" WidthRequest="50" Margin="0,-65,0,0" HorizontalOptions="Start" ZIndex="3" />
 
-                    <!--<ScrollView>
-                        <VerticalStackLayout>
+                                                    <HorizontalStackLayout>
+                                                        <Label Text="{Binding SubjectTitle}" TextColor="White" ZIndex="3" Margin="90,-25,0,0" FontSize="20" FontFamily="Roboto-Regular" FontAttributes="Bold" />
+                                                        <Border 
+                                                               Padding="40"
+                                                               Stroke="Transparent"
+                                                               StrokeThickness="4"
+                                                               Background="#FC6923"
+                                                               HorizontalOptions="Start"
+                                                                WidthRequest="1.5"
+                                                                HeightRequest="25"
+                                                                ZIndex="2"
+                                                                Margin="10,-25,5,0">
+                                                            <Border.StrokeShape>
+                                                                <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                            </Border.StrokeShape>
+                                                        </Border>
+                                                        <Label Text="{Binding SubjectCode}" TextColor="White" ZIndex="3" Margin="5,-25,0,0" FontSize="20" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                                    </HorizontalStackLayout>
+                                                    <Label Text="{Binding SubjectLecturer}" TextColor="White" ZIndex="3" FontSize="16" Margin="90,5,0,0" FontFamily="Roboto-Regular" FontAttributes="None"/>
 
-                            <components:SubjectCards/>
-                            <components:SubjectCards/>
-                            <components:SubjectCards/>
-                            <components:SubjectCards/>
-                            <components:SubjectCards/>
-                            <components:SubjectCards/>
-                            <components:SubjectCards/>
-                        </VerticalStackLayout>
-                    </ScrollView>--> 
+                                                    <Grid>
+                                                        <!--New Grid Definitions-->
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="260"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="5*"/>
+                                                            <ColumnDefinition Width="1.5*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Frame Grid.Column="0"  BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
+                                                            <VerticalStackLayout>
+                                                                <Border 
+                                                                        Stroke="Transparent"
+                                                                        Background="#5D3AF3"
+                                                                        HorizontalOptions="FillAndExpand"
+                                                                        HeightRequest="5.5"
+                                                                        Margin="70,0,0,0">
+                                                                    <Border.StrokeShape>
+                                                                        <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                                    </Border.StrokeShape>
+                                                                </Border>
+                                                                <FlexLayout Direction="Row"
+                                                                         AlignItems="End"
+                                                                        JustifyContent="SpaceBetween" >
+                                                                    <VerticalStackLayout>
+                                                                        <HorizontalStackLayout>
+                                                                            <Image Source="venueiconsubjects.png" WidthRequest="20" Margin="75,20,0,0"  HorizontalOptions="Start" ZIndex="3" />
+                                                                            <Label Text="Venue" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="100"/>
+                                                                            <Border 
+                                                                                    Padding="40"
+                                                                                    Stroke="Transparent"
+                                                                                    StrokeThickness="4"
+                                                                                    Background="#FC6923"
+                                                                                    HorizontalOptions="Start"
+                                                                                    WidthRequest="1.5"
+                                                                                    HeightRequest="15"
+                                                                                    ZIndex="2"
+                                                                                    Margin="90,20,5,0">
+                                                                                <Border.StrokeShape>
+                                                                                    <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                                                </Border.StrokeShape>
+                                                                            </Border>
+                                                                            <Label Text="{Binding SubjectVenue}" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="200" />
+                                                                        </HorizontalStackLayout>
+                                                                        <HorizontalStackLayout>
+                                                                            <Image Source="timeiconsubjects.png" WidthRequest="20" Margin="75,20,0,0"  HorizontalOptions="Start" ZIndex="3" />
+                                                                            <Label Text="{Binding SubjectDate}" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="100"/>
+                                                                            <Border 
+                                                                                    Padding="40"
+                                                                                    Stroke="Transparent"
+                                                                                    StrokeThickness="4"
+                                                                                    Background="#FC6923"
+                                                                                    HorizontalOptions="Start"
+                                                                                    WidthRequest="1.5"
+                                                                                    HeightRequest="15"
+                                                                                    ZIndex="2"
+                                                                                    Margin="90,20,5,0">
+                                                                                <Border.StrokeShape>
+                                                                                    <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                                                </Border.StrokeShape>
+                                                                            </Border>
+                                                                            <Label Text="{Binding SubjectTime}" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="200" />
+                                                                        </HorizontalStackLayout>
+                                                                        <HorizontalStackLayout>
+                                                                            <Image Source="creditsiconsubjects.png" WidthRequest="20" Margin="75,20,0,0"  HorizontalOptions="Start" ZIndex="3" />
+                                                                            <Label Text="Credits" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="100"/>
+                                                                            <Border 
+                                                                                    Padding="40"
+                                                                                    Stroke="Transparent"
+                                                                                    StrokeThickness="4"
+                                                                                    Background="#FC6923"
+                                                                                    HorizontalOptions="Start"
+                                                                                    WidthRequest="1.5"
+                                                                                    HeightRequest="15"
+                                                                                    ZIndex="2"
+                                                                                    Margin="90,20,5,0">
+                                                                                <Border.StrokeShape>
+                                                                                    <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                                                </Border.StrokeShape>
+                                                                            </Border>
+                                                                            <Label Text="{Binding SubjectCredits}" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="200" />
+                                                                        </HorizontalStackLayout>
+                                                                        <HorizontalStackLayout>
+                                                                            <Image Source="hoursiconsubjects.png" WidthRequest="20" Margin="75,20,0,0"  HorizontalOptions="Start" ZIndex="3" />
+                                                                            <Label Text="Hours" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="100"/>
+                                                                            <Border 
+                                                                                    Padding="40"
+                                                                                    Stroke="Transparent"
+                                                                                    StrokeThickness="4"
+                                                                                    Background="#FC6923"
+                                                                                    HorizontalOptions="Start"
+                                                                                    WidthRequest="1.5"
+                                                                                    HeightRequest="15"
+                                                                                    ZIndex="2"
+                                                                                    Margin="90,20,5,0">
+                                                                                <Border.StrokeShape>
+                                                                                    <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                                                </Border.StrokeShape>
+                                                                            </Border>
+                                                                            <Label Text="{Binding SubjectHours}" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="200" />
+                                                                        </HorizontalStackLayout>
+                                                                        <HorizontalStackLayout>
+                                                                            <Image Source="priceiconsubjects.png" WidthRequest="20" Margin="75,20,0,0"  HorizontalOptions="Start" ZIndex="3" />
+                                                                            <Label Text="Price" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="100"/>
+                                                                            <Border 
+                                                                                    Padding="40"
+                                                                                    Stroke="Transparent"
+                                                                                    StrokeThickness="4"
+                                                                                    Background="#FC6923"
+                                                                                    HorizontalOptions="Start"
+                                                                                    WidthRequest="1.5"
+                                                                                    HeightRequest="15"
+                                                                                    ZIndex="2"
+                                                                                    Margin="90,20,5,0">
+                                                                                <Border.StrokeShape>
+                                                                                    <RoundRectangle CornerRadius="1,1,1,1"/>
+                                                                                </Border.StrokeShape>
+                                                                            </Border>
+                                                                            <Label Text="{Binding SubjectPrice}" TextColor="White" ZIndex="3" FontSize="18" Margin="10,20,-90,0" FontFamily="Roboto-Regular" WidthRequest="200" />
+                                                                        </HorizontalStackLayout>
+
+
+                                                                    </VerticalStackLayout>
+                                                                    <Border
+                                                                            Padding="4"
+                                                                            Stroke="#FFBC24"
+                                                                            StrokeThickness="6"
+                                                                            Background="Transparent"
+                                                                            HorizontalOptions="Start"
+                                                                            WidthRequest="420"
+                                                                            HeightRequest="180"
+                                                                            ZIndex="2">
+                                                                        <Border.StrokeShape>
+                                                                            <RoundRectangle CornerRadius="25,25,25,25"/>
+                                                                        </Border.StrokeShape>
+                                                                        <AbsoluteLayout>
+                                                                            <Label Text="{Binding SubjectDescription}"  TextColor="White" ZIndex="3" FontSize="12" Margin="15,15,0,0" FontFamily="Roboto-Regular" WidthRequest="370"  AbsoluteLayout.LayoutBounds="0,0"
+                                                                                        AbsoluteLayout.LayoutFlags="PositionProportional"  HeightRequest="140"/>
+                                                                        </AbsoluteLayout>
+                                                                    </Border>
+                                                                </FlexLayout>
+                                                            </VerticalStackLayout>
+
+                                                        </Frame>
+
+                                                        <Frame Grid.Column="1"  BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" Margin="0,-60,0,0" >
+                                                            <FlexLayout Direction="Column"
+                                                                         AlignItems="End"
+                                                                        JustifyContent="SpaceBetween" >
+                                                                <Border
+                                                                                Padding="0"
+                                                                                Stroke="#5D3AF3"
+                                                                                StrokeThickness="6"
+                                                                                Background="Transparent"
+                                                                                HorizontalOptions="Start"
+                                                                                WidthRequest="220"
+                                                                                HeightRequest="200"
+                                                                                ZIndex="2">
+                                                                    <Border.StrokeShape>
+                                                                        <RoundRectangle CornerRadius="20,20,20,20"/>
+                                                                    </Border.StrokeShape>
+                                                                    <FlexLayout Direction="Column"
+                                                                                 AlignItems="Center"
+                                                                                JustifyContent="SpaceBetween" >
+                                                                        <Label Text="Students:"  TextColor="White" ZIndex="3" FontSize="30"  FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                                                        <Label Text="(9)"  TextColor="White" ZIndex="3" FontSize="76" Margin="0,0,0,20" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                                                    </FlexLayout>
+                                                                </Border>
+                                                                <Button  Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:SubjectViewModel}}, Path=DisplayActionCommand}"
+                                                              CommandParameter="{Binding .}" Text="Edit/Delete" CornerRadius="10" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FC6923" Padding="15" HorizontalOptions="End" WidthRequest="220"  />
+                                                            </FlexLayout>
+                                                        </Frame>
+                                                    </Grid>
+                                                </VerticalStackLayout>
+                                            </Frame>
+                                        </VerticalStackLayout>
+                                    </Frame>
+                                    <Frame  BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" Margin="0,-450,0,0" ZIndex="1"  >
+                                        <VerticalStackLayout  HeightRequest="340">
+                                            <Image Source="subjectcardslarge.png"  HeightRequest="330" Aspect="Fill" Margin="25,25,0,0"/>
+                                        </VerticalStackLayout>
+                                    </Frame>
+                                </VerticalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
                 </Frame>
             </Grid>
         </Frame>
-
-
-
-
-
-        <!--- Reminder for later work with grids on all pages and have row and column defined-->
     </Grid>
-    
-
 </ContentPage>
+
+
+
