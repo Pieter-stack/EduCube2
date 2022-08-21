@@ -147,8 +147,13 @@
 
                             </Border>
                         </Frame>
-                        <Frame  Grid.Row="2" Grid.ColumnSpan="2" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
-                            <ScrollView >
+                        <Frame  Grid.Row="2" Grid.Column="2" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
+                            <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="End" Spacing="20">
+                                <Button Text="Start Month" CornerRadius="10" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FC6923" Padding="15" HorizontalOptions="End" WidthRequest="220"  HeightRequest="80"/>
+                                <Button Text="End Month" CornerRadius="10" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#5D3AF3" Padding="15" HorizontalOptions="End" WidthRequest="220" HeightRequest="80" />
+                            </HorizontalStackLayout>
+
+                            <!--     <ScrollView >
                                 <VerticalStackLayout>
                                 <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
                                     <Label Text="Invoice" FontSize="32" FontFamily="Roboto-Bold" FontAttributes="Bold"/>
@@ -167,13 +172,13 @@
                                     </Border.StrokeShape>
                                 </Border>
 
-                                    <VerticalStackLayout>
+                                 <VerticalStackLayout>
                                         <components:Invoices/>
                                         <components:Invoices/>
                                     </VerticalStackLayout>
 
                                 </VerticalStackLayout>
-                            </ScrollView>
+                            </ScrollView> -->
                             
                         </Frame>
 
@@ -197,16 +202,3 @@
 </ContentPage>
     
     
-    <!--
-        
-                                   <FlexLayout  AlignItems="Center" BackgroundColor="Aqua" Direction="Row" JustifyContent="SpaceBetween"  >
-
-    <FlexLayout>
-        
-    </FlexLayout>
-    <Label  Text="R5 000 000.00" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" ></Label>
-
-    </FlexLayout>
-
-
-    -->
