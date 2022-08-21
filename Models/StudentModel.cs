@@ -11,8 +11,7 @@ namespace EduCube.Models
     [Table("student")]
     public class StudentModel
     {
-
-        [PrimaryKey, AutoIncrement, Column("_id")]
+        [PrimaryKey, AutoIncrement]
         public int StudentID { get; set; }
 
         [MaxLength(100)]
@@ -40,13 +39,6 @@ namespace EduCube.Models
         public int StudentTuition { get; set; }
 
         [MaxLength(100)]
-        public int StudentType { get; set; }
-
-        [MaxLength(255)]
-        public Array SubjectsEnrolled { get; set; }
-
-
-
-
+        public string StudentType { get; set; }
     }
 }
