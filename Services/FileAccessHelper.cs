@@ -8,14 +8,10 @@ namespace EduCube.Services
 {
     public class FileAccessHelper
     {
-
         public static string GetLocalFilePath(string filename)
         {
-            //helper function to get our local file 's path db related
+            //Helper function to get our local file's path db related.
             return System.IO.Path.Combine(FileSystem.AppDataDirectory, filename);
         }
-
-
-
     }
 }
