@@ -17,6 +17,7 @@ public partial class AppShell : Shell
         //initialize add and update pages
         Routing.RegisterRoute(nameof(AddUpdateStudentPage), typeof(AddUpdateStudentPage));
         Routing.RegisterRoute(nameof(AddUpdateSubjectPage), typeof(AddUpdateSubjectPage));
-        
+        Routing.RegisterRoute(nameof(AddUpdateStaffPage), typeof(AddUpdateStaffPage));
+
     }
 }

@@ -4,9 +4,13 @@
              xmlns:mynamespace="clr-namespace:EduCube"
              x:Class="EduCube.TeachersPage"
              xmlns:handless="clr-namespace:EduCube.Handlers"
+             xmlns:viewModels="clr-namespace:EduCube.ViewModels"
+             xmlns:viewModel="clr-namespace:EduCube.ViewModels.AddUpdateViewModels"
+             x:DataType="viewModels:StaffViewModel"
+             xmlns:models="clr-namespace:EduCube.Models"
              BackgroundColor="#FFFFFF">
 
-    <Grid>
+        <Grid>
         <!--New Grid Definitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -40,14 +44,14 @@
                                 </Border.Shadow>
                                 <HorizontalStackLayout>
                                     <Image Source="searchicon.png" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" Margin="10"/>
-                                    <!--<handless:BorderlessEnrty Placeholder="Search Subjects by Name or ID" PlaceholderColor="Black" FontSize="16" FontFamily="Roboto-Regular" BackgroundColor="Transparent" WidthRequest="1030" VerticalOptions="Center" Margin="0,5,0,0" />-->
-                                    <Button Text="Search" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#29233E" Padding="15" HorizontalOptions="End"/>
+                                    <handless:BorderlessEnrty Text="{Binding Search}" Placeholder="Search Staff by Name or ID" PlaceholderColor="Black" FontSize="16" FontFamily="Roboto-Regular" BackgroundColor="Transparent" WidthRequest="1030" VerticalOptions="Center" Margin="0,5,0,0" />
+                                    <Button Command="{Binding GetStaffListSearchCommand}"  Text="Search" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#29233E" Padding="15" HorizontalOptions="End"/>
                                 </HorizontalStackLayout>
                             </Border>
                         </StackLayout>
                         <FlexLayout Direction="Row" AlignItems="End" JustifyContent="SpaceBetween" BackgroundColor="Blue">
                             <Label  Text="Staff" TextColor="#29233E" FontSize="48" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="0,0,0,0" />
-                            <Button Text="+ Add Staff" CornerRadius="30" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FFBC24" Padding="15" HorizontalOptions="End"  />
+                            <Button Command="{Binding AddUpdateStaffCommand}"  Text="+ Add Staff" CornerRadius="30" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FFBC24" Padding="15" HorizontalOptions="End"  />
                         </FlexLayout>
                     </FlexLayout>
 
@@ -55,11 +59,120 @@
 
                 <Frame Grid.Row="1" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
 
-                    <ScrollView>
-                        <VerticalStackLayout>
+                    <!-- Collection View | Student Cards -->
+                    <CollectionView ItemsSource="{Binding Staff}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:StaffModel">
 
-                        </VerticalStackLayout>
-                    </ScrollView>
+                                <!-- StudentCards Starts Here -->
+                                <VerticalStackLayout BackgroundColor="Grey" WidthRequest="350">
+                                    <!-- Top Section -->
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="Black">
+                                        <!-- Profile Image Border Rectangle -->
+                                        <Border HeightRequest="60" WidthRequest="60" Margin="-20,-45,0,0" HorizontalOptions="Start" StrokeThickness="3" Stroke="#120B29" Background="#ffffff">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="8"/>
+                                            </Border.StrokeShape>
+                                        </Border>
+                                        <!-- Profile Image -->
+                                        <Image Source="profilepic.png" HeightRequest="60" WidthRequest="60" Margin="-60,-45,0,0" Background="Transparent" Aspect="AspectFill" />
+                                        <!-- Profile Details -->
+                                        <VerticalStackLayout Margin="5,10,5,10" HorizontalOptions="Start">
+                                            <HorizontalStackLayout>
+                                                <Label Text="{Binding StaffFirstName}" FontSize="20" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                                <Label Text="{Binding StaffLastName}" FontSize="20" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                            </HorizontalStackLayout>
+                                            <Label Text="{Binding StaffHours}" FontSize="16" FontFamily="Roboto-Regular"/>
+                                            <Label Text="{Binding StaffEmail}" FontSize="10" FontFamily="Roboto-Regular"/>
+                                        </VerticalStackLayout>
+                                        <!-- Profile ID & Action Buttons -->
+                                        <VerticalStackLayout BackgroundColor="Transparent" HorizontalOptions="EndAndExpand">
+                                            <StackLayout Orientation="Vertical" Margin="0,5,20,0">
+                                                <Label Text="{Binding StaffPersonalID}" FontSize="10" FontFamily="Roboto-Regular" HorizontalOptions="End"/>
+                                            </StackLayout>
+                                            <HorizontalStackLayout Spacing="5" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Margin="0,35,20,0">
+                                                <!-- Buttons -->
+                                                <ImageButton Source="deleteicon.png" HeightRequest="20" WidthRequest="20" BackgroundColor="#F33A3A" Padding="3" CornerRadius="1" Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StaffViewModel}}, Path=DisplayActionCommand}" CommandParameter="{Binding .}"/>
+                                                <ImageButton Source="pencilicon.png" HeightRequest="20" WidthRequest="20" BackgroundColor="#FC6923" Padding="3" CornerRadius="1" Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StaffViewModel}}, Path=DisplayActionCommand}" CommandParameter="{Binding .}"/>
+                                                <ImageButton Source="dotsicon.png" HeightRequest="20" WidthRequest="20" BackgroundColor="#5D3AF3" Padding="3" CornerRadius="1" Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StaffViewModel}}, Path=DisplayActionCommand}" CommandParameter="{Binding .}"/>
+                                            </HorizontalStackLayout>
+                                        </VerticalStackLayout>
+                                    </StackLayout>
+
+                                    <!-- Bottom Section -->
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="White" HeightRequest="120">
+                                        <!-- Blocks Section -->
+                                        <Grid ColumnSpacing="10" RowSpacing="10" Margin="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="110"/>
+                                                <ColumnDefinition Width="110"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <!-- Top Left -->
+                                            <Border StrokeThickness="2" Stroke="#5D3AF3" Grid.Row="0" Grid.Column="0">
+                                                <Border.StrokeShape>
+                                                    <RoundRectangle CornerRadius="8"/>
+                                                </Border.StrokeShape>
+
+                                                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                                                    <Label Text="Education Type" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    <Label Text="{Binding StaffRole}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                </VerticalStackLayout>
+                                            </Border>
+                                            <!-- Top Right -->
+                                            <Border StrokeThickness="2" Stroke="#FC6923" Grid.Row="0" Grid.Column="1">
+                                                <Border.StrokeShape>
+                                                    <RoundRectangle CornerRadius="8"/>
+                                                </Border.StrokeShape>
+
+                                                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                                                    <Label Text="Credits" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    <Label Text="{Binding StaffSalary}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                </VerticalStackLayout>
+                                            </Border>
+                                            <!-- Bottom Left -->
+                                            <Border StrokeThickness="2" Stroke="#EAAEF9" Grid.Row="1" Grid.Column="0">
+                                                <Border.StrokeShape>
+                                                    <RoundRectangle CornerRadius="8"/>
+                                                </Border.StrokeShape>
+
+                                                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                                                    <Label Text="Major" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    <Label Text="DV300" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                </VerticalStackLayout>
+                                            </Border>
+                                            <!-- Bottom Right -->
+                                            <Border StrokeThickness="2" Stroke="#FFBC24" Grid.Row="1" Grid.Column="1">
+                                                <Border.StrokeShape>
+                                                    <RoundRectangle CornerRadius="8"/>
+                                                </Border.StrokeShape>
+
+                                                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                                                    <Label Text="Total Fees" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    <Label Text="TEST SUBJECT ARRAY TEXT" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                </VerticalStackLayout>
+                                            </Border>
+                                        </Grid>
+
+                                        <!--Barcode Image Section -->
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                            <Label VerticalOptions="Center" HorizontalOptions="Center" Text="2020" FontSize="40" FontFamily="Roboto-Regular" FontAttributes="Bold" TextColor="Black" Rotation="-90"/>
+                                            <Image Source="barcode.png" Margin="-20,0,0,0" HeightRequest="110"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                </VerticalStackLayout>
+                                <!-- Student Cards End Here -->
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                   
+
                 </Frame>
             </Grid>
         </Frame>

@@ -3,109 +3,85 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EduCube.MainPage"
              xmlns:mynamespace="clr-namespace:EduCube"
-             BackgroundColor="Aqua">
+             xmlns:viewmodel="clr-namespace:EduCube.ViewModels"
+             x:DataType="viewmodel:LoginViewModel"
+             NavigationPage.HasBackButton="False">
 
-    <!--Login Page-->
-    <Grid 
-        RowDefinitions="1*,8*,1*" 
-        HorizontalOptions="Fill" 
-        VerticalOptions="FillAndExpand">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1.1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        
 
-        <!--Navbar-->
-        <mynamespace:Navbar/>
+        <Frame Grid.RowSpan="3" Grid.ColumnSpan="3" BackgroundColor="Transparent" CornerRadius="0">
+            <Image Source="background.png" Aspect="AspectFill" Margin="-20,-20,-20,-20"/>
+        </Frame>
 
-        <Frame 
-            CornerRadius="20" 
-            BackgroundColor="#5D3AF3"
-            Grid.Row="1"
-            WidthRequest="300"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand"
-            Margin="100,0,100,0"
-            >
 
-            <VerticalStackLayout 
-                HorizontalOptions="Center" 
-                VerticalOptions="Center" 
-                BackgroundColor="Transparent" 
-                Spacing="25">
+        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" Opacity="0.5" BorderColor="Transparent" CornerRadius="30" Margin="0,0,0,40"/>
 
-                <Image 
-                    Source="logo.png" 
-                    WidthRequest="100">
-                    <Image.Shadow>
-                        <Shadow 
-                            Brush="Black"
-                            Offset="1,2"
-                            Radius="5"
-                            Opacity="0.2"/>
-                    </Image.Shadow>
-                </Image>
+        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" Opacity="1" BorderColor="Transparent" CornerRadius="30">
 
-                <Frame 
-                    Padding="5" 
-                    BorderColor="Transparent" 
-                    CornerRadius="5" 
-                    BackgroundColor="#FFFFFF">
-                    <Grid 
-                        RowDefinitions="25,*" 
-                        RowSpacing="10">
-                        <Label 
-                            Text="Username" 
-                            FontSize="12" 
-                            FontAttributes="Bold" 
-                            TextColor="#FFFFFF" 
-                            />
-                        <Entry 
-                            VerticalOptions="Center" 
-                            Placeholder="Email" 
-                            FontSize="12" 
-                            Grid.Column="1" 
-                            TextColor="Black" />
-                    </Grid>
+            <VerticalStackLayout>
+                <Image Source="logo.png" WidthRequest="120"/>
+                <Label Text="EduCube" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Rubik-Regular" Margin="0,0,0,20"></Label>
+
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent">
+
+                        <VerticalStackLayout>
+                            <Label Text="Email" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                            <Border 
+                    
+                       Padding="2"
+                       Stroke="White"
+                    StrokeThickness="3"
+                       Background="Transparent"
+                       HorizontalOptions="StartAndExpand"
+                                Margin="0,0,0,0" >
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="40,40,40,40"/>
+                                </Border.StrokeShape>
+                                <Entry Text="{Binding Email}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"></Entry>
+                            </Border>
+
+                        <Label Text="Password" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                        <Border 
+                    
+                       Padding="2"
+                       Stroke="White"
+                    StrokeThickness="3"
+                       Background="Transparent"
+                       HorizontalOptions="StartAndExpand"
+                                Margin="0,0,0,0" >
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding Password}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"></Entry>
+                        </Border>
+                            
+                        <Label Text="Forgot Password?" HorizontalOptions="End" FontSize="12" FontAttributes="None" TextColor="White" FontFamily="Monserrat-Regular" Margin="0,15,20,0"></Label>
+
+                    </VerticalStackLayout>
+   
                 </Frame>
+                <Label Text="{Binding ErrorMessage, Mode=TwoWay}" TextColor="DarkRed"/>
 
-                <Frame 
-                    Padding="5" 
-                    BorderColor="Transparent" 
-                    CornerRadius="5" 
-                    BackgroundColor="#FFFFFF">
-                    <Grid 
-                        RowDefinitions="25,*" 
-                        RowSpacing="10">
-                        <Label 
-                            Text="Password" 
-                            FontSize="12" 
-                            FontAttributes="Bold" 
-                            TextColor="#FFFFFF" />
-                        <Entry 
-                            VerticalOptions="Center" 
-                            Placeholder="Password" 
-                            FontSize="12" 
-                            Grid.Column="1" 
-                            TextColor="Black" />
-                    </Grid>
-                </Frame>
-
-                <Label 
-                    FontAttributes="None" 
-                    FontSize="12" 
-                    Text="Forgot Password?" 
-                    TextColor="Gray" 
-                    HorizontalTextAlignment="End" 
-                    />
-                <Button 
-                    CornerRadius="18" 
-                    HeightRequest="38" 
-                    Text="Sign In" 
-                    FontSize="16" 
-                    TextColor="#FFFFFF" 
-                    FontAttributes="None" 
-                    BackgroundColor="#FC6923" 
-                    />
+                <Button Command="{Binding LoginValidCommand}"  Margin="50,30,50,0" BackgroundColor="#FC6923" TextColor="White" CornerRadius="35" Padding="20" Text="Login" FontFamily="Roboto-Bold" FontSize="15"></Button>
 
             </VerticalStackLayout>
+
         </Frame>
+
+
+
+
 
     </Grid>
 

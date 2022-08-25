@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mynamespace="clr-namespace:EduCube"
              xmlns:components="clr-namespace:EduCube.Components"
+             xmlns:Model="clr-namespace:EduCube.Models"
+             xmlns:viewModel="clr-namespace:EduCube.ViewModels"
+             x:DataType="viewModel:FundViewModel"
              x:Class="EduCube.FundsPage">
 
     <Grid>
@@ -88,7 +91,7 @@
 
                                 <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
                                     <Image Margin="20" Source="cashin.png" WidthRequest="90"/>
-                                    <Label Margin="20"   Text="+4 000 000.00" TextColor="White" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" />
+                                    <Label Text="{Binding TotalTuition}" Margin="20" TextColor="White" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" />
                                 </FlexLayout>
 
 
@@ -110,7 +113,7 @@
 
                                 <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
                                     <Image Margin="20" Source="cashout.png" WidthRequest="90"/>
-                                    <Label Margin="20"  Text="-90 000" TextColor="White" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" />
+                                    <Label Margin="20"  Text="{Binding TotalSalary}" TextColor="White" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" />
                                 </FlexLayout>
 
 
@@ -139,7 +142,7 @@
                                         <Label FlexLayout.Basis="Auto" FlexLayout.Order="-1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="C" TextColor="#FC6923" FontFamily="Rubik-Bold" FontSize="36"></Label>
                                         <Label FlexLayout.Basis="Auto" FlexLayout.Order="-1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="ube" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36"></Label>
                                         <Label FontSize="18" BackgroundColor="Transparent" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FlexLayout.Grow="1" />
-                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="R5 000 000.00" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" ></Label>
+                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding TotalFunds}" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" ></Label>
                                         <Label FlexLayout.Basis="20" FlexLayout.Order="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  TextColor="Black" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" ></Label>
                                     </FlexLayout>
                                 </FlexLayout>
@@ -149,42 +152,12 @@
                         </Frame>
                         <Frame  Grid.Row="2" Grid.Column="2" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
                             <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="End" Spacing="20">
-                                <Button Text="Start Month" CornerRadius="10" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FC6923" Padding="15" HorizontalOptions="End" WidthRequest="220"  HeightRequest="80"/>
+                                <Button Command="{Binding AddUpdateFundsCommand}" Text="Start Month" CornerRadius="10" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FC6923" Padding="15" HorizontalOptions="End" WidthRequest="220"  HeightRequest="80"/>
                                 <Button Text="End Month" CornerRadius="10" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#5D3AF3" Padding="15" HorizontalOptions="End" WidthRequest="220" HeightRequest="80" />
                             </HorizontalStackLayout>
-
-                            <!--     <ScrollView >
-                                <VerticalStackLayout>
-                                <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
-                                    <Label Text="Invoice" FontSize="32" FontFamily="Roboto-Bold" FontAttributes="Bold"/>
-                                        <Label Text="Price" FontSize="32" FontFamily="Roboto-Bold" FontAttributes="Bold"/>
-
-                                </FlexLayout>
-                                <Border
-                                            Padding="0"
-                                            Stroke="Transparent"
-                                            Background="#5D3AF3"
-                                        HeightRequest="5"
-                                            HorizontalOptions="FillAndExpand"
-                                            ZIndex="2">
-                                    <Border.StrokeShape>
-                                        <RoundRectangle CornerRadius="15,15,15,15"/>
-                                    </Border.StrokeShape>
-                                </Border>
-
-                                 <VerticalStackLayout>
-                                        <components:Invoices/>
-                                        <components:Invoices/>
-                                    </VerticalStackLayout>
-
-                                </VerticalStackLayout>
-                            </ScrollView> -->
-                            
                         </Frame>
 
                         
-
-
                     </Grid>
 
 

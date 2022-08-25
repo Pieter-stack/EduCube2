@@ -54,7 +54,7 @@
                                 </Border.Shadow>
                                 <HorizontalStackLayout>
                                     <Image Source="searchicon.png" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" Margin="10"/>
-                                    <handless:BorderlessEnrty Placeholder="Search Subjects Title" PlaceholderColor="Black" FontSize="16" FontFamily="Roboto-Regular" BackgroundColor="Transparent" WidthRequest="1030" VerticalOptions="Center" Margin="0,5,0,0" />
+                                    <handless:BorderlessEnrty Text="{Binding Search}" Placeholder="Search Subjects Title" PlaceholderColor="Black" FontSize="16" FontFamily="Roboto-Regular" BackgroundColor="Transparent" WidthRequest="1030" VerticalOptions="Center" Margin="0,5,0,0" />
                                     <Button Command="{Binding GetSubjectListSearchCommand}" Text="Search" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#29233E" Padding="15" HorizontalOptions="End"/>
                                 </HorizontalStackLayout>
                             </Border>

@@ -38,15 +38,16 @@ public static class MauiProgram
         builder.Services.AddSingleton<FundsPage>();
 
         builder.Services.AddSingleton<StudentsPage>();
-        builder.Services.AddSingleton<AddUpdateStudentPage>();
+        builder.Services.AddTransient<AddUpdateStudentPage>();
 
         builder.Services.AddSingleton<SubjectsPage>();
         builder.Services.AddTransient<AddUpdateSubjectPage>();
 
         builder.Services.AddSingleton<TeachersPage>();
+        builder.Services.AddTransient<AddUpdateStaffPage>();
 
         builder.Services.AddSingleton<MainPage>();
-
+        
 
         //Viewmodels
         builder.Services.AddSingleton<AdminViewModel>();
@@ -54,6 +55,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<FundViewModel>();
 
         builder.Services.AddSingleton<StaffViewModel>();
+        builder.Services.AddTransient<AddUpdateStaffViewModel>();
 
         builder.Services.AddSingleton<StudentViewModel>();
         builder.Services.AddTransient<AddUpdateStudentViewModel>();
@@ -61,13 +63,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<SubjectViewModel>();
         builder.Services.AddTransient<AddUpdateSubjectViewModel>();
 
-        //DB Repos
-        //  string userDBPath = FileAccessHelper.GetLocalFilePath("educubeDatabase.db3");
-        //   builder.Services.AddSingleton<AdminRepository>(s => ActivatorUtilities.CreateInstance<AdminRepository>(s, userDBPath));
-        //   builder.Services.AddSingleton<FundRepository>(s => ActivatorUtilities.CreateInstance<FundRepository>(s, userDBPath));
-        //   builder.Services.AddSingleton<StaffRepository>(s => ActivatorUtilities.CreateInstance<StaffRepository>(s, userDBPath));
-        //   builder.Services.AddSingleton<StudentRepository>(s => ActivatorUtilities.CreateInstance<StudentRepository>(s, userDBPath));
-        //   builder.Services.AddSingleton<SubjectRepository>(s => ActivatorUtilities.CreateInstance<SubjectRepository>(s, userDBPath));
+        builder.Services.AddSingleton<LoginViewModel>();
 
         return builder.Build();
 	}

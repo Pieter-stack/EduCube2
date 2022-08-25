@@ -10,10 +10,10 @@ namespace EduCube.Services
     public interface ISubjectService
     {
         //Initialize CRUD operations
-        Task<List<SubjectModel>> GetSubjectList();
         Task<int> AddSubject(SubjectModel subjectModel);
-        Task<int> DeleteSubject(SubjectModel subjectModel);
+        Task<List<SubjectModel>> GetSubjectList();
         Task<int> EditSubject(SubjectModel subjectModel);
+        Task<int> DeleteSubject(SubjectModel subjectModel);
 
     }
 }

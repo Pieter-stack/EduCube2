@@ -75,6 +75,9 @@
                     FontAttributes="Bold"
                     TextColor="White" />
             </Border>
+            <VerticalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="logoutroute"/>
+            </VerticalStackLayout.GestureRecognizers>
         </VerticalStackLayout>
 
         </Grid>

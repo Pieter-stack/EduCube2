@@ -27,7 +27,7 @@ namespace EduCube.Models
         public string StudentLastName { get; set; }
 
         [MaxLength(100)]
-        public string StudentRole { get; set; }
+        public string StudentSubjects { get; set; }
 
         [MaxLength(255)]
         public string StudentImage { get; set; }

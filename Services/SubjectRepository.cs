@@ -11,8 +11,6 @@ namespace EduCube.Services
 {
     internal class SubjectRepository : ISubjectService
     {
-
-
         private SQLiteAsyncConnection _dbConnection;
 
         //setup using path

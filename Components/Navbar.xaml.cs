@@ -37,5 +37,12 @@ public partial class Navbar : ContentView
 
         await Shell.Current.GoToAsync("//FundsPage");
     }
+    private async void logoutroute(object sender, EventArgs e)
+    {
+
+        await Shell.Current.GoToAsync("//MainPage");
+    }
+
+   
 
 }
