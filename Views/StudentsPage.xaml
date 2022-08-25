@@ -44,7 +44,7 @@
                                 </Border.Shadow>
                                 <HorizontalStackLayout>
                                     <Image Source="searchicon.png" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" Margin="10"/>
-                                    <handless:BorderlessEnrty Placeholder="Search Student" PlaceholderColor="Black" FontSize="16" FontFamily="Roboto-Regular" BackgroundColor="Transparent" WidthRequest="1030" VerticalOptions="Center" Margin="0,5,0,0" />
+                                    <handless:BorderlessEnrty Text="{Binding Search}" Placeholder="Search Studeets by Name or ID" PlaceholderColor="Black" FontSize="16" FontFamily="Roboto-Regular" BackgroundColor="Transparent" WidthRequest="1030" VerticalOptions="Center" Margin="0,5,0,0" />
                                     <!-- Search Student Button -->
                                     <Button Command="{Binding GetStudentListSearchCommand}" Text="Search" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#29233E" Padding="15" HorizontalOptions="End"/>
                                 </HorizontalStackLayout>
@@ -60,12 +60,13 @@
                 </Frame>
 
                 <Frame Grid.Row="1" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
+
                     <!-- Collection View | Student Cards -->
                     <CollectionView ItemsSource="{Binding Students}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="models:StudentModel">
-                                
-                            <!-- StudentCards Starts Here -->
+
+                                <!-- StudentCards Starts Here -->
                                 <VerticalStackLayout BackgroundColor="Grey" WidthRequest="350">
                                     <!-- Top Section -->
                                     <StackLayout Orientation="Horizontal" BackgroundColor="Black">
@@ -83,7 +84,7 @@
                                                 <Label Text="{Binding StudentFirstName}" FontSize="20" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
                                                 <Label Text="{Binding StudentLastName}" FontSize="20" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
                                             </HorizontalStackLayout>
-                                            <Label Text="{Binding StudentRole}" FontSize="16" FontFamily="Roboto-Regular"/>
+                                            <Label Text="{Binding StudentCredits}" FontSize="16" FontFamily="Roboto-Regular"/>
                                             <Label Text="{Binding StudentEmail}" FontSize="10" FontFamily="Roboto-Regular"/>
                                         </VerticalStackLayout>
                                         <!-- Profile ID & Action Buttons -->
@@ -132,7 +133,7 @@
 
                                                 <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
                                                     <Label Text="Credits" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                                    <Label Text="{Binding StudentCredits}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    <Label Text="{Binding StudentTuition}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                                                 </VerticalStackLayout>
                                             </Border>
                                             <!-- Bottom Left -->
@@ -154,7 +155,7 @@
 
                                                 <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
                                                     <Label Text="Total Fees" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                                    <Label Text="{Binding StudentTuition}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    <Label Text="{Binding StudentSubjects}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                                                 </VerticalStackLayout>
                                             </Border>
                                         </Grid>
@@ -172,6 +173,7 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
+
                 </Frame>
             </Grid>
         </Frame>

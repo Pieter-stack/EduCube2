@@ -23,8 +23,5 @@ namespace EduCube.Models
         [MaxLength(255)]
         public int TotalSalary { get; set; }
 
-        [MaxLength(255)]
-        public string InvoiceDate { get; set; }
-
     }
 }

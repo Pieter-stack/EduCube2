@@ -5,7 +5,8 @@
              xmlns:local="clr-namespace:EduCube.ViewModels;assembly=EduCube"
              xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
              xmlns:lvcore="clr-namespace:LiveChartsCore;assembly=LiveChartsCore"
-             x:Class="EduCube.DashboardPage">
+             x:Class="EduCube.DashboardPage"
+             NavigationPage.HasBackButton="False">
 
     <ContentPage.BindingContext>
         <local:Charts/>
@@ -47,7 +48,7 @@
                             <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
                                 <VerticalStackLayout>
                                     <Label Text="Staff" TextColor="White" FontSize="20" FontFamily="Roboto-Regular"/>
-                                    <Label Text="65" TextColor="White" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding TotalStaffText}" TextColor="White" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
                                 </VerticalStackLayout>
                             </Frame>
 
@@ -73,7 +74,7 @@
                             <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
                                 <VerticalStackLayout>
                                     <Label Text="Students" TextColor="#120B29" FontSize="20" FontFamily="Roboto-Regular"/>
-                                    <Label Text="20" TextColor="#120B29" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding TotalStudentText}" TextColor="#120B29" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
                                 </VerticalStackLayout>
                             </Frame>
 
@@ -99,7 +100,7 @@
                             <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
                                 <VerticalStackLayout>
                                     <Label Text="Teachers" TextColor="#120B29" FontSize="20" FontFamily="Roboto-Regular"/>
-                                    <Label Text="15" TextColor="#120B29" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding TotalLecturerText}" TextColor="#120B29" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
                                 </VerticalStackLayout>
                             </Frame>
 
@@ -125,7 +126,7 @@
                             <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
                                 <VerticalStackLayout>
                                     <Label Text="Admin" TextColor="#120B29" FontSize="20" FontFamily="Roboto-Regular"/>
-                                    <Label Text="50" TextColor="#120B29" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding TotalAdminText}" TextColor="#120B29" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
                                 </VerticalStackLayout>
                             </Frame>
 
@@ -163,7 +164,7 @@
                                     <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
                                         <VerticalStackLayout >
                                             <Label Text="Total Expenses 2022" TextColor="#828282" FontSize="16" FontFamily="Roboto-Regular"/>
-                                            <Label Text="R250 000" TextColor="#120B29" FontSize="40" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
+                                            <Label Text="{Binding TotalFundsText}" TextColor="#120B29" FontSize="40" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
                                         </VerticalStackLayout>
                                     </Frame>
 
@@ -197,6 +198,7 @@
                                                 </Border.StrokeShape>
                                                 <StackLayout>
                                                     <Image Source="profilepic.png" Aspect="Fill"/>
+                                                    
                                                 </StackLayout>
                                             </Border>
                                         </VerticalStackLayout>
@@ -204,7 +206,8 @@
 
                                     <Frame  Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,0,-20,-20">
                                         <HorizontalStackLayout>
-                                            <Label Text="Pieter Venter" FontSize="46" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="20,-20,0,0" TextColor="#120B29"/>
+                                            <Label Text="{Binding FirstNameText}" FontSize="46" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="20,-20,0,0" TextColor="#120B29"/>
+                                            <Label Text="{Binding LastNameText}" FontSize="46" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="20,-20,0,0" TextColor="#120B29"/>
                                             <Label Text="Admin"  FontSize="42"  FontFamily="Roboto-Bold" Margin="20,-17,0,0" TextColor="#120B29"/>
                                         </HorizontalStackLayout>
                                     </Frame>

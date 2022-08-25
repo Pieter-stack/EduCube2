@@ -22,7 +22,17 @@ namespace EduCube.ViewModels
         public SubjectViewModel(ISubjectService subjectService)
         {
             _subjectRepository = subjectService;
+
+
         }
+
+        [ObservableProperty]
+        string search;
+
+
+
+
+
 
         [ICommand]
         public async void GetSubjectList()
@@ -43,16 +53,13 @@ namespace EduCube.ViewModels
         public  async void GetSubjectListSearch()
         {
             var subjectList = await _subjectRepository.GetSubjectList();
-            var filteredItems = subjectList.Where(value => value.SubjectTitle.ToLowerInvariant().Contains('r')).ToList();
+            var filteredItems = subjectList.Where(value => value.SubjectTitle.ToLowerInvariant().Contains(Search)).ToList();
 
             Subjects.Clear();
             foreach (var subject in filteredItems)
             {
                 Subjects.Add(subject);
-            }
-
-                
-            
+            }  
         }
 
 

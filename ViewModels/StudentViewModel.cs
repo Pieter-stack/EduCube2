@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using EduCube.Models;
 using EduCube.Services;
 using EduCube.Views.AddUpdateViews;
@@ -22,6 +23,15 @@ namespace EduCube.ViewModels
             _studentRepository = studentService;
         }
 
+        [ObservableProperty]
+        int totalDegree;
+
+        [ObservableProperty]
+        int totalDiploma;
+
+        [ObservableProperty]
+        string search;
+
         [ICommand]
         public async void GetStudentList()
         {
@@ -32,7 +42,36 @@ namespace EduCube.ViewModels
                 foreach(var student in studentList)
                 {
                     Students.Add(student);
+                    if (student.StudentType == "Degree")
+                    {
+                        totalDegree++;
+                    }
+                    else if (student.StudentType == "Diploma")
+                    {
+                        totalDiploma++;
+                    }
+                    Preferences.Set("TotalDegree", totalDegree);
+                    Preferences.Set("TotalDiploma", totalDiploma);
                 }
+            }
+        }
+
+        [ICommand]
+        public async void GetStudentListSearch()
+        {
+            var studentList = await _studentRepository.GetStudentList();
+            var filteredItems = studentList.Where(value => value.StudentFirstName.ToLowerInvariant().Contains(Search)).ToList();
+            var filteredItems2 = studentList.Where(value => value.StudentPersonalID.ToString().Contains(Search)).ToList();
+
+
+            Students.Clear();
+            foreach (var student in filteredItems)
+            {
+                Students.Add(student);
+            }
+            foreach (var student in filteredItems2)
+            {
+                Students.Add(student);
             }
         }
 
@@ -64,17 +103,9 @@ namespace EduCube.ViewModels
             }
         }
 
-        [ICommand]
-        public async void GetStudentListSearch()
-        {
-            var studentList = await _studentRepository.GetStudentList();
-            var filteredItems = studentList.Where(value => value.StudentLastName.ToLowerInvariant().Contains('a')).ToList();
 
-            Students.Clear();
-            foreach (var student in filteredItems)
-            {
-                Students.Add(student);
-            }
-        }
     }
 }
+
+
+

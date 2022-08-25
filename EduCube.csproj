@@ -95,6 +95,9 @@
 	  <MauiXaml Update="Components\SubjectCards.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\AddUpdateViews\AddUpdateStaffPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\AddUpdateViews\AddUpdateStudentPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

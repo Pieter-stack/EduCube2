@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace EduCube.ViewModels.AddUpdateViewModels
 { 
     [QueryProperty(nameof(SubjectDetail), "SubjectDetail")]
@@ -19,18 +20,42 @@ namespace EduCube.ViewModels.AddUpdateViewModels
     public partial class AddUpdateSubjectViewModel : ObservableObject
     {
 
+        
+
         [ObservableProperty]
         public SubjectModel _subjectDetail = new SubjectModel();
 
             private readonly ISubjectService _subjectRepository;
-            public AddUpdateSubjectViewModel(ISubjectService subjectService)
+            public  AddUpdateSubjectViewModel(ISubjectService subjectService)
             {
             _subjectRepository = subjectService;
+
+
+
+            listOfLecturers = new List<StaffModel>();
+            GetListOfLecturers();
+
             }
 
 
-            //add display action to assign active state
-            [ICommand]
+
+
+        //list of lecturers observable property
+        [ObservableProperty]
+        List<StaffModel> listOfLecturers;
+
+        [ObservableProperty]
+        StaffModel selectedLecturer;
+
+
+        public async void GetListOfLecturers()
+        {
+            ListOfLecturers = await App.StaffRepo.GetStaffList();
+        }
+
+
+
+        [ICommand]
             public async void AddUpdateSubject()
             {
             int response = -1;
@@ -44,7 +69,7 @@ namespace EduCube.ViewModels.AddUpdateViewModels
                 {
                     SubjectTitle = SubjectDetail.SubjectTitle,
                     SubjectCode = SubjectDetail.SubjectCode,
-                    SubjectLecturer = SubjectDetail.SubjectLecturer,
+                    SubjectLecturer = SelectedLecturer.StaffFirstName,
                     SubjectDescription = SubjectDetail.SubjectDescription,
                     SubjectCredits = SubjectDetail.SubjectCredits,
                     SubjectPrice = SubjectDetail.SubjectPrice,
@@ -58,8 +83,8 @@ namespace EduCube.ViewModels.AddUpdateViewModels
 
                 if (response > 0)
                 {
-                    await Shell.Current.DisplayAlert("subject info saved", "Record Saved", "OK");
-                    //navigate back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    await Shell.Current.DisplayAlert("Subject info saved", "Record Saved", "OK");
+                   
                 }
                 else
                 {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EduCube.Views.AddUpdateViews.AddUpdateStudentPage"
+             x:Class="EduCube.Views.AddUpdateViews.AddUpdateStaffPage"
              xmlns:viewModel="clr-namespace:EduCube.ViewModels.AddUpdateViewModels"
              xmlns:models="clr-namespace:EduCube.Models"
-             x:DataType="viewModel:AddUpdateStudentViewModel">
+             x:DataType="viewModel:AddUpdateStaffViewModel">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -29,12 +29,12 @@
         <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" Opacity="1" BorderColor="Transparent" CornerRadius="30">
 
             <VerticalStackLayout>
-                <Label Text="Add/Edit Students" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="0,20,0,20"></Label>
+                <Label Text="Add/Edit Staff" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="0,20,0,20"></Label>
 
                 <Frame BackgroundColor="Transparent" BorderColor="Transparent">
                     <ScrollView MaximumHeightRequest="680">
                         <VerticalStackLayout>
-                            <Label Text="Student ID Number" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                            <Label Text="Staff Personal ID Number" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
                             <Border 
                     
                        Padding="2"
@@ -46,15 +46,11 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentPersonalID}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"></Entry>
+                                <Entry Text="{Binding StaffDetail.StaffPersonalID}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"></Entry>
                             </Border>
 
 
-
-
-
-
-                            <Label Text="Student Email" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                            <Label Text="Staff Email" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
                             <Border 
                        Padding="2"
                        Stroke="White"
@@ -65,11 +61,11 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentEmail}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <Entry Text="{Binding StaffDetail.StaffEmail}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
                             </Border>
 
 
-                            <Label Text="Student FirstName" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                            <Label Text="Staff FirstName" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
                             <Border 
                        Padding="2"
                        Stroke="White"
@@ -80,11 +76,11 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentFirstName}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <Entry Text="{Binding StaffDetail.StaffFirstName}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
                             </Border>
 
 
-                            <Label Text="Student LastName" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                            <Label Text="Staff LastName" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
                             <Border 
                        Padding="2"
                        Stroke="White"
@@ -95,10 +91,10 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentLastName}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <Entry Text="{Binding StaffDetail.StaffLastName}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
                             </Border>
 
-                            <Label Text="Student Subjects" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                            <Label Text="Staff Role" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
                             <Border 
                        Padding="2"
                        Stroke="White"
@@ -109,11 +105,11 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentSubjects}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <Entry Text="{Binding StaffDetail.StaffRole}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
                             </Border>
 
 
-                            <Label Text="Student Image" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                            <Label Text="Staff Image" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
                             <Border 
                        Padding="2"
                        Stroke="White"
@@ -124,11 +120,11 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentImage}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <Entry Text="{Binding StaffDetail.StaffImage}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
                             </Border>
 
 
-                            <Label Text="Student Credits" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                            <Label Text="Staff Hours" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
                             <Border 
                        Padding="2"
                        Stroke="White"
@@ -139,11 +135,10 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentCredits}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <Entry Text="{Binding StaffDetail.StaffHours}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
                             </Border>
 
-
-                            <Label Text="Student Tuition" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                            <Label Text="Staff Password" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
                             <Border 
                        Padding="2"
                        Stroke="White"
@@ -154,22 +149,7 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentTuition}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
-                            </Border>
-
-
-                            <Label Text="Student Type" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentType}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <Entry Text="{Binding StaffDetail.StaffPassword}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
                             </Border>
 
                         </VerticalStackLayout>
@@ -177,15 +157,9 @@
                 </Frame>
 
 
-                <Button Command="{Binding AddUpdateStudentCommand}" Margin="50,35,50,0" BackgroundColor="#FC6923" TextColor="White" CornerRadius="35" Padding="20" Text="Save" FontFamily="Monserrat-Regular" FontSize="15"></Button>
+                <Button Command="{Binding AddUpdateStaffCommand}" Margin="50,35,50,0" BackgroundColor="#FC6923" TextColor="White" CornerRadius="35" Padding="20" Text="Save" FontFamily="Monserrat-Regular" FontSize="15"></Button>
 
             </VerticalStackLayout>
-
         </Frame>
-
-
-
-
-
     </Grid>
-</ContentPage>
+</ContentPage> 

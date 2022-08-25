@@ -33,13 +33,16 @@ namespace EduCube.Models
         public string StaffImage { get; set; }
 
         [MaxLength(100)]
-        public string StaffHours { get; set; }
+        public int StaffHours { get; set; }
 
         [MaxLength(10)]
         public int StaffSalary { get; set; }
 
-        [MaxLength(255)]
-        public Array SubjectsAssigned { get; set; }
+        [MaxLength(100)]
+        public string StaffPassword { get; set; }
+
+        //  [MaxLength(255)]
+        // public Array SubjectsAssigned { get; set; }
 
 
 

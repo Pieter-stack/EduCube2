@@ -41,12 +41,12 @@ namespace EduCube.ViewModels.AddUpdateViewModels
                     StudentEmail = StudentDetail.StudentEmail,
                     StudentFirstName = StudentDetail.StudentFirstName,
                     StudentLastName = StudentDetail.StudentLastName,
-                    StudentRole = StudentDetail.StudentRole,
+                    StudentSubjects = StudentDetail.StudentSubjects,
                     StudentImage = StudentDetail.StudentImage,
                     StudentCredits = StudentDetail.StudentCredits,
                     StudentTuition = StudentDetail.StudentTuition,
-                    StudentType = StudentDetail.StudentType
-                    
+                    StudentType = StudentDetail.StudentCredits == 60 ? ("Diploma") : ("Degree")
+
                 });
             }
                 if (response > 0)
