@@ -1,55 +1,48 @@
-# EduCube2
-
-# EduCube
-<!-- REPLACE ALL THE [USERNAME] TEXT WITH YOUR GITHUB PROFILE NAME & THE [PROJECTNAME] WITH THE NAME OF YOUR GITHUB PROJECT -->
-
-<!-- Repository Information & Links-->
+<!-- PROJECT LOGO -->
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/username/projectname?color=%000000)
-![GitHub watchers](https://img.shields.io/github/watchers/username/projectname?color=%000000)
-![GitHub language count](https://img.shields.io/github/languages/count/username/projectname?color=%000000)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/username/projectname?color=%000000)
-[![LinkedIn][linkedin-shield]][linkedin-url]
-[![Instagram][instagram-shield]][instagram-url]
-[![Behance][behance-shield]][behance-url]
+![GitHub repo size](https://img.shields.io/github/repo-size/Pieter-stack/EduCube2?color=darkgreen)
+![GitHub watchers](https://img.shields.io/github/watchers/Pieter-stack/EduCube2?color=darkgreen)
+![GitHub language count](https://img.shields.io/github/languages/count/Pieter-stack/EduCube2?color=darkgreen)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Pieter-stack/EduCube2?color=darkgreen)
 
-<!-- HEADER SECTION -->
-<h5 align="center" style="padding:0;margin:0;">Dylan Vanhout</h5>
-<h5 align="center" style="padding:0;margin:0;">190160</h5>
-<h5 align="center" style="padding:0;margin:0;">Pieter Venter</h5>
-<h5 align="center" style="padding:0;margin:0;">200054</h5>
-<h6 align="center">DV300 2022</h6>
-</br>
+<h6 align="center">Interactive Development 302</h6>
+<h6 align="center">Pieter Venter 200054</h6>
+<h6 align="center">Dylan Vanhout 190160</h6>
 <p align="center">
-
-  <a href="https://github.com/username/projectname">
-    <img src="path/to/logo" alt="Logo" width="140" height="140">
+</br>
+   
+  <a href="https://github.com/Pieter-stack/EduCube2">
+    <img src="Images/Icon.png" alt="Logo" width="140" height="140">
   </a>
   
-  <h3 align="center">EduCube</h3>
+  <h3 align="center">EduCube2</h3>
 
   <p align="center">
-    Short Project Slogan / Description <br>
-      <a href="https://github.com/username/projectname"><strong>Explore the docs »</strong></a>
-   <br />
-   <br />
-   <a href="path/to/demonstration/video">View Demo</a>
-    ·
-    <a href="https://github.com/username/projectname/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/username/projectname/issues">Request Feature</a>
-</p>
+    This app is for companies that want to host golf tournaments aswell as for all the golf players to easily enter competitions, see the golf course and all the details and have a virtual scorecard while also being able to play competitions and get badges when users win competitions.
+<br>
+      <a href="https://github.com/Pieter-stack/EduCube2"><strong>Explore the docs Â»</strong></a>
+      <br />
+      <br />
+      <a href="add video">View Demo</a>
+       Â·
+       <a href="https://github.com/Pieter-stack/EduCube2/issues">Report Bug</a>
+       Â·
+       <a href="https://github.com/Pieter-stack/EduCube2/issues">Request Feature</a>
+   </p>
+
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
   * [Project Description](#project-description)
-  * [Built With](#built-with)
+  * [Built with](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
-  * [How to install](#how-to-install)
+  * [Installation](#installation)
 * [Features and Functionality](#features-and-functionality)
+   * [Features](#features)
+   * [Functionality](#functionality)
 * [Concept Process](#concept-process)
    * [Ideation](#ideation)
    * [Wireframes](#wireframes)
@@ -58,14 +51,11 @@
    * [Implementation Process](#implementation-process)
         * [Highlights](#highlights)
         * [Challenges](#challenges)
-   * [Reviews and Testing](#peer-reviews)
-        * [Feedback from Reviews](#feedback-from-reviews)
-        * [Unit Tests](#unit-tests)
-   * [Future Implementation](#peer-reviews)
+   * [Reviews and Testing](#reviews-and-testing)
+   * [Future Implementation](#future-implementation)
 * [Final Outcome](#final-outcome)
-    * [Mockups](#mockups)
-    * [Video Demonstration](#video-demonstration)
-* [Conclusion](#conclusion)
+   * [Mockups](#mockups)
+   * [Promotional Video](#promotional-video)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
@@ -74,170 +64,203 @@
 
 <!--PROJECT DESCRIPTION-->
 ## About the Project
-<!-- header image of project -->
+
 ![image1][image1]
 
 ### Project Description
+This app is designed and developed for golfers to experience a better and faster way to to keep track of their score, enter competitions and have a virtual layout of the golf course in the palm of their hand.
 
-A nice introduction to this amazing project of mine.
+This app features ranks and badges for the user to progress through the app, and companies can now host tournaments and competitions, or your work will also host a golf day for the office where there is a leaderboard to see the best player of the match and the top 3 player will rankup and the best player that wins the competition will get a badge. 
+
+The app features an build in scorecard for the golf course where you can see an top doen view of each hole with some neccessary information to help the golfer make a decision. With filters you will always know what competitions you are entered in what your past competitions are and see the newest and upcoming competitions ready for you to join.
+
+For the companies, you can host tournaments and competitions spesific to what you like, have a all womans tournament or want to host a pensioners golf day, with Top Shots you can. For pro golfers there is ranking systems for users that want to play professional the competitions can be hosted on different rank and skill level.
 
 ### Built With
 
-* [Technology Name](path/to/technology/website)
-* [Technology Name](path/to/technology/website)
-* [Technology Name](path/to/technology/website)
+* [Visual Studio](https://visualstudio.microsoft.com/)
+* [Expo](https://expo.dev/)
+* [React Native](https://reactnative.dev/)
+* [GitHub](https://github.com/)
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="Images/expo.png" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <!-- GETTING STARTED -->
-<!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
 ## Getting Started
 
-The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-Ensure that you have the latest version of [Software](path/to/where/they/can/download/software) installed on your machine. The [Plugin](path/to/where/they/can/download/plugin) plugin will also be required.
-
-### How to install
+For development, the latest version of Visual Studio is required. The latest version can be downloaded from [Visual Studio](https://visualstudio.microsoft.com/)
 
 ### Installation
-Here are a couple of ways to clone this repo:
+ 
+1. Clone the repo
+```sh
+git clone https://github.com/Pieter-stack/EduCube2.git
+```
+2. Open the project
 
-1. Software </br>
-`Android Studio` -> `File` -> `New` -> `From Version Control` -> `Git`</br>
-Enter `https://github.com/username/projectname.git` into the URL field and press the `Clone` button.
+  Locate and drag file into Visual studio code.
 
-2. Clone Repository </br>
-Run the following in the command-line to clone the project:
-   ```sh
-   git clone https://github.com/username/projectname.git
-   ```
-    Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
+3. Install packages 
 
-3. Install Dependencies </br>
-Run the following in the command-line to install all the required dependencies:
-   ```sh
-   npm install
-   ```
+```sh
+npm install
+```
 
-4. Get a free API Key at [https://example.com](https://example.com) and enter it in the `config.js` file:
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+4. Run project
 
+```sh
+Expo start
+```
+
+5. Download expo go
+
+Download expo go on android or IOS
+* [IOS](https://apps.apple.com/us/app/expo-go/id982107779)
+* [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_ZA&gl=US)
+
+5.1. You can also run IOS simulator or android emulator
+Android studio is required for android
+* [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQjwhqaVBhCxARIsAHK1tiP-KAFcvl19_xwV01RQoGHAutm6AxSajkqRUTqSQXHxTKGShHW3vYwaAgQ_EALw_wcB&gclsrc=aw.ds)
+```sh
+expo run:android
+```
+Xcode is required for ios
+* [Xcode](https://developer.apple.com/xcode/)
+```sh
+expo run:ios
+```
 
 <!-- FEATURES AND FUNCTIONALITY-->
-<!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
 
+### Features
+
+### Splash screen.
+
+![image10][image10]
+
+See the splash screen when you open up the app
+
+### Register and Login. 
+
 ![image2][image2]
-### Feature 1
 
-Description of Feature
+Onboarding experience for register and the user can change his/her profile picture in the profile page
 
-![image3][image3]
-### Feature 2
-
-Description of Feature
+### Create Competitions and enter competitions.
 
 ![image4][image4]
-### Feature 3
 
-Description of Feature
+The user can create and enter competitions with a husge selection of filters
+
+### Golf courses.
+
+![image3][image3]
+
+See top down view of more than 15 golf courses in v1.0 and input your score in the scorecard
+
+### Where do you stand on the leaderboard.
+
+![image6][image6]
+
+With a realtime leaderboard the users can see exactly how they move up or down on the leaderboard
+
+### See your badges, past competitions.
 
 ![image5][image5]
 
+You can see all your badges that you won and also see your past competitions and change your profile picture
+
+
+### Artwork and designs created by me
+
+The artwork was created with Figma.
+
+### Functionality
+
+* `Scorecard` can be found in golf courses where the user has a digital scorecard.
+* `Leaderboard` see your progress as you progress.
+* `Realtime data` see the competitions being added in seconds and with a live leaderboard you won't miss out on the action.
+* `Register and login` you can register and login with an account.
+* `Push notifications` are there to notify the users of important information.
 
 <!-- CONCEPT PROCESS -->
-<!-- Briefly explain your concept ideation process -->
 ## Concept Process
 
 The `Conceptual Process` is the set of actions, activities and research that was done when starting this project.
 
 ### Ideation
 
-![image5][image5]
-<br>
-![image6][image6]
+![image7][image7]
 
 ### Wireframes
 
-![image7][image7]
+![image8][image8]
 
 ### User-flow
 
-![image8][image8]
+![image9][image9]
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
 
-The `Development Process` is the technical implementations and functionality done in the frontend and backend of the application.
+The `Development Process` is the technical implementations and functionality done in the backend of the application.
 
 ### Implementation Process
-<!-- stipulate all of the functionality you included in the project -->
 
-* Made use of both `functionality` to implement a specific feature.
-* `MVC/MVVM` design architecture implemented.
-* `Plugin` for this.
-* ETC.
+#### Design Architecture
+`React native` to design the pages used in EduCube2.
 
 #### Highlights
-<!-- stipulated the highlight you experienced with the project -->
-* Sunshine.
-* Rainbows.
+
+* One highlight was to `research`  golf the sport and it was a really popular sport.
+* The `UI/UX design` was to help golfers to easily input scores and have companies host competitions.
+* The best part was to load the app onto a `real device` and being able to have it on `android` and `IOS`.
+* ` Creating` a huge project and completing the brief and also adding a lot more functionality within the app that the brief didn't require.
 
 #### Challenges
-<!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-* Bugs.
-* Bugs.
 
-### Reviews & Testing
-<!-- stipulate how you've conducted testing in the form of peer reviews, feedback and also functionality testing, like unit tests (if applicable) -->
+* Was a challenge because of the scale of the project but I got all of the functionality in and also added a couple of golf courses for v1.0 to test.
 
-#### Feedback from Reviews
+### Reviews and Testing
+The `Reviews and Testing` consists of `in class`, reviews.
 
-`Peer Reviews` were conducted by my fellow students and lecturer. The following feedback I found useful:
+#### Future Implementation
 
-* Feedback one.
-* Feedback two.
-
-#### Unit Tests
-
-`Unit Tests` were conducted to establish working functionality. Here are all the tests that were ran:
-
-* Test 1 of this functionality
-* Test 2 of this functionality
-
-### Future Implementation
-<!-- stipulate functionality and improvements that can be implemented in the future. -->
-
-* Future 1.
-* Future 2.
+* Add `admin portal` to the app.
+* Have companies `register` to host competitions.
+* Improve static `scorecard`.
 
 <!-- MOCKUPS -->
 ## Final Outcome
 
 ### Mockups
 
-![image9][image9]
-<br>
-![image10][image10]
+![image11][image11]
 
-<!-- VIDEO DEMONSTRATION -->
-### Video Demonstration
+<!-- PROMO VIDEO -->
+## Promotional Video
 
-To see a run through of the application, click below:
+To see the promotional video, click below:
 
-[View Demonstration](path/to/video/demonstration)
+[View Promotional Video](https://www.youtube.com/watch?v=vvu9OxefnRk)
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/username/projectname/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/Pieter-stack/EduCube2/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -248,7 +271,7 @@ Contributions are what makes the open-source community such an amazing place to 
 <!-- AUTHORS -->
 ## Authors
 
-* **Your Name & Surname** - [username](https://github.com/username)
+* **Pieter Venter** - [PieterVenter](https://github.com/Pieter-stack)
 
 <!-- LICENSE -->
 ## License
@@ -258,36 +281,28 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- LICENSE -->
 ## Contact
 
-* **Your Name & Surname** - [email@address](mailto:email@address) - [@instagram_handle](https://www.instagram.com/instagram_handle/) 
-* **Project Link** - https://github.com/username/projectname
+* **Pieter Venter**  - pieterven12@gmail.com
+* **Project Link** - https://github.com/Pieter-stack/EduCube2
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-<!-- all resources that you used and Acknowledgements here -->
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
+
+* [Expo](https://expo.dev/)
+* [Mockups](https://www.freepik.com)
+* [Lecturer](https://github.com/ArmandPret)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[image1]: /path/to/image.png
-[image2]: /path/to/image.png
-[image3]: /path/to/image.png
-[image4]: /path/to/image.png
-[image5]: /path/to/image.png
-[image6]: /path/to/image.png
-[image7]: /path/to/image.png
-[image8]: /path/to/image.png
-[image9]: /path/to/image.png
-[image10]: /path/to/image.png
+[image1]: Images/Image1.png
+[image2]: Images/Image2.png
+[image3]: Images/Image3.png
+[image4]: Images/Image4.png
+[image5]: Images/Image5.png
+[image6]: Images/Image6.png
+[image7]: Images/Image7.png
+[image8]: Images/Image8.png
+[image9]: Images/Image9.png
+[image10]: Images/Image10.png
+[image11]: Images/Image11.png
 
-
-<!-- Refer to https://shields.io/ for more information and options about the shield links at the top of the ReadMe file -->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/nameonlinkedin/
-[instagram-shield]: https://img.shields.io/badge/-Instagram-black.svg?style=flat-square&logo=instagram&colorB=555
-[instagram-url]: https://www.instagram.com/instagram_handle/
-[behance-shield]: https://img.shields.io/badge/-Behance-black.svg?style=flat-square&logo=behance&colorB=555
-[behance-url]: https://www.behance.net/name-on-behance/
+ 

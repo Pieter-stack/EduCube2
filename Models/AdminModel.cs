@@ -11,7 +11,6 @@ namespace EduCube.Models
     [Table("admin")]
     public class AdminModel
     {
-
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int AdminID { get; set; }
 
@@ -26,7 +25,5 @@ namespace EduCube.Models
 
         [MaxLength(255)]
         public string AdminLogImage { get; set; } 
-
-
     }
 }

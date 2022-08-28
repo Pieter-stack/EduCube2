@@ -10,7 +10,6 @@ namespace EduCube.Services
 {
     internal class FundRepository : IFundService
     {
-
         private SQLiteAsyncConnection _dbConnection;
 
         //setup using path
@@ -48,7 +47,6 @@ namespace EduCube.Services
             await SetUpDb();
             return await _dbConnection.DeleteAsync(fundModel);
         }
-
     }
 }
 

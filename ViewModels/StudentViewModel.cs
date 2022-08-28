@@ -63,7 +63,6 @@ namespace EduCube.ViewModels
             var filteredItems = studentList.Where(value => value.StudentFirstName.ToLowerInvariant().Contains(Search)).ToList();
             var filteredItems2 = studentList.Where(value => value.StudentPersonalID.ToString().Contains(Search)).ToList();
 
-
             Students.Clear();
             foreach (var student in filteredItems)
             {
@@ -87,11 +86,9 @@ namespace EduCube.ViewModels
             var response = await AppShell.Current.DisplayActionSheet("Select an action", "OK", null, "Edit", "Delete");
             if (response == "Edit")
             {
-
                 var navParam = new Dictionary<string, object>();
                 navParam.Add("StudentDetail", studentModel);
                 await AppShell.Current.GoToAsync(nameof(AddUpdateStudentPage), navParam);
-
             }
             else if (response == "Delete")
             {
@@ -102,8 +99,6 @@ namespace EduCube.ViewModels
                 }
             }
         }
-
-
     }
 }
 

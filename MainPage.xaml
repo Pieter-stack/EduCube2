@@ -7,82 +7,75 @@
              x:DataType="viewmodel:LoginViewModel"
              NavigationPage.HasBackButton="False">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="1.1*"/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
-        
+    <ContentPage.Content>
+        <!--Login Page-->
+        <Grid>
+            <!-- Grid Definitions -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <Frame Grid.RowSpan="3" Grid.ColumnSpan="3" BackgroundColor="Transparent" CornerRadius="0">
-            <Image Source="background.png" Aspect="AspectFill" Margin="-20,-20,-20,-20"/>
-        </Frame>
+            <!-- Background Image -->
+            <Frame Grid.RowSpan="3" Grid.ColumnSpan="3" BackgroundColor="Transparent">
+                <Image Source="background.png" Aspect="AspectFill" Scale="1" Margin="-20,-20,-20,-20"/>
+            </Frame>
 
+            <!--Navbar-->
+            <mynamespace:Navbar/>
 
-        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" Opacity="0.5" BorderColor="Transparent" CornerRadius="30" Margin="0,0,0,40"/>
+            <Frame Grid.Column="1" Grid.Row="0" CornerRadius="20" BackgroundColor="#FFFFFF" Opacity="0.3" MaximumHeightRequest="400"/>
+            <Frame Grid.Column="1" Grid.Row="0" CornerRadius="20" BackgroundColor="Transparent" MaximumHeightRequest="400">
 
-        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" Opacity="1" BorderColor="Transparent" CornerRadius="30">
+                <VerticalStackLayout Grid.Column="1" BackgroundColor="Transparent">
+                    <Image Source="logo.png" WidthRequest="90">
+                        <Image.Shadow>
+                            <Shadow Brush="Black" Offset="1,2" Radius="5" Opacity="0.2"/>
+                        </Image.Shadow>
+                    </Image>
 
-            <VerticalStackLayout>
-                <Image Source="logo.png" WidthRequest="120"/>
-                <Label Text="EduCube" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Rubik-Regular" Margin="0,0,0,20"></Label>
-
-                <Frame BackgroundColor="Transparent" BorderColor="Transparent">
-
-                        <VerticalStackLayout>
-                            <Label Text="Email" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                    
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding Email}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"></Entry>
-                            </Border>
-
-                        <Label Text="Password" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                        <Border 
-                    
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Email" FontSize="12" FontAttributes="Bold" TextColor="#FFFFFF"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="40,40,40,40"/>
                             </Border.StrokeShape>
-                            <Entry Text="{Binding Password}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"></Entry>
+                            <Entry Text="{Binding Email}" Placeholder="Email" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                         </Border>
-                            
-                        <Label Text="Forgot Password?" HorizontalOptions="End" FontSize="12" FontAttributes="None" TextColor="White" FontFamily="Monserrat-Regular" Margin="0,15,20,0"></Label>
 
+                        <Label Text="Password" FontSize="12" FontAttributes="Bold" TextColor="#FFFFFF"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding Password}" Placeholder="Password" PlaceholderColor="Gray" IsPassword="True" Keyboard="Text" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
                     </VerticalStackLayout>
-   
-                </Frame>
-                <Label Text="{Binding ErrorMessage, Mode=TwoWay}" TextColor="DarkRed"/>
 
-                <Button Command="{Binding LoginValidCommand}"  Margin="50,30,50,0" BackgroundColor="#FC6923" TextColor="White" CornerRadius="35" Padding="20" Text="Login" FontFamily="Roboto-Bold" FontSize="15"></Button>
+                    <VerticalStackLayout Spacing="5">
+                        
+                        <HorizontalStackLayout HorizontalOptions="Fill" VerticalOptions="Center" Spacing="80">
+                            <Label Text="Stay Logged In" HorizontalOptions="Start" Margin="0,10,0,0"/>
+                            <Switch IsToggled="{Binding StayLoggedOn}" OnColor="Orange" ThumbColor="White" HorizontalOptions="EndAndExpand"/>
+                        </HorizontalStackLayout>
+                        
+                        <!-- Forgotten Password Button -->
+                        <Button FontAttributes="None" FontSize="12" BackgroundColor="Transparent" BorderColor="Transparent" Text="Forgot Password?" TextColor="Gray" HorizontalOptions="Center"/>
+                        <!--Sign In Button-->
+                        <Button Command="{Binding LoginValidCommand}" CornerRadius="18" WidthRequest="120" HeightRequest="35" Text="Sign In" FontSize="12" TextColor="#FFFFFF" FontAutoScalingEnabled="True" FontAttributes="Bold" BackgroundColor="#FC6923" Padding="3"/>
+                        <!-- Sign Up Button -->
+                        <!--<Button CornerRadius="18" WidthRequest="120" HeightRequest="35" Text="Sign Up" FontSize="12" TextColor="#FFFFFF" FontAutoScalingEnabled="True" FontAttributes="None" BackgroundColor="Transparent" BorderColor="#FFBC24" BorderWidth="1.5" Padding="3"/>-->
 
-            </VerticalStackLayout>
+                        <!--Error Message -->
+                        <Label Text="{Binding ErrorMessage, Mode=TwoWay}" TextColor="Red"/>
+                    </VerticalStackLayout>
 
-        </Frame>
-
-
-
-
-
-    </Grid>
-
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

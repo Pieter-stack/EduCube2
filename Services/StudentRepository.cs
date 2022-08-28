@@ -12,7 +12,7 @@ namespace EduCube.Services
     {
         private SQLiteAsyncConnection _dbConnection;
 
-        //setup using path
+        //Setup Connection to DB.
         private async Task SetUpDb()
         {
             if(_dbConnection == null)
@@ -22,26 +22,26 @@ namespace EduCube.Services
                 await _dbConnection.CreateTableAsync<StudentModel>();
             }
         }
- 
+        //Create a new student.
         public async Task<int> AddStudent(StudentModel studentModel)
         {
             await SetUpDb();
             return await _dbConnection.InsertAsync(studentModel);
         }
-
+        //Get list of students.
         public async Task<List<StudentModel>> GetStudentList()
         {
             await SetUpDb();
             var studentList = await _dbConnection.Table<StudentModel>().ToListAsync();
             return studentList;
         }
-
+        //Update student details.
         public async Task<int> EditStudent(StudentModel studentModel)
         {
             await SetUpDb();
             return await _dbConnection.UpdateAsync(studentModel);
         }
-
+        //Delete a student.
         public async Task<int> DeleteStudent(StudentModel studentModel)
         {
             await SetUpDb();

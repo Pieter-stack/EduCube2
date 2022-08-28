@@ -46,7 +46,6 @@ namespace EduCube.ViewModels.AddUpdateViewModels
                     StudentCredits = StudentDetail.StudentCredits,
                     StudentTuition = StudentDetail.StudentTuition,
                     StudentType = StudentDetail.StudentCredits == 60 ? ("Diploma") : ("Degree")
-
                 });
             }
                 if (response > 0)
@@ -58,6 +57,5 @@ namespace EduCube.ViewModels.AddUpdateViewModels
                     await Shell.Current.DisplayAlert("Information not added.", "Something went wrong while adding record.", "OK");
                 }
             }
-
     }
 }

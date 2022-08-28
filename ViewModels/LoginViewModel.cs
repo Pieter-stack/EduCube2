@@ -11,7 +11,6 @@ namespace EduCube.ViewModels
 {
     public partial class LoginViewModel : ObservableObject
     {
-        //changeable Fields
         [ObservableProperty]
         string email;
 
@@ -21,32 +20,32 @@ namespace EduCube.ViewModels
         [ObservableProperty]
         string errorMessage;
 
+        [ObservableProperty]
+        bool stayLoggedOn = false;
+
         [ICommand]
         public async Task LoginValidAsync()
         {
             bool search = await App.StaffRepo.AdminLoginAuth(email, password);
-            //encrtypt pw
-            //save name and image of user
 
-               if (search)
-               {
-                   Debug.WriteLine("Found User");
-                   ErrorMessage = "";
+            if (search)
+            {
+                Debug.WriteLine("Found User");
+                ErrorMessage = "";
+
+                Preferences.Set("StayLoggedOn", stayLoggedOn);
+
+                Debug.WriteLine(Preferences.Get("StayLoggedOn", false));
+                Debug.WriteLine(Preferences.Get("currentUser", 0));
+
                 await Shell.Current.GoToAsync("//DashboardPage");
-                
-               }
-                else
-               {
-                   Debug.WriteLine("User Not Found");
-                   ErrorMessage = "Invalid Email or Password. Please try again!";
-               }
-
-
+            }
+            else
+            {
+                Debug.WriteLine("User Not Found");
+                ErrorMessage = "Invalid Email and/or Password. Please try again!";
+            }
         }
-
-
-
-
     }
 }
 

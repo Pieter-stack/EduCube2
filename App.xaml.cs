@@ -5,18 +5,13 @@ namespace EduCube;
 
 public partial class App : Application
 {
-
     public static IStaffService StaffRepo { get; private set; }
     public static IStudentService StudentRepo { get; private set; }
     public static ISubjectService SubjectRepo { get; private set; }
 
-
-
     public App(IStaffService staffRepo, IStudentService studentRepo, ISubjectService subjectRepo)
 	{
 		InitializeComponent();
-
-
         //borderless entry code for Windows machines
         Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(BorderlessEnrty), (handler, view) =>
         {
@@ -27,14 +22,10 @@ public partial class App : Application
         });
 
         MainPage = new AppShell();
-
         //Initializing our repos
         StaffRepo = staffRepo;
         StudentRepo = studentRepo;
         SubjectRepo = subjectRepo;
-
-
-
     }
 }
 
