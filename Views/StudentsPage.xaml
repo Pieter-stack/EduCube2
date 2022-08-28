@@ -90,7 +90,7 @@
                                         <!-- Profile ID & Action Buttons -->
                                         <VerticalStackLayout BackgroundColor="Transparent" HorizontalOptions="EndAndExpand">
                                             <StackLayout Orientation="Vertical" Margin="0,5,20,0">
-                                                <Label Text="{Binding StudentPersonalID}" FontSize="10" FontFamily="Roboto-Regular" TextColor="White" HorizontalOptions="End"/>
+                                                <Label Text="{Binding StudentSubjects}" FontSize="10" FontFamily="Roboto-Regular" TextColor="White" HorizontalOptions="End"/>
                                             </StackLayout>
                                             <HorizontalStackLayout Spacing="5" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Margin="0,35,20,0">
                                                 <!-- Buttons -->

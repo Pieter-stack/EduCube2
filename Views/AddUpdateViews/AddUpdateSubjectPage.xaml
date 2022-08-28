@@ -78,7 +78,7 @@
                                 <Picker x:Name="picker"
                                     TextColor="White"
                                     MinimumWidthRequest="900"
-                                    ItemsSource="{Binding ListOfLecturers}"
+                                    ItemsSource="{Binding Lec}"
                                     ItemDisplayBinding="{Binding StaffFirstName}"
                                     SelectedItem="{Binding SelectedLecturer}"
                                     />
@@ -198,6 +198,20 @@
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
                                 <Entry Text="{Binding SubjectDetail.SubjectVenue}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                            </Border>
+
+                            <Label Text="Subject Category" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                            <Border 
+                       Padding="2"
+                       Stroke="White"
+                    StrokeThickness="3"
+                       Background="Transparent"
+                       HorizontalOptions="StartAndExpand"
+                                Margin="0,0,0,0" >
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="40,40,40,40"/>
+                                </Border.StrokeShape>
+                                <Entry Text="{Binding SubjectDetail.SubjectCategory}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
                             </Border>
 
                         </VerticalStackLayout>
