@@ -40,11 +40,5 @@ namespace EduCube.Models
 
         [MaxLength(100)]
         public string StaffPassword { get; set; }
-
-        //  [MaxLength(255)]
-        // public Array SubjectsAssigned { get; set; }
-
-
-
     }
 }

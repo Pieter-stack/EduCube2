@@ -79,16 +79,16 @@
                                         <!-- Profile Details -->
                                         <VerticalStackLayout Margin="5,10,5,10" HorizontalOptions="Start">
                                             <HorizontalStackLayout>
-                                                <Label Text="{Binding StaffFirstName}" FontSize="20" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
-                                                <Label Text="{Binding StaffLastName}" FontSize="20" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                                <Label Text="{Binding StaffFirstName}" FontSize="20" FontFamily="Roboto-Regular" TextColor="White" FontAttributes="Bold"/>
+                                                <Label Text="{Binding StaffLastName}" FontSize="20" FontFamily="Roboto-Regular" TextColor="White" FontAttributes="Bold"/>
                                             </HorizontalStackLayout>
-                                            <Label Text="{Binding StaffHours}" FontSize="16" FontFamily="Roboto-Regular"/>
-                                            <Label Text="{Binding StaffEmail}" FontSize="10" FontFamily="Roboto-Regular"/>
+                                            <Label Text="{Binding StaffHours}" FontSize="16" FontFamily="Roboto-Regular" TextColor="White"/>
+                                            <Label Text="{Binding StaffEmail}" FontSize="10" FontFamily="Roboto-Regular" TextColor="White"/>
                                         </VerticalStackLayout>
                                         <!-- Profile ID & Action Buttons -->
                                         <VerticalStackLayout BackgroundColor="Transparent" HorizontalOptions="EndAndExpand">
                                             <StackLayout Orientation="Vertical" Margin="0,5,20,0">
-                                                <Label Text="{Binding StaffPersonalID}" FontSize="10" FontFamily="Roboto-Regular" HorizontalOptions="End"/>
+                                                <Label Text="{Binding StaffPersonalID}" FontSize="10" FontFamily="Roboto-Regular" TextColor="White" HorizontalOptions="End"/>
                                             </StackLayout>
                                             <HorizontalStackLayout Spacing="5" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Margin="0,35,20,0">
                                                 <!-- Buttons -->
@@ -171,8 +171,6 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                   
-
                 </Frame>
             </Grid>
         </Frame>

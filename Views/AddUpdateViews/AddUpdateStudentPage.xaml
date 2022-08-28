@@ -7,6 +7,7 @@
              x:DataType="viewModel:AddUpdateStudentViewModel">
 
     <Grid>
+        <!-- Grid Definitions -->
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10*"/>
@@ -18,174 +19,112 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-
         <Frame Grid.RowSpan="3" Grid.ColumnSpan="3" BackgroundColor="Transparent" CornerRadius="0">
             <Image Source="background.png" Aspect="AspectFill" Margin="-20,-20,-20,-20"/>
         </Frame>
-
 
         <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" Opacity="0.5" BorderColor="Transparent" CornerRadius="30" Margin="0,0,0,40"/>
 
         <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" Opacity="1" BorderColor="Transparent" CornerRadius="30">
 
             <VerticalStackLayout>
-                <Label Text="Add/Edit Students" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="0,20,0,20"></Label>
-
+                <Label Text="Add/Edit Students" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="0,20,0,20"/>
                 <Frame BackgroundColor="Transparent" BorderColor="Transparent">
                     <ScrollView MaximumHeightRequest="680">
                         <VerticalStackLayout>
-                            <Label Text="Student ID Number" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                    
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+                            <!-- Student PersonalID Number -->
+                            <Label Text="Student ID Number" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
+                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentPersonalID}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"></Entry>
+                                <!-- Student PersonalID Number Entry -->
+                                <Entry Text="{Binding StudentDetail.StudentPersonalID}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"></Entry>
                             </Border>
 
-
-
-
-
-
-                            <Label Text="Student Email" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+                            <!-- Student FirstName -->
+                            <Label Text="First Name" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
+                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentEmail}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <!-- Student FirstName Entry -->
+                                <Entry Text="{Binding StudentDetail.StudentFirstName}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
                             </Border>
 
-
-                            <Label Text="Student FirstName" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+                            <!-- Student LastName -->
+                            <Label Text="Last Name" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
+                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentFirstName}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <!-- Student LastName Entry -->
+                                <Entry Text="{Binding StudentDetail.StudentLastName}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
                             </Border>
 
-
-                            <Label Text="Student LastName" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+                            <!-- Student Email -->
+                            <Label Text="Email" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
+                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentLastName}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <!-- Student Email Entry -->
+                                <Entry Text="{Binding StudentDetail.StudentEmail}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
                             </Border>
 
-                            <Label Text="Student Subjects" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+                            <!-- Student Role -->
+                            
+
+                            <!-- Student Type -->
+                            <Label Text="Type" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
+                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentSubjects}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <!-- Student Type Entry -->
+                                <Entry Text="{Binding StudentDetail.StudentType}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
                             </Border>
 
-
-                            <Label Text="Student Image" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+                            <!-- Student Credits -->
+                            <Label Text="Credits" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
+                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentImage}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <!-- Student Credits Entry -->
+                                <Entry Text="{Binding StudentDetail.StudentCredits}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
                             </Border>
 
-
-                            <Label Text="Student Credits" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+                            <!-- Student Tuition/Fees -->
+                            <Label Text="Tuition Fees" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
+                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentCredits}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <!-- Student Tuition/Fees Entry -->
+                                <Entry Text="{Binding StudentDetail.StudentTuition}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
                             </Border>
 
+                            <!-- Student Subjects Enrolled -->
 
-                            <Label Text="Student Tuition" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+
+                            <!-- Student Image -->
+                            <Label Text="Profile Image" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
+                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentTuition}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <!-- Student Image Entry -->
+                                <Entry Text="{Binding StudentDetail.StudentImage}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
                             </Border>
 
-
-                            <Label Text="Student Type" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding StudentDetail.StudentType}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
-                            </Border>
+                            <!-- Add/Update Student Button -->
+                            <Button Command="{Binding AddUpdateStudentCommand}" Margin="50,35,50,0" BackgroundColor="#FC6923" TextColor="White" CornerRadius="35" Padding="20" Text="Save" FontFamily="Roboto-Regular" FontSize="15"/>
 
                         </VerticalStackLayout>
                     </ScrollView>
                 </Frame>
-
-
-                <Button Command="{Binding AddUpdateStudentCommand}" Margin="50,35,50,0" BackgroundColor="#FC6923" TextColor="White" CornerRadius="35" Padding="20" Text="Save" FontFamily="Monserrat-Regular" FontSize="15"></Button>
-
             </VerticalStackLayout>
-
         </Frame>
-
-
-
-
-
     </Grid>
 </ContentPage>

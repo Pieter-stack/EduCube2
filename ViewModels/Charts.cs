@@ -16,7 +16,6 @@ namespace EduCube.ViewModels
 {
     public partial class Charts : ObservableObject
     {
-
         [ObservableProperty]
         int _totalFundsText = Preferences.Get("MonthlyFunds", 0);
         [ObservableProperty]
@@ -32,14 +31,12 @@ namespace EduCube.ViewModels
         [ObservableProperty]
         string _lastNameText = Preferences.Get("LastName", "");
 
-                  //  Preferences.Set("ProfileImage", successAuth.StaffImage);
+        //Preferences.Set("ProfileImage", successAuth.StaffImage);
 
-        //get prefrenced data
+        //Get prefrenced data
         private static int TotalFunds = Preferences.Get("MonthlyFunds", 0);
         private static int TotalIncome = Preferences.Get("FundsTuition", 0);
         private static double TotalSalary = Preferences.Get("FundsSalary", 0);
-
-                        
 
         private static int TotalLecturers = Preferences.Get("TotalLecturer", TotalLecturers);
         private static int TotalAdmin = Preferences.Get("TotalAdmin", TotalAdmin);
@@ -50,9 +47,6 @@ namespace EduCube.ViewModels
         private static int DiplomaStudents = Preferences.Get("TotalDiploma", 0);
 
         private static int TotalStudents = Preferences.Get("TotalDegree", 0) + Preferences.Get("TotalDiploma", 0);
-
-
-
 
         public ISeries[] LineOne { get; set; }
             = new ISeries[]
@@ -65,161 +59,121 @@ namespace EduCube.ViewModels
                     Fill = null,
                     GeometryFill = null,
                     GeometryStroke = null
-
                 }
-
-
             };
 
-
-
-        public ISeries[] LineTwo { get; set; }
-            = new ISeries[]
+        public ISeries[] LineTwo { get; set; } = new ISeries[]
+        {
+            new LineSeries<double>
             {
-                new LineSeries<double>
-                {
-                    Name = "Students",
-                    Values = new double[] {0,TotalStudents},
-                    Stroke = new SolidColorPaint(new SKColor(93, 58, 243)) { StrokeThickness = 3 },
-                    Fill = null,
-                    GeometryFill = null,
-                    GeometryStroke = null
+                Name = "Students",
+                Values = new double[] {0,TotalStudents},
+                Stroke = new SolidColorPaint(new SKColor(93, 58, 243)) { StrokeThickness = 3 },
+                Fill = null,
+                GeometryFill = null,
+                GeometryStroke = null
+            }
+        };
 
-                }
+        public ISeries[] LineThree { get; set; } = new ISeries[]
+        {
+            new LineSeries<double>
+            {
+                Name = "Teachers",
+                Values = new double[] {0,TotalLecturers},
+                Stroke = new SolidColorPaint(new SKColor(234, 174, 249)) { StrokeThickness = 3 },
+                Fill = null,
+                GeometryFill = null,
+                GeometryStroke = null
+            }
+        };
 
+        public ISeries[] LineFour { get; set; } = new ISeries[]
+        {
+            new LineSeries<double>
+            {
+                Name = "Admin",
+                Values = new double[] {0,TotalAdmin},
+                Stroke = new SolidColorPaint(new SKColor(255, 188, 36)) { StrokeThickness = 3 },
+                Fill = null,
+                GeometryFill = null,
+                GeometryStroke = null
+            }
+        };
 
-            };
-
-
-
-        public ISeries[] LineThree { get; set; }
-    = new ISeries[]
-    {
-                new LineSeries<double>
-                {
-                    Name = "Teachers",
-                    Values = new double[] {0,TotalLecturers},
-                    Stroke = new SolidColorPaint(new SKColor(234, 174, 249)) { StrokeThickness = 3 },
-                    Fill = null,
-                    GeometryFill = null,
-                    GeometryStroke = null
-
-                }
-
-
-    };
-
-
-        public ISeries[] LineFour { get; set; }
-= new ISeries[]
-{
-                new LineSeries<double>
-                {
-                    Name = "Admin",
-                    Values = new double[] {0,TotalAdmin},
-                    Stroke = new SolidColorPaint(new SKColor(255, 188, 36)) { StrokeThickness = 3 },
-                    Fill = null,
-                    GeometryFill = null,
-                    GeometryStroke = null
-
-                }
-
-
-};
-
-        public ISeries[] BarOne { get; set; }
-= new ISeries[]
-{
-                new ColumnSeries<double>
-                {
-                    Name = "Salary",
-                    Values = new double[] { 2, 5, 4, -2, 4, -3, 5 },
-                    Fill = new SolidColorPaint(new SKColor(93, 58, 243)),
-                    Rx = 10,
-                    Ry = 10
-                },
-                new ColumnSeries<double>
-                {
-                    Name = "Tuition",
-                    Values = new double[] { 2, 5, 4, -2, 4, -3, 5 },
-                    Fill = new SolidColorPaint(new SKColor(234, 174, 249)),
-                    Rx = 10,
-                    Ry = 10
-                },
-                new ColumnSeries<double>
-                {
-                    Name = "Expenses",
-                    Values = new double[] { 2, 5, 4, -2, 4, -3, 5 },
-                    Fill = new SolidColorPaint(new SKColor(252, 105, 35)),
-                    Rx = 10,
-                    Ry = 10
-                },
-
-};
-
-
-
+        public ISeries[] BarOne { get; set; } = new ISeries[]
+        {
+            new ColumnSeries<double>
+            {
+                Name = "Salary",
+                Values = new double[] { 2, 5, 4, -2, 4, -3, 5 },
+                Fill = new SolidColorPaint(new SKColor(93, 58, 243)),
+                Rx = 10,
+                Ry = 10
+            },
+            new ColumnSeries<double>
+            {
+                Name = "Tuition",
+                Values = new double[] { 2, 5, 4, -2, 4, -3, 5 },
+                Fill = new SolidColorPaint(new SKColor(234, 174, 249)),
+                Rx = 10,
+                Ry = 10
+            },
+            new ColumnSeries<double>
+            {
+                Name = "Expenses",
+                Values = new double[] { 2, 5, 4, -2, 4, -3, 5 },
+                Fill = new SolidColorPaint(new SKColor(252, 105, 35)),
+                Rx = 10,
+                Ry = 10
+            },
+        };
 
         public ISeries[] PieOne { get; set; } = new ISeries[]
-   {
+        {
         new PieSeries<double> { Values = new List<double> { DegreeStudents }, InnerRadius = 50, Fill = new SolidColorPaint(new SKColor(93, 58, 243)),  Name = "Degree" },
         new PieSeries<double> { Values = new List<double> { DiplomaStudents }, InnerRadius = 50, Fill = new SolidColorPaint(new SKColor(234, 174, 249)),  Name = "Diploma" },
-   };
-
+        };
         public ISeries[] PieTwo { get; set; } = new ISeries[]
-{
+        {
         new PieSeries<double> { Values = new List<double> { TotalAdmin }, InnerRadius = 50, Fill = new SolidColorPaint(new SKColor(93, 58, 243)),  Name = "Admin" },
         new PieSeries<double> { Values = new List<double> { TotalLecturers }, InnerRadius = 50, Fill = new SolidColorPaint(new SKColor(234, 174, 249)),  Name = "Teachers" }
-};
-
-
+        };
         public ISeries[] PieThree { get; set; } = new ISeries[]
-{
+        {
         new PieSeries<double> { Values = new List<double> { TotalSalary }, InnerRadius = 50, Fill = new SolidColorPaint(new SKColor(93, 58, 243)),  Name = "Salary" },
         new PieSeries<double> { Values = new List<double> { TotalIncome }, InnerRadius = 50, Fill = new SolidColorPaint(new SKColor(234, 174, 249)),  Name = "Income" },
         new PieSeries<double> { Values = new List<double> { TotalFunds }, InnerRadius = 50, Fill = new SolidColorPaint(new SKColor(252, 105, 35)),  Name = "TotalFunds" }
-};
+        };
 
-
-
-        public Axis[] XAxes { get; set; }
-           = new Axis[]
-           {
-                new Axis
-                {
-                    NamePaint = null,
-
-                    LabelsPaint = null,
-                    TextSize = 0,
-
-                    SeparatorsPaint = null
-                }
-           };
-
-        public Axis[] YAxes { get; set; }
-            = new Axis[]
+        public Axis[] XAxes { get; set; } = new Axis[]
+        {
+            new Axis
             {
-                new Axis
-                {
-                    NamePaint = null,
+                NamePaint = null,
+                LabelsPaint = null,
+                TextSize = 0,
+                SeparatorsPaint = null
+            }
+        };
 
-                    LabelsPaint = null,
+        public Axis[] YAxes { get; set; } = new Axis[]
+        {
+            new Axis
+            {
+                NamePaint = null,
+                LabelsPaint = null,
+                TextSize = 0,
+                SeparatorsPaint = null
+            }
+        };
 
-                    TextSize = 0,
-                     SeparatorsPaint = null
-
-                }
-            };
-
-        public Axis[] XAxesBar { get; set; }
-           = new Axis[]
-           {
-                new Axis
-                {
-                    Labels = new string[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" }
-                }
-           };
-
-
+        public Axis[] XAxesBar { get; set; } = new Axis[]
+        {
+            new Axis
+            {
+                Labels = new string[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" }
+            }
+        };
     }
 }

@@ -8,11 +8,9 @@ namespace EduCube.Services
 {
     internal class StaffRepository : IStaffService
     {
-
-
         private SQLiteAsyncConnection _dbConnection;
 
-        //setup using path
+        //Setup Connection to DB.
         private async Task SetUpDb()
         {
             if (_dbConnection == null)
@@ -48,7 +46,7 @@ namespace EduCube.Services
             return await _dbConnection.DeleteAsync(staffModel);
         }
 
-        //Check authentication
+        //Check Admin Authentication
         public async Task<bool> AdminLoginAuth(string email, string password)
         {
             try
@@ -76,6 +74,5 @@ namespace EduCube.Services
                 return false;
             }           
         }
-
     }
 }

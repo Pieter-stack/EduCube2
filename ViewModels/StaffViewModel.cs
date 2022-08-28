@@ -56,14 +56,12 @@ namespace EduCube.ViewModels
             }
         }
 
-
         [ICommand]
         public async void GetStaffListSearch()
         {
             var subjectList = await _staffRepository.GetStaffList();
             var filteredItems = subjectList.Where(value => value.StaffFirstName.ToLowerInvariant().Contains(Search)).ToList();
             var filteredItems2 = subjectList.Where(value => value.StaffPersonalID.ToString().Contains(Search)).ToList();
-
 
             Staff.Clear();
             foreach (var staff in filteredItems)
@@ -74,11 +72,7 @@ namespace EduCube.ViewModels
             {
                 Staff.Add(staff);
             }
-
         }
-
-
-
 
         [ICommand]
         public async void AddUpdateStaff()
@@ -107,8 +101,6 @@ namespace EduCube.ViewModels
                 }
             }
         }
-
-
     }
 }
 

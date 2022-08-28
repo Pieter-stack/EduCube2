@@ -11,7 +11,7 @@ namespace EduCube.Models
     [Table("student")]
     public class StudentModel
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement, Column("_id")]
         public int StudentID { get; set; }
 
         [MaxLength(100)]
