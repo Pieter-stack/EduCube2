@@ -14,25 +14,16 @@ namespace EduCube.ViewModels
 {
     public partial class SubjectViewModel : ObservableObject
     {
-
         public ObservableCollection<SubjectModel> Subjects { get; set; } = new ObservableCollection<SubjectModel>();
-
 
         private readonly ISubjectService _subjectRepository;
         public SubjectViewModel(ISubjectService subjectService)
         {
             _subjectRepository = subjectService;
-
-
         }
 
         [ObservableProperty]
         string search;
-
-
-
-
-
 
         [ICommand]
         public async void GetSubjectList()
@@ -48,7 +39,6 @@ namespace EduCube.ViewModels
             }
         }
 
-
         [ICommand]
         public  async void GetSubjectListSearch()
         {
@@ -62,9 +52,6 @@ namespace EduCube.ViewModels
             }  
         }
 
-
-
-
         [ICommand]
         public async void AddUpdateSubject()
         {
@@ -77,22 +64,18 @@ namespace EduCube.ViewModels
            var response = await AppShell.Current.DisplayActionSheet("Select Option","OK",null,"Edit","Delete");
             if(response == "Edit")
             {
-
                 var navParam = new Dictionary<string, object>();
                 navParam.Add("SubjectDetail", subjectModel);
                 await AppShell.Current.GoToAsync(nameof(AddUpdateSubjectPage),navParam);
-
             }
             else if (response == "Delete")
             {
-             var delResponse = await _subjectRepository.DeleteSubject(subjectModel);
+                var delResponse = await _subjectRepository.DeleteSubject(subjectModel);
                 if(delResponse > 0)
                 {
                     GetSubjectList();
                 }
             }
         }
-
-
     }
 }

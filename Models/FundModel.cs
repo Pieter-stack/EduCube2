@@ -10,7 +10,6 @@ namespace EduCube.Models
     [Table("funds")]
     public class FundModel
     {
-
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int FundsID { get; set; }
 
@@ -22,6 +21,5 @@ namespace EduCube.Models
 
         [MaxLength(255)]
         public int TotalSalary { get; set; }
-
     }
 }

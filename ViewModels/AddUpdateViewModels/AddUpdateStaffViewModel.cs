@@ -23,7 +23,6 @@ namespace EduCube.ViewModels.AddUpdateViewModels
             _staffRepository = staffService;
         }
 
-
         //add display action to assign active state
         [ICommand]
         public async void AddUpdateStaff()
@@ -52,7 +51,6 @@ namespace EduCube.ViewModels.AddUpdateViewModels
             if (response > 0)
             {
                 await Shell.Current.DisplayAlert("staff info saved", "Record Saved", "OK");
-                //navigate back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             }
             else
             {
@@ -60,8 +58,6 @@ namespace EduCube.ViewModels.AddUpdateViewModels
             }
 
         }
-
-
     }
 }
 
