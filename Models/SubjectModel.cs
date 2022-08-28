@@ -46,5 +46,8 @@ namespace EduCube.Models
 
         [MaxLength(100)]
         public string SubjectVenue { get; set; }
+
+        [MaxLength(100)]
+        public string SubjectCategory { get; set; }
     }
 }

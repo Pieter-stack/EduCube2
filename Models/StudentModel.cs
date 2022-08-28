@@ -29,6 +29,33 @@ namespace EduCube.Models
         [MaxLength(100)]
         public string StudentSubjects { get; set; }
 
+        [MaxLength(100)]
+        public string StudentSubjectsMajor { get; set; }
+
+        [MaxLength(100)]
+        public string StudentSubjectsTheory { get; set; }
+
+        [MaxLength(100)]
+        public string StudentSubjectsModule1 { get; set; }
+
+        [MaxLength(100)]
+        public string StudentSubjectsModule2 { get; set; }
+
+        [MaxLength(100)]
+        public string StudentSubjectsModule3 { get; set; }
+
+        [MaxLength(100)]
+        public string StudentSubjectsModule4 { get; set; }
+
+
+        [MaxLength(100)]
+        public string StudentSubjectsModule5 { get; set; }
+
+
+        [MaxLength(100)]
+        public string StudentSubjectsModule6 { get; set; }
+
+
         [MaxLength(255)]
         public string StudentImage { get; set; }
 

@@ -16,6 +16,13 @@ namespace EduCube.ViewModels
 {
     public partial class Charts : ObservableObject
     {
+
+        //ADD TOTAL SUBJECTS
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
         [ObservableProperty]
         int _totalFundsText = Preferences.Get("MonthlyFunds", 0);
         [ObservableProperty]

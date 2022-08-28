@@ -7,6 +7,7 @@ using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,9 @@ namespace EduCube.ViewModels.AddUpdateViewModels
 
     public partial class AddUpdateSubjectViewModel : ObservableObject
     {
+
+        public ObservableCollection<StaffModel> Lec { get; set; } = new ObservableCollection<StaffModel>();
+
         [ObservableProperty]
         public SubjectModel _subjectDetail = new SubjectModel();
 
@@ -26,8 +30,8 @@ namespace EduCube.ViewModels.AddUpdateViewModels
         {
         _subjectRepository = subjectService;
 
-        listOfLecturers = new List<StaffModel>();
-        GetListOfLecturers();
+            listOfLecturers = new List<StaffModel>();
+            GetListOfLecturers();
 
         }
 
@@ -40,6 +44,16 @@ namespace EduCube.ViewModels.AddUpdateViewModels
         public async void GetListOfLecturers()
         {
             ListOfLecturers = await App.StaffRepo.GetStaffList();
+
+
+                foreach (var listOfLecturer in listOfLecturers.ToList())
+                {
+                    if(listOfLecturer.StaffRole == "Lecturer"){
+                    Lec.Add(listOfLecturer);
+                    }
+                }
+            
+
         }
 
         [ICommand]
@@ -65,7 +79,8 @@ namespace EduCube.ViewModels.AddUpdateViewModels
                 SubjectTime = SubjectDetail.SubjectTime,
                 SubjectImage = SubjectDetail.SubjectImage,
                 SubjectHours = SubjectDetail.SubjectHours,
-                SubjectVenue = SubjectDetail.SubjectVenue
+                SubjectVenue = SubjectDetail.SubjectVenue,
+                SubjectCategory = SubjectDetail.SubjectCategory,
             });
         }
 

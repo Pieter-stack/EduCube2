@@ -29,6 +29,86 @@
 
             <VerticalStackLayout>
                 <Label Text="Add/Edit Students" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="0,20,0,20"/>
+
+
+                <HorizontalStackLayout Spacing="10">
+                
+
+                <Picker x:Name="pickerMajor"
+                                    TextColor="Black"
+                                    MinimumWidthRequest="900"
+                                    ItemsSource="{Binding Major}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectMajor}"
+                                    />
+
+                <Picker x:Name="pickerTheory"
+                                    TextColor="Black"
+                                    MinimumWidthRequest="900"
+                                    ItemsSource="{Binding Theory}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectTheory}"
+                                    />
+                
+                
+                <Picker x:Name="pickerModule1"
+                                    TextColor="Black"
+                                    MinimumWidthRequest="900"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule1}"
+                                    />
+
+                <Picker x:Name="pickerModule2"
+                                    TextColor="Black"
+                                    MinimumWidthRequest="900"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule2}"
+                                    />
+
+                <Picker x:Name="pickerModule3"
+                                    TextColor="Black"
+                                    MinimumWidthRequest="900"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule3}"
+                                    />
+
+                <Picker x:Name="pickerModule4"
+                                    TextColor="Black"
+                                    MinimumWidthRequest="900"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule4}"
+                                    />
+
+                <Picker x:Name="pickerModule5"
+                                    TextColor="Black"
+                                    MinimumWidthRequest="900"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule5}"
+                                    />
+
+
+                <Picker x:Name="pickerModule6"
+                                    TextColor="Black"
+                                    MinimumWidthRequest="900"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule6}"
+                                    />
+
+
+
+                </HorizontalStackLayout>
+
+
+
+
+
+
                 <Frame BackgroundColor="Transparent" BorderColor="Transparent">
                     <ScrollView MaximumHeightRequest="680">
                         <VerticalStackLayout>
