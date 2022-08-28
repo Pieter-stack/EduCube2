@@ -20,6 +20,9 @@ namespace EduCube.Services
                 string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Student.db3");
                 _dbConnection = new SQLiteAsyncConnection(dbPath);
                 await _dbConnection.CreateTableAsync<StudentModel>();
+
+                //Drop table to fix some issues
+
             }
         }
         //Create a new student.
