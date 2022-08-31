@@ -26,98 +26,143 @@
         <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" Opacity="0.5" BorderColor="Transparent" CornerRadius="30" Margin="0,0,0,40"/>
 
         <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" Opacity="1" BorderColor="Transparent" CornerRadius="30">
-
             <VerticalStackLayout>
-                <Label Text="Update/Edit Staff" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="0,20,0,20"/>
-                <Frame BackgroundColor="Transparent" BorderColor="Transparent">
-                    <ScrollView MaximumHeightRequest="680">
-                        <VerticalStackLayout>
-                            <!-- Staff PersonalID Number -->
-                            <Label Text="Staff ID Number" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff PersonalID Number Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffPersonalID}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"/>
-                            </Border>
+                <Label Text="Add/Edit Students" HorizontalOptions="Center" FontSize="26" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="0,10,0,20"/>
 
-                            <!-- Staff FirstName -->
-                            <Label Text="First Name" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff FirstName Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffFirstName}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
+                <Label Text="Personal Details" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,5"/>
 
-                            <!-- Staff LastName -->
-                            <Label Text="Last Name" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff LastName Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffLastName}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
+                <!--First & Last Names-->
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,10,10,10">
+                    <!-- First Name -->
+                    <VerticalStackLayout>
+                        <Label Text="First Name" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StaffDetail.StaffFirstName}" Placeholder="First Name" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <!-- Last Name -->
+                    <VerticalStackLayout>
+                        <Label Text="Last Name" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StaffDetail.StaffLastName}" Placeholder="Last Name" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
 
-                            <!-- Staff Email -->
-                            <Label Text="Email" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff Email Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffEmail}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
+                <!-- ID Number & Email -->
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,0">
+                    <!-- ID Number -->
+                    <VerticalStackLayout>
+                        <Label Text="ID Number" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StaffDetail.StaffPersonalID}" Placeholder="ID Number" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <!-- Email -->
+                    <VerticalStackLayout>
+                        <Label Text="Email Address" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StaffDetail.StaffEmail}" Placeholder="Email Address" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
 
-                            <!-- Staff Role -->
-                            <Label Text="Role" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff Role Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffRole}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
+                <!-- Student Details -->
+                <Label Text="Staff Details" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,20,0,0"/>
+                <!-- Role & Major -->
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,10">
+                    <!-- Role -->
+                    <VerticalStackLayout>
+                        <Label Text="Type" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StaffDetail.StaffRole}" Placeholder="Staff Role" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
 
-                            <!-- Staff Hours -->
-                            <Label Text="Hours" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff Hours Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffHours}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
+                    <!--<VerticalStackLayout>
+                        <Label Text="Major" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="" Placeholder="Major" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>-->
+                </HorizontalStackLayout>
 
-                            <!-- Staff Salary -->
-                            <Label Text="Salary" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff Hours Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffSalary}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
+                <!-- Hours & Salary -->
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,0">
+                    <!-- Hours -->
+                    <VerticalStackLayout>
+                        <Label Text="Hours" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StaffDetail.StaffHours}" Placeholder="Hours" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <!-- Salary -->
+                    <VerticalStackLayout>
+                        <Label Text="Salary" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StaffDetail.StaffSalary}" Placeholder="Salary" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
 
-                            <!-- Staff Image -->
-                            <Label Text="Profile Image" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff Image Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffImage}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
+                <!-- Subjects -->
+                <Label Text="Subjects" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,20,0,0"/>
 
-                            <!-- Update Staff Button -->
-                            <Button Command="{Binding AddUpdateStaffCommand}" Margin="50,35,50,0" BackgroundColor="#FC6923" TextColor="White" CornerRadius="35" Padding="20" Text="Save" FontFamily="Roboto-Regular" FontSize="15"/>
+                <!-- Subject Pickers -->
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,0">
+                    <!-- Major -->
+                    <!--
+                    <VerticalStackLayout>
+                        <Label Text="Major" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250" HorizontalOptions="Start">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Picker x:Name="pickerMajor" TextColor="Black" WidthRequest="250" ItemsSource="{Binding Major}" ItemDisplayBinding="{Binding SubjectCode}" SelectedItem="{Binding SelectedSubjectMajor}"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    -->
+                    
+                    <!-- Theory -->
+                    <!--
+                    <VerticalStackLayout>
+                        <Label Text="Theory" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250" HorizontalOptions="Start">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Picker x:Name="pickerTheory" TextColor="Black" WidthRequest="250" ItemsSource="{Binding Theory}" ItemDisplayBinding="{Binding SubjectCode}" SelectedItem="{Binding SelectedSubjectTheory}"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    -->
+                </HorizontalStackLayout>
 
-                        </VerticalStackLayout>
-                    </ScrollView>
-                </Frame>
+                <!-- Add/Update Student Button -->
+                <Button Command="{Binding AddUpdateStaffCommand}" BackgroundColor="#FC6923" TextColor="White" FontAttributes="Bold" FontAutoScalingEnabled="True" CharacterSpacing="0.6" CornerRadius="26" Padding="10" Margin="0,40,0,0" VerticalOptions="End" Text="Save" FontFamily="Roboto-Regular" FontSize="15" WidthRequest="190" HeightRequest="50"/>
             </VerticalStackLayout>
         </Frame>
     </Grid>

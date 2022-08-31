@@ -23,188 +23,238 @@
             <Image Source="background.png" Aspect="AspectFill" Margin="-20,-20,-20,-20"/>
         </Frame>
 
-        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" Opacity="0.5" BorderColor="Transparent" CornerRadius="30" Margin="0,0,0,40"/>
+        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" Opacity="0.25" BorderColor="Transparent" CornerRadius="30" Margin="0,0,0,40"/>
 
         <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" Opacity="1" BorderColor="Transparent" CornerRadius="30">
 
             <VerticalStackLayout>
-                <Label Text="Add/Edit Students" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="0,20,0,20"/>
+                <Label Text="Add/Edit Students" HorizontalOptions="Center" FontSize="26" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="0,10,0,20"/>
 
+                <Label Text="Personal Details" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,5"/>
 
-                <HorizontalStackLayout Spacing="10">
-                
-
-                <Picker x:Name="pickerMajor"
-                                    TextColor="Black"
-                                    MinimumWidthRequest="900"
-                                    ItemsSource="{Binding Major}"
-                                    ItemDisplayBinding="{Binding SubjectCode}"
-                                    SelectedItem="{Binding SelectedSubjectMajor}"
-                                    />
-
-                <Picker x:Name="pickerTheory"
-                                    TextColor="Black"
-                                    MinimumWidthRequest="900"
-                                    ItemsSource="{Binding Theory}"
-                                    ItemDisplayBinding="{Binding SubjectCode}"
-                                    SelectedItem="{Binding SelectedSubjectTheory}"
-                                    />
-                
-                
-                <Picker x:Name="pickerModule1"
-                                    TextColor="Black"
-                                    MinimumWidthRequest="900"
-                                    ItemsSource="{Binding DegreeModule}"
-                                    ItemDisplayBinding="{Binding SubjectCode}"
-                                    SelectedItem="{Binding SelectedSubjectModule1}"
-                                    />
-
-                <Picker x:Name="pickerModule2"
-                                    TextColor="Black"
-                                    MinimumWidthRequest="900"
-                                    ItemsSource="{Binding DegreeModule}"
-                                    ItemDisplayBinding="{Binding SubjectCode}"
-                                    SelectedItem="{Binding SelectedSubjectModule2}"
-                                    />
-
-                <Picker x:Name="pickerModule3"
-                                    TextColor="Black"
-                                    MinimumWidthRequest="900"
-                                    ItemsSource="{Binding DegreeModule}"
-                                    ItemDisplayBinding="{Binding SubjectCode}"
-                                    SelectedItem="{Binding SelectedSubjectModule3}"
-                                    />
-
-                <Picker x:Name="pickerModule4"
-                                    TextColor="Black"
-                                    MinimumWidthRequest="900"
-                                    ItemsSource="{Binding DegreeModule}"
-                                    ItemDisplayBinding="{Binding SubjectCode}"
-                                    SelectedItem="{Binding SelectedSubjectModule4}"
-                                    />
-
-                <Picker x:Name="pickerModule5"
-                                    TextColor="Black"
-                                    MinimumWidthRequest="900"
-                                    ItemsSource="{Binding DegreeModule}"
-                                    ItemDisplayBinding="{Binding SubjectCode}"
-                                    SelectedItem="{Binding SelectedSubjectModule5}"
-                                    />
-
-
-                <Picker x:Name="pickerModule6"
-                                    TextColor="Black"
-                                    MinimumWidthRequest="900"
-                                    ItemsSource="{Binding DegreeModule}"
-                                    ItemDisplayBinding="{Binding SubjectCode}"
-                                    SelectedItem="{Binding SelectedSubjectModule6}"
-                                    />
-
-
-
+                <!-- First & Last Names -->
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,10,10,10">
+                    <!-- First Name -->
+                    <VerticalStackLayout>
+                        <Label Text="First Name" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StudentDetail.StudentFirstName}" Placeholder="First Name" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <!-- Last Name -->
+                    <VerticalStackLayout>
+                        <Label Text="Last Name" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StudentDetail.StudentLastName}" Placeholder="Last Name" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
                 </HorizontalStackLayout>
 
+                <!-- ID Number & Email -->
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,0">
+                    <!-- ID -->
+                    <VerticalStackLayout>
+                        <Label Text="ID Number" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StudentDetail.StudentPersonalID}" Placeholder="ID Number" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <!-- Email -->
+                    <VerticalStackLayout>
+                        <Label Text="Email Address" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StudentDetail.StudentEmail}" Placeholder="Email Address" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
 
+                <!-- Student Details -->
+                <Label Text="Student Details" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,20,0,0"/>
+                <!-- Type & Major -->
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,10">
+                    <!-- Type -->
+                    <VerticalStackLayout>
+                        <Label Text="Type" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StudentDetail.StudentType}" Placeholder="Student Type" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <!-- Major -->
+                    <VerticalStackLayout>
+                        <Label Text="Major" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="" Placeholder="Major" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+                
+                <!-- Credits & Fees -->
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,0">
+                    <!-- Credits -->
+                    <VerticalStackLayout>
+                        <Label Text="Credits" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StudentDetail.StudentCredits}" Placeholder="Credits" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <!-- Tuition Fees -->
+                    <VerticalStackLayout>
+                        <Label Text="Fees" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Entry Text="{Binding StudentDetail.StudentTuition}" Placeholder="Fees" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
 
+                <!-- Subjects -->
+                <Label Text="Subjects" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,20,0,0"/>
+                
+                <!-- Subject Pickers -->
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,0">
+                    <!-- Major -->
+                    <VerticalStackLayout>
+                    <Label Text="Major" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                    <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250" HorizontalOptions="Start">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                        </Border.StrokeShape>
+                            <Picker x:Name="pickerMajor" TextColor="Black" WidthRequest="250"
+                                    ItemsSource="{Binding Major}" 
+                                    ItemDisplayBinding="{Binding SubjectCode}" 
+                                    SelectedItem="{Binding SelectedSubjectMajor}"/>
+                    </Border>
+                    </VerticalStackLayout>
+                    <!-- Theory -->
+                    <VerticalStackLayout>
+                        <Label Text="Theory" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250" HorizontalOptions="Start">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Picker x:Name="pickerTheory" TextColor="Black" WidthRequest="250" 
+                                    ItemsSource="{Binding Theory}" 
+                                    ItemDisplayBinding="{Binding SubjectCode}" 
+                                    SelectedItem="{Binding SelectedSubjectTheory}"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
 
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,0">
+                    <!-- Module 1 -->
+                    <VerticalStackLayout>
+                        <Label Text="Module 1" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250" HorizontalOptions="Start">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Picker x:Name="pickerModule1" TextColor="Black" WidthRequest="250"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule1}"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <!-- Module 2 -->
+                    <VerticalStackLayout>
+                        <Label Text="Module 2" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250" HorizontalOptions="Start">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Picker x:Name="pickerModule2" TextColor="Black" WidthRequest="250"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule2}"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
 
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,0">
+                    <!-- Module 3 -->
+                    <VerticalStackLayout>
+                        <Label Text="Module 3" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250" HorizontalOptions="Start">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Picker x:Name="pickerModule3" TextColor="Black" WidthRequest="250"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule3}"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <!-- Module 4 -->
+                    <VerticalStackLayout>
+                        <Label Text="Module 4" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250" HorizontalOptions="Start">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Picker x:Name="pickerModule4" TextColor="Black" WidthRequest="250"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule4}"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
 
-                <Frame BackgroundColor="Transparent" BorderColor="Transparent">
-                    <ScrollView MaximumHeightRequest="680">
-                        <VerticalStackLayout>
-                            <!-- Student PersonalID Number -->
-                            <Label Text="Student ID Number" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Student PersonalID Number Entry -->
-                                <Entry Text="{Binding StudentDetail.StudentPersonalID}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"></Entry>
-                            </Border>
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="50" Padding="20,0">
+                    <!-- Module 5 -->
+                    <VerticalStackLayout>
+                        <Label Text="Module 5" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250" HorizontalOptions="Start">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Picker x:Name="pickerModule5" TextColor="Black" WidthRequest="250"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule5}"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <!-- Module 6 -->
+                    <VerticalStackLayout>
+                        <Label Text="Module 6" FontSize="16" FontAttributes="None" TextColor="#FFFFFF" Margin="3,0,0,3"/>
+                        <Border Stroke="White" StrokeThickness="1.5" Background="Transparent" WidthRequest="250" HorizontalOptions="Start">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="40,40,40,40"/>
+                            </Border.StrokeShape>
+                            <Picker x:Name="pickerModule6" TextColor="Black" WidthRequest="250"
+                                    ItemsSource="{Binding DegreeModule}"
+                                    ItemDisplayBinding="{Binding SubjectCode}"
+                                    SelectedItem="{Binding SelectedSubjectModule6}"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
 
-                            <!-- Student FirstName -->
-                            <Label Text="First Name" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Student FirstName Entry -->
-                                <Entry Text="{Binding StudentDetail.StudentFirstName}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
+                <!-- Add/Update Student Button -->
+                <Button Command="{Binding AddUpdateStudentCommand}" BackgroundColor="#FC6923" TextColor="White" FontAttributes="Bold" FontAutoScalingEnabled="True" CharacterSpacing="0.6" CornerRadius="26" Padding="10" Margin="0,40,0,0" VerticalOptions="End" Text="Save" FontFamily="Roboto-Regular" FontSize="15" WidthRequest="190" HeightRequest="50"/>
 
-                            <!-- Student LastName -->
-                            <Label Text="Last Name" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Student LastName Entry -->
-                                <Entry Text="{Binding StudentDetail.StudentLastName}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Student Email -->
-                            <Label Text="Email" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Student Email Entry -->
-                                <Entry Text="{Binding StudentDetail.StudentEmail}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Student Role -->
-                            
-
-                            <!-- Student Type -->
-                            <Label Text="Type" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Student Type Entry -->
-                                <Entry Text="{Binding StudentDetail.StudentType}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Student Credits -->
-                            <Label Text="Credits" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Student Credits Entry -->
-                                <Entry Text="{Binding StudentDetail.StudentCredits}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Student Tuition/Fees -->
-                            <Label Text="Tuition Fees" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Student Tuition/Fees Entry -->
-                                <Entry Text="{Binding StudentDetail.StudentTuition}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Student Subjects Enrolled -->
-
-
-                            <!-- Student Image -->
-                            <Label Text="Profile Image" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Student Image Entry -->
-                                <Entry Text="{Binding StudentDetail.StudentImage}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Add/Update Student Button -->
-                            <Button Command="{Binding AddUpdateStudentCommand}" Margin="50,35,50,0" BackgroundColor="#FC6923" TextColor="White" CornerRadius="35" Padding="20" Text="Save" FontFamily="Roboto-Regular" FontSize="15"/>
-
-                        </VerticalStackLayout>
-                    </ScrollView>
-                </Frame>
             </VerticalStackLayout>
+            
         </Frame>
     </Grid>
 </ContentPage>

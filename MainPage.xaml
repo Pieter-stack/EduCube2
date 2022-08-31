@@ -28,52 +28,46 @@
             <!--Navbar-->
             <mynamespace:Navbar/>
 
-            <Frame Grid.Column="1" Grid.Row="0" CornerRadius="20" BackgroundColor="#FFFFFF" Opacity="0.3" MaximumHeightRequest="400"/>
-            <Frame Grid.Column="1" Grid.Row="0" CornerRadius="20" BackgroundColor="Transparent" MaximumHeightRequest="400">
+            <Frame Grid.Column="1" Grid.Row="0" CornerRadius="20" BackgroundColor="#FFFFFF" Opacity="0.3" MaximumHeightRequest="350"/>
+            <Frame Grid.Column="1" Grid.Row="0" CornerRadius="20" BackgroundColor="Transparent" MaximumHeightRequest="350">
 
-                <VerticalStackLayout Grid.Column="1" BackgroundColor="Transparent">
+                <VerticalStackLayout Grid.Column="1" BackgroundColor="Transparent" ZIndex="2">
                     <Image Source="logo.png" WidthRequest="90">
                         <Image.Shadow>
                             <Shadow Brush="Black" Offset="1,2" Radius="5" Opacity="0.2"/>
                         </Image.Shadow>
                     </Image>
-
+                    <!-- Email & Password Entry -->
                     <VerticalStackLayout Spacing="5">
-                        <Label Text="Email" FontSize="12" FontAttributes="Bold" TextColor="#FFFFFF"/>
+                        <Label Text="Email" FontSize="14" FontFamily="Roboto-Regular" FontAttributes="Bold" TextColor="#FFFFFF"/>
                         <Border Stroke="White" StrokeThickness="1.5" Background="Transparent">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="40,40,40,40"/>
                             </Border.StrokeShape>
-                            <Entry Text="{Binding Email}" Placeholder="Email" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            <Entry Text="{Binding Email}" Placeholder="Email" PlaceholderColor="Gray" FontFamily="Roboto-Regular" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                         </Border>
 
-                        <Label Text="Password" FontSize="12" FontAttributes="Bold" TextColor="#FFFFFF"/>
+                        <Label Text="Password" FontSize="14" FontFamily="Roboto-Regular" FontAttributes="Bold" TextColor="#FFFFFF"/>
                         <Border Stroke="White" StrokeThickness="1.5" Background="Transparent">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="40,40,40,40"/>
                             </Border.StrokeShape>
-                            <Entry Text="{Binding Password}" Placeholder="Password" PlaceholderColor="Gray" IsPassword="True" Keyboard="Text" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            <Entry Text="{Binding Password}" Placeholder="Password" PlaceholderColor="Gray" IsPassword="True" Keyboard="Text" FontFamily="Roboto-Regular" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                         </Border>
                     </VerticalStackLayout>
 
                     <VerticalStackLayout Spacing="5">
-                        
-                        <HorizontalStackLayout HorizontalOptions="Fill" VerticalOptions="Center" Spacing="80">
-                            <Label Text="Stay Logged In" HorizontalOptions="Start" Margin="0,10,0,0"/>
-                            <Switch IsToggled="{Binding StayLoggedOn}" OnColor="Orange" ThumbColor="White" HorizontalOptions="EndAndExpand"/>
+                        <!-- Toggle Switch -->
+                        <HorizontalStackLayout HorizontalOptions="Fill" VerticalOptions="Center" Spacing="100">
+                            <Label Text="Stay Logged In" HorizontalOptions="Start" Margin="0,10,0,0" FontFamily="Roboto-Regular" FontSize="12"/>
+                            <Switch IsToggled="{Binding StayLoggedOn}" OnColor="#FC6923" ThumbColor="White" HorizontalOptions="EndAndExpand"/>
                         </HorizontalStackLayout>
+                        <!-- Error Message -->
+                        <Label Text="{Binding ErrorMessage, Mode=TwoWay}" TextColor="Red" FontFamily="Roboto-Regular" FontSize="12" FontAttributes="Italic" FontAutoScalingEnabled="True" Padding="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <!-- Sign In Button -->
+                        <Button Command="{Binding LoginValidCommand}" CornerRadius="18" WidthRequest="120" HeightRequest="35" Text="Sign In" FontFamily="Roboto-Regular" FontSize="12" TextColor="#FFFFFF" FontAutoScalingEnabled="True" FontAttributes="Bold" BackgroundColor="#FC6923" Padding="3" Margin="0,0,0,0"/>
                         
-                        <!-- Forgotten Password Button -->
-                        <Button FontAttributes="None" FontSize="12" BackgroundColor="Transparent" BorderColor="Transparent" Text="Forgot Password?" TextColor="Gray" HorizontalOptions="Center"/>
-                        <!--Sign In Button-->
-                        <Button Command="{Binding LoginValidCommand}" CornerRadius="18" WidthRequest="120" HeightRequest="35" Text="Sign In" FontSize="12" TextColor="#FFFFFF" FontAutoScalingEnabled="True" FontAttributes="Bold" BackgroundColor="#FC6923" Padding="3"/>
-                        <!-- Sign Up Button -->
-                        <!--<Button CornerRadius="18" WidthRequest="120" HeightRequest="35" Text="Sign Up" FontSize="12" TextColor="#FFFFFF" FontAutoScalingEnabled="True" FontAttributes="None" BackgroundColor="Transparent" BorderColor="#FFBC24" BorderWidth="1.5" Padding="3"/>-->
-
-                        <!--Error Message -->
-                        <Label Text="{Binding ErrorMessage, Mode=TwoWay}" TextColor="Red"/>
                     </VerticalStackLayout>
-
                 </VerticalStackLayout>
             </Frame>
         </Grid>

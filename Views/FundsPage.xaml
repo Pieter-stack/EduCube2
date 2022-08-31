@@ -57,7 +57,7 @@
                 AlignItems="End"
                 JustifyContent="SpaceBetween" BackgroundColor="Transparent">
                             <Label  Text="Funds Pool" TextColor="#29233E" FontSize="48" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="0,0,0,0" />
-                           
+
                         </FlexLayout>
                     </FlexLayout>
 
@@ -157,21 +157,15 @@
                             </HorizontalStackLayout>
                         </Frame>
 
-                        
+
                     </Grid>
 
 
                 </Frame>
             </Grid>
         </Frame>
-
-
-
-
-
         <!--- Reminder for later work with grids on all pages and have row and column defined-->
     </Grid>
-
 </ContentPage>
     
     

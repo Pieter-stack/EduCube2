@@ -19,7 +19,6 @@ namespace EduCube.ViewModels.AddUpdateViewModels
 
     public partial class AddUpdateSubjectViewModel : ObservableObject
     {
-
         public ObservableCollection<StaffModel> Lec { get; set; } = new ObservableCollection<StaffModel>();
 
         [ObservableProperty]
@@ -32,7 +31,6 @@ namespace EduCube.ViewModels.AddUpdateViewModels
 
             listOfLecturers = new List<StaffModel>();
             GetListOfLecturers();
-
         }
 
         [ObservableProperty]
@@ -45,15 +43,12 @@ namespace EduCube.ViewModels.AddUpdateViewModels
         {
             ListOfLecturers = await App.StaffRepo.GetStaffList();
 
-
-                foreach (var listOfLecturer in listOfLecturers.ToList())
-                {
-                    if(listOfLecturer.StaffRole == "Lecturer"){
-                    Lec.Add(listOfLecturer);
-                    }
+            foreach (var listOfLecturer in listOfLecturers.ToList())
+            {
+                if(listOfLecturer.StaffRole == "Lecturer"){
+                Lec.Add(listOfLecturer);
                 }
-            
-
+            }    
         }
 
         [ICommand]
@@ -83,7 +78,6 @@ namespace EduCube.ViewModels.AddUpdateViewModels
                 SubjectCategory = SubjectDetail.SubjectCategory,
             });
         }
-
             if (response > 0)
             {
                 await Shell.Current.DisplayAlert("Subject info saved", "Record Saved", "OK");               

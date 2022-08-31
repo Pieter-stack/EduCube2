@@ -34,37 +34,25 @@ public static class MauiProgram
 
         //Views
         builder.Services.AddSingleton<DashboardPage>();
-
         builder.Services.AddSingleton<FundsPage>();
-
         builder.Services.AddSingleton<StudentsPage>();
         builder.Services.AddTransient<AddUpdateStudentPage>();
-
         builder.Services.AddSingleton<SubjectsPage>();
         builder.Services.AddTransient<AddUpdateSubjectPage>();
-
         builder.Services.AddSingleton<TeachersPage>();
         builder.Services.AddTransient<AddUpdateStaffPage>();
-
         builder.Services.AddSingleton<MainPage>();
         
-
         //Viewmodels
         builder.Services.AddSingleton<AdminViewModel>();
-
         builder.Services.AddSingleton<FundViewModel>();
-
         builder.Services.AddSingleton<StaffViewModel>();
         builder.Services.AddTransient<AddUpdateStaffViewModel>();
-
         builder.Services.AddSingleton<StudentViewModel>();
         builder.Services.AddTransient<AddUpdateStudentViewModel>();
-
         builder.Services.AddSingleton<SubjectViewModel>();
         builder.Services.AddTransient<AddUpdateSubjectViewModel>();
-
         builder.Services.AddSingleton<LoginViewModel>();
-
         return builder.Build();
 	}
 }

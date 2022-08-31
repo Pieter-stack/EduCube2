@@ -56,124 +56,125 @@
                             <Button Command="{Binding AddUpdateStudentCommand}" Text="+ Add Student" CornerRadius="30" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FFBC24" Padding="15" HorizontalOptions="End"  />
                         </FlexLayout>
                     </FlexLayout>
-
                 </Frame>
-
-                <Frame Grid.Row="1" BorderColor="White" BackgroundColor="White" CornerRadius="0" >
-
+                
+                <Frame Grid.Row="1" BorderColor="White" BackgroundColor="White" CornerRadius="0">
+                    <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceAround" BackgroundColor="Transparent" >
+                    
                     <!-- Collection View | Student Cards -->
-                    <CollectionView ItemsSource="{Binding Students}">
+                    <CollectionView ItemsSource="{Binding Students}" FlowDirection="LeftToRight">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="models:StudentModel">
-
-                                <!-- StudentCards Starts Here -->
-                                <VerticalStackLayout BackgroundColor="Grey" WidthRequest="350" Margin="20,20,20,20">
-                                    <!-- Top Section -->
-                                    <StackLayout Orientation="Horizontal" BackgroundColor="Black">
-                                        <!-- Profile Image Border Rectangle -->
-                                        <Border HeightRequest="60" WidthRequest="60" Margin="-20,-45,0,0" HorizontalOptions="Start" StrokeThickness="3" Stroke="#120B29" Background="#ffffff" ZIndex="5">
-                                            <Border.StrokeShape>
-                                                <RoundRectangle CornerRadius="8"/>
-                                            </Border.StrokeShape>
-                                        </Border>
-                                        <!-- Profile Image -->
-                                        <Image Source="profilepic.png" HeightRequest="60" WidthRequest="60" Margin="-60,-45,0,0" Background="Transparent" Aspect="AspectFill" ZIndex="6" />
-                                        <!-- Profile Details -->
-                                        <VerticalStackLayout Margin="5,10,5,10" HorizontalOptions="Start">
-                                            <HorizontalStackLayout>
-                                                <Label Text="{Binding StudentFirstName}" FontSize="20" FontFamily="Roboto-Regular" TextColor="White" FontAttributes="Bold"/>
-                                                <Label Text="{Binding StudentLastName}" FontSize="20" FontFamily="Roboto-Regular" TextColor="White" FontAttributes="Bold"/>
-                                            </HorizontalStackLayout>
-                                            <Label Text="Student" FontSize="10" FontFamily="Roboto-Regular" TextColor="White"/>
-                                            <Label Text="{Binding StudentEmail}" FontSize="10" FontFamily="Roboto-Regular" TextColor="White"/>
-                                        </VerticalStackLayout>
-                                        <!-- Profile ID & Action Buttons -->
-                                        <VerticalStackLayout BackgroundColor="Transparent" HorizontalOptions="EndAndExpand">
-                                            <StackLayout Orientation="Vertical" Margin="0,5,20,0">
-                                                <Label Text="{Binding StudentSubjects}" FontSize="10" FontFamily="Roboto-Regular" TextColor="White" HorizontalOptions="End"/>
-                                            </StackLayout>
-                                            <HorizontalStackLayout Spacing="5" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Margin="0,35,20,0">
-                                                <!-- Buttons -->
-                                                <ImageButton Source="deleteicon.png" HeightRequest="20" WidthRequest="20" BackgroundColor="#F33A3A" Padding="3" CornerRadius="1" Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StudentViewModel}}, Path=DisplayActionCommand}" CommandParameter="{Binding .}"/>
-                                                <ImageButton Source="pencilicon.png" HeightRequest="20" WidthRequest="20" BackgroundColor="#FC6923" Padding="3" CornerRadius="1" Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StudentViewModel}}, Path=DisplayActionCommand}" CommandParameter="{Binding .}"/>
-                                                <ImageButton Source="dotsicon.png" HeightRequest="20" WidthRequest="20" BackgroundColor="#5D3AF3" Padding="3" CornerRadius="1" Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StudentViewModel}}, Path=DisplayActionCommand}" CommandParameter="{Binding .}"/>
-                                            </HorizontalStackLayout>
-                                        </VerticalStackLayout>
-                                    </StackLayout>
-
-                                    <!-- Bottom Section -->
-                                    <StackLayout Orientation="Horizontal" BackgroundColor="White" HeightRequest="120">
-                                        <!-- Blocks Section -->
-                                        <Grid ColumnSpacing="10" RowSpacing="10" Margin="10">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="*"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="110"/>
-                                                <ColumnDefinition Width="110"/>
-                                            </Grid.ColumnDefinitions>
-
-                                            <!-- Top Left -->
-                                            <Border StrokeThickness="2" Stroke="#5D3AF3" Grid.Row="0" Grid.Column="0">
+                                
+                                    <!-- StudentCards Starts Here -->
+                                    <VerticalStackLayout BackgroundColor="Grey" WidthRequest="350" Margin="20,20,20,20">
+                                        <!-- Top Section -->
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="Black">
+                                            <!-- Profile Image Border Rectangle -->
+                                            <Border HeightRequest="60" WidthRequest="60" Margin="-20,-45,0,0" HorizontalOptions="Start" StrokeThickness="3" Stroke="#120B29" Background="#ffffff" ZIndex="5">
                                                 <Border.StrokeShape>
                                                     <RoundRectangle CornerRadius="8"/>
                                                 </Border.StrokeShape>
-
-                                                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                                                    <Label Text="Education Type" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                                    <Label Text="{Binding StudentType}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                                </VerticalStackLayout>
                                             </Border>
-                                            <!-- Top Right -->
-                                            <Border StrokeThickness="2" Stroke="#FC6923" Grid.Row="0" Grid.Column="1">
-                                                <Border.StrokeShape>
-                                                    <RoundRectangle CornerRadius="8"/>
-                                                </Border.StrokeShape>
-
-                                                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                                                    <Label Text="Credits" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                                    <Label Text="{Binding StudentCredits}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                                </VerticalStackLayout>
-                                            </Border>
-                                            <!-- Bottom Left -->
-                                            <Border StrokeThickness="2" Stroke="#EAAEF9" Grid.Row="1" Grid.Column="0">
-                                                <Border.StrokeShape>
-                                                    <RoundRectangle CornerRadius="8"/>
-                                                </Border.StrokeShape>
-
-                                                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                                                    <Label Text="Major" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                                    <Label Text="DV300" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                                </VerticalStackLayout>
-                                            </Border>
-                                            <!-- Bottom Right -->
-                                            <Border StrokeThickness="2" Stroke="#FFBC24" Grid.Row="1" Grid.Column="1">
-                                                <Border.StrokeShape>
-                                                    <RoundRectangle CornerRadius="8"/>
-                                                </Border.StrokeShape>
-
-                                                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
-                                                    <Label Text="Total Fees" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                                    <Label Text="{Binding StudentTuition}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                                </VerticalStackLayout>
-                                            </Border>
-                                        </Grid>
-
-                                        <!--Barcode Image Section -->
-                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                                            <Label VerticalOptions="Center" HorizontalOptions="Center" Text="2020" FontSize="40" FontFamily="Roboto-Regular" FontAttributes="Bold" TextColor="Black" Rotation="-90"/>
-                                            <Image Source="barcode.png" Margin="-20,0,0,0" HeightRequest="110"/>
+                                            <!-- Profile Image -->
+                                            <Image Source="profilepic.png" HeightRequest="60" WidthRequest="60" Margin="-60,-45,0,0" Background="Transparent" Aspect="AspectFill" ZIndex="6" />
+                                            <!-- Profile Details -->
+                                            <VerticalStackLayout Margin="5,10,5,10" HorizontalOptions="Start">
+                                                <HorizontalStackLayout>
+                                                    <Label Text="{Binding StudentFirstName}" FontSize="20" FontFamily="Roboto-Regular" TextColor="White" FontAttributes="Bold"/>
+                                                    <Label Text="{Binding StudentLastName}" FontSize="20" FontFamily="Roboto-Regular" TextColor="White" FontAttributes="Bold" Padding="10,0,0,0"/>
+                                                </HorizontalStackLayout>
+                                                <Label Text="Student" FontSize="10" FontFamily="Roboto-Regular" TextColor="White"/>
+                                                <Label Text="{Binding StudentEmail}" FontSize="10" FontFamily="Roboto-Regular" TextColor="White"/>
+                                            </VerticalStackLayout>
+                                            <!-- Profile ID & Action Buttons -->
+                                            <VerticalStackLayout BackgroundColor="Transparent" HorizontalOptions="EndAndExpand">
+                                                <StackLayout Orientation="Vertical" Margin="0,5,20,0">
+                                                    <Label Text="{Binding StudentPersonalID}" FontSize="10" FontFamily="Roboto-Regular" TextColor="White" HorizontalOptions="End"/>
+                                                </StackLayout>
+                                                <HorizontalStackLayout Spacing="5" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Margin="0,35,20,0" Padding="0,0,0,5">
+                                                    <!-- Buttons -->
+                                                    <ImageButton Source="deleteicon.png" HeightRequest="20" WidthRequest="20" BackgroundColor="#F33A3A" Padding="3" CornerRadius="1" Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StudentViewModel}}, Path=DisplayActionCommand}" CommandParameter="{Binding .}"/>
+                                                    <ImageButton Source="pencilicon.png" HeightRequest="20" WidthRequest="20" BackgroundColor="#FC6923" Padding="3" CornerRadius="1" Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StudentViewModel}}, Path=DisplayActionCommand}" CommandParameter="{Binding .}"/>
+                                                    <ImageButton Source="dotsicon.png" HeightRequest="20" WidthRequest="20" BackgroundColor="#5D3AF3" Padding="3" CornerRadius="1" Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StudentViewModel}}, Path=DisplayActionCommand}" CommandParameter="{Binding .}"/>
+                                                </HorizontalStackLayout>
+                                            </VerticalStackLayout>
                                         </StackLayout>
 
-                                    </StackLayout>
+                                        <!-- Bottom Section -->
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="White" HeightRequest="120">
+                                            <!-- Blocks Section -->
+                                            <Grid ColumnSpacing="10" RowSpacing="10" Margin="10">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="110"/>
+                                                    <ColumnDefinition Width="110"/>
+                                                </Grid.ColumnDefinitions>
 
-                                </VerticalStackLayout>
-                                <!-- Student Cards End Here -->
+                                                <!-- Top Left -->
+                                                <Border StrokeThickness="2" Stroke="#5D3AF3" Grid.Row="0" Grid.Column="0">
+                                                    <Border.StrokeShape>
+                                                        <RoundRectangle CornerRadius="8"/>
+                                                    </Border.StrokeShape>
+
+                                                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                                                        <Label Text="Education Type" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                        <Label Text="{Binding StudentType}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    </VerticalStackLayout>
+                                                </Border>
+                                                <!-- Top Right -->
+                                                <Border StrokeThickness="2" Stroke="#FC6923" Grid.Row="0" Grid.Column="1">
+                                                    <Border.StrokeShape>
+                                                        <RoundRectangle CornerRadius="8"/>
+                                                    </Border.StrokeShape>
+
+                                                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                                                        <Label Text="Credits" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                        <Label Text="{Binding StudentCredits}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    </VerticalStackLayout>
+                                                </Border>
+                                                <!-- Bottom Left -->
+                                                <Border StrokeThickness="2" Stroke="#EAAEF9" Grid.Row="1" Grid.Column="0">
+                                                    <Border.StrokeShape>
+                                                        <RoundRectangle CornerRadius="8"/>
+                                                    </Border.StrokeShape>
+
+                                                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                                                        <Label Text="Major" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                        <Label Text="DV300" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    </VerticalStackLayout>
+                                                </Border>
+                                                <!-- Bottom Right -->
+                                                <Border StrokeThickness="2" Stroke="#FFBC24" Grid.Row="1" Grid.Column="1">
+                                                    <Border.StrokeShape>
+                                                        <RoundRectangle CornerRadius="8"/>
+                                                    </Border.StrokeShape>
+
+                                                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                                                        <Label Text="Total Fees" FontSize="9" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                        <Label Text="{Binding StudentTuition}" FontSize="14" FontFamily="Roboto-Regular" FontAutoScalingEnabled="True" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    </VerticalStackLayout>
+                                                </Border>
+                                            </Grid>
+
+                                            <!--Barcode Image Section -->
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                <Label VerticalOptions="Center" HorizontalOptions="Center" Text="2020" FontSize="40" FontFamily="Roboto-Regular" FontAttributes="Bold" TextColor="Black" Rotation="-90"/>
+                                                <Image Source="barcode.png" Margin="-20,0,0,0" HeightRequest="110"/>
+                                            </StackLayout>
+
+                                        </StackLayout>
+
+                                    </VerticalStackLayout>
+                                    <!-- Student Cards End Here -->
+                                
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-
+                    </FlexLayout>
                 </Frame>
             </Grid>
         </Frame>

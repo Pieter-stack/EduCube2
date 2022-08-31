@@ -16,7 +16,7 @@ namespace EduCube.ViewModels
     public partial class StudentViewModel : ObservableObject
     {
         public ObservableCollection<StudentModel> Students { get; set; } = new ObservableCollection<StudentModel>();
-        public ObservableCollection<ClassroomModel> Classrooms { get; set; } = new ObservableCollection<ClassroomModel>();
+        //public ObservableCollection<ClassroomModel> Classrooms { get; set; } = new ObservableCollection<ClassroomModel>();
 
         private readonly IStudentService _studentRepository;
 
@@ -25,10 +25,6 @@ namespace EduCube.ViewModels
             _studentRepository = studentService;
 
         }
-
-
-
-
 
         [ObservableProperty]
         int totalDegree;
@@ -62,7 +58,6 @@ namespace EduCube.ViewModels
                 }
             }
         }
-
 
         [ICommand]
         public async void GetStudentListSearch()
@@ -107,31 +102,22 @@ namespace EduCube.ViewModels
                 }
             }
         }
-
-
-
-
-
-    //    [ICommand]
-    //    public async void GetClassroomList()
-    //    {
-     //       var classroomList = await _classroomRepository.GetClassroomList();
-     //       if (classroomList?.Count > 0)
-     //       {
-     //           Students.Clear();
-     //           foreach (var classroom in classroomList)
-     //           {
-                    //if statement for checking studentID to spesific subject
-    //                Classrooms.Add(classroom);
+        /*
+        [ICommand]
+        public async void GetClassroomList()
+        {
+            var classroomList = await _classroomRepository.GetClassroomList();
+            if (classroomList?.Count > 0)
+            {
+                Students.Clear();
+                foreach (var classroom in classroomList)
+                {
+                   if statement for checking studentID to spesific subject
+                   Classrooms.Add(classroom);
     
-     //           }
-     //       }
-    //    }
-
-
-
-
-
+                }
+            }
+        }*/
     }
 }
 
