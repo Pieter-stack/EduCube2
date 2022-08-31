@@ -1,12 +1,12 @@
 <!-- PROJECT LOGO -->
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/Pieter-stack/EduCube2?color=darkgreen)
-![GitHub watchers](https://img.shields.io/github/watchers/Pieter-stack/EduCube2?color=darkgreen)
-![GitHub language count](https://img.shields.io/github/languages/count/Pieter-stack/EduCube2?color=darkgreen)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Pieter-stack/EduCube2?color=darkgreen)
+![GitHub repo size](https://img.shields.io/github/repo-size/Pieter-stack/EduCube2?color=%235938E8)
+![GitHub watchers](https://img.shields.io/github/watchers/Pieter-stack/Educube2?color=%235938E8)
+![GitHub language count](https://img.shields.io/github/languages/count/Pieter-stack/EduCube2?color=%235938E8)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Pieter-stack/EduCube2?color=%235938E8)
 
-<h6 align="center">Interactive Development 302</h6>
+<h6 align="center">Interactive Development 300</h6>
 <h6 align="center">Pieter Venter 200054</h6>
 <h6 align="center">Dylan Vanhout 190160</h6>
 <p align="center">
@@ -19,7 +19,7 @@
   <h3 align="center">EduCube2</h3>
 
   <p align="center">
-    This app is for companies that want to host golf tournaments aswell as for all the golf players to easily enter competitions, see the golf course and all the details and have a virtual scorecard while also being able to play competitions and get badges when users win competitions.
+    This desktop application is for universities that want an efficient way to administrate students, subjects and staff. The university management application allows university employees to manage the university administration system, by allowing the user to view the details of people and subjects, as well as register lecturers and studets for subjects. The management system also allows the user to view the total amount for salaries and tuition fees due each month.
 <br>
       <a href="https://github.com/Pieter-stack/EduCube2"><strong>Explore the docs »</strong></a>
       <br />
@@ -68,25 +68,31 @@
 ![image1][image1]
 
 ### Project Description
-This app is designed and developed for golfers to experience a better and faster way to to keep track of their score, enter competitions and have a virtual layout of the golf course in the palm of their hand.
+This app is designed and developed for university administrators to experience an effecient way of managaging their students, subjects staff and finances.
 
-This app features ranks and badges for the user to progress through the app, and companies can now host tournaments and competitions, or your work will also host a golf day for the office where there is a leaderboard to see the best player of the match and the top 3 player will rankup and the best player that wins the competition will get a badge. 
+This app features a data driven dashboard page which provides an overview of various analytics. This includes the total diploma & degree students, total academic & admin staff, total subjects and the funds pools figures.
 
-The app features an build in scorecard for the golf course where you can see an top doen view of each hole with some neccessary information to help the golfer make a decision. With filters you will always know what competitions you are entered in what your past competitions are and see the newest and upcoming competitions ready for you to join.
+This app features Student and Staff management pages which allow the Admin staff to view a person's details and subjects. The app also allows the registering of new students and staff. The Student and Staff management pages makes use of CRUD operations to Create, Read, Update and Delete records in the database. 
 
-For the companies, you can host tournaments and competitions spesific to what you like, have a all womans tournament or want to host a pensioners golf day, with Top Shots you can. For pro golfers there is ranking systems for users that want to play professional the competitions can be hosted on different rank and skill level.
+This app features a Subject management page which allow the Admin staff to view a subject's details. The app also allows the registering of new subject and makes use of CRUD operations to Create, Read, Update and Delete records in the database.
+
+This app features an build in seach functionality on the Student, Staff and Subject management pages. Which allows the Admin staff to search people by name or ID number.
+
+This app features a Funds Pool page which allows the Admin staff to recieve tuition fees and make salary payments which is done at the closing of the calendar month.
 
 ### Built With
 
 * [Visual Studio](https://visualstudio.microsoft.com/)
-* [Expo](https://expo.dev/)
-* [React Native](https://reactnative.dev/)
+* [.NET](https://docs.microsoft.com/en-us/dotnet/)
+* [MAUI](https://docs.microsoft.com/en-us/dotnet/maui/)
 * [GitHub](https://github.com/)
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="Images/expo.png" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Visual_Studio_Icon_2019.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Dotnet-bot.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/GitHub_Mark.png" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -95,101 +101,93 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-For development, the latest version of Visual Studio is required. The latest version can be downloaded from [Visual Studio](https://visualstudio.microsoft.com/)
+For development, the latest version of `Visual Studio` is required. The latest version can be downloaded from [Visual Studio](https://visualstudio.microsoft.com/)
+During the installation of Visual Studio make sure to select the following: `ASP.Net and web development`, `.NET Multi-platform App UI development` and `.NET desktop development`.
 
 ### Installation
- 
-1. Clone the repo
-```sh
-git clone https://github.com/Pieter-stack/EduCube2.git
-```
-2. Open the project
+Here are a couple of ways to clone this repo:
 
-  Locate and drag file into Visual studio code.
+1. Visual Studio </br>
 
-3. Install packages 
+`Visual Studio` -> `File` -> `Clone Repository` -> `Git`
+Enter the Git repository URL into the URL field and press the `Clone` button.
+  ```sh 
+  https://github.com/Pieter-Stack/EduCube2.git
+  ``` 
+2. Git Clone Repository
 
-```sh
-npm install
-```
+Run the following in the git command-line in the terminal:
+  ```sh
+   git clone https://github.com/Pieter-Stack/EduCube2.git
+  ```
+Open `Visual Studio` and select `File | Open` from the menu. Select `Open Project/Solution` and select the cloned directory and press `Open` button.
 
-4. Run project
+3. Install Dependencies </br>
+When you build the project for the first time. `Nuget Package Manager` will install any project dependencies and packages required.
 
-```sh
-Expo start
-```
+4. Implement Database </br>
+The database is an SQLite database which is created and stored locally. When starting the project for the first time there will be zero data to work with. You are required to add your own data for example: admin, staff, students and subjects.
 
-5. Download expo go
-
-Download expo go on android or IOS
-* [IOS](https://apps.apple.com/us/app/expo-go/id982107779)
-* [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_ZA&gl=US)
-
-5.1. You can also run IOS simulator or android emulator
-Android studio is required for android
-* [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQjwhqaVBhCxARIsAHK1tiP-KAFcvl19_xwV01RQoGHAutm6AxSajkqRUTqSQXHxTKGShHW3vYwaAgQ_EALw_wcB&gclsrc=aw.ds)
-```sh
-expo run:android
-```
-Xcode is required for ios
-* [Xcode](https://developer.apple.com/xcode/)
-```sh
-expo run:ios
-```
+5. Build and Run
 
 <!-- FEATURES AND FUNCTIONALITY-->
 ## Features and Functionality
 
 ### Features
 
-### Splash screen.
+### Login Screen.
 
 ![image10][image10]
 
-See the splash screen when you open up the app
+Admin Authentication and Validation allowing only Admin users to access the app.
 
-### Register and Login. 
+### Dashboard Screen. 
 
 ![image2][image2]
 
-Onboarding experience for register and the user can change his/her profile picture in the profile page
+Dashboard overview of student, staff and subject totals with dynamic charts.
 
-### Create Competitions and enter competitions.
+### Student Management Screen.
 
 ![image4][image4]
 
-The user can create and enter competitions with a husge selection of filters
+View, Create, Update and Delete student accounts and assing subjects to each student, as well as search a student by name or ID number.
 
-### Golf courses.
+### Staff Management Screen.
 
 ![image3][image3]
 
-See top down view of more than 15 golf courses in v1.0 and input your score in the scorecard
+View, Create, Update and Delete staff accounts as well as search by name or ID number.
 
-### Where do you stand on the leaderboard.
+### Subject Management Screen.
 
 ![image6][image6]
 
-With a realtime leaderboard the users can see exactly how they move up or down on the leaderboard
+Admin user can view, create, update and delete subjects.
 
-### See your badges, past competitions.
+### Funds Management Screen.
 
 ![image5][image5]
 
-You can see all your badges that you won and also see your past competitions and change your profile picture
+Admin user can manage the fund pool by processing tuition fees and staff salaries at the end of each month.
 
 
-### Artwork and designs created by me
+### Artwork and designs created by Pieter and Dylan.
 
-The artwork was created with Figma.
+Figma was used to collaborate and design the user interfaces.
 
 ### Functionality
 
-* `Scorecard` can be found in golf courses where the user has a digital scorecard.
-* `Leaderboard` see your progress as you progress.
-* `Realtime data` see the competitions being added in seconds and with a live leaderboard you won't miss out on the action.
-* `Register and login` you can register and login with an account.
-* `Push notifications` are there to notify the users of important information.
+* `Login Screen` administration staff are able to log on to the system with their email & password and log off of the system.
+* `Login Screen` includes authentication validation.
+* `Dashboard Screen` is the first screen the user will see when logging on to the system.
+* `Dashboard Screen` has a summary of the data on the system including the following: Total Diploma Students & Degree Students, Total Academic Staff & Admin Staff, Total Subjects, and the Funds Pool.
+* `Student Management Screen` the user is able to see all the students, edit the information of a student and add a new student.
+* `Subject Management Screen` the user is able to see all the subjects, edit the information of a subject, add a new subject and assign students and lecturer to a subject.
+* `Staff Management Screen` the user is able to view all the academic and administration staff, edit the information of all staff members and add new staff members.
+* `Funds Screen` the user is able to view the total salaries for each month, view the total income student tuition fees.
+* `Funds Screen` the user is able to close off a month: collect the student fees and pay staff members and then start a new month.
+* `Search` functionality implement on the Student, Staff and Subject pages.
 
 <!-- CONCEPT PROCESS -->
 ## Concept Process
@@ -204,7 +202,7 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ![image8][image8]
 
-### User-flow
+### User-flow Diagram
 
 ![image9][image9]
 
@@ -216,14 +214,14 @@ The `Development Process` is the technical implementations and functionality don
 ### Implementation Process
 
 #### Design Architecture
-`React native` to design the pages used in EduCube2.
-
+* `.NET MAUI` is a cross-platform framework for creating native mobile and desktop apps with `C#` and `XAML`.
+* `MVVM` (Model-View-ViewModel) software desing pattern used to seperate the program logic and user interface controls.
 #### Highlights
 
-* One highlight was to `research`  golf the sport and it was a really popular sport.
-* The `UI/UX design` was to help golfers to easily input scores and have companies host competitions.
-* The best part was to load the app onto a `real device` and being able to have it on `android` and `IOS`.
-* ` Creating` a huge project and completing the brief and also adding a lot more functionality within the app that the brief didn't require.
+* 
+* 
+* 
+* 
 
 #### Challenges
 
@@ -234,9 +232,9 @@ The `Reviews and Testing` consists of `in class`, reviews.
 
 #### Future Implementation
 
-* Add `admin portal` to the app.
-* Have companies `register` to host competitions.
-* Improve static `scorecard`.
+* 
+* 
+* 
 
 <!-- MOCKUPS -->
 ## Final Outcome
@@ -250,7 +248,7 @@ The `Reviews and Testing` consists of `in class`, reviews.
 
 To see the promotional video, click below:
 
-[View Promotional Video](https://www.youtube.com/watch?v=vvu9OxefnRk)
+[View Promotional Video](https://www.youtube.com/)
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -272,6 +270,7 @@ Contributions are what make the open source community such an amazing place to b
 ## Authors
 
 * **Pieter Venter** - [PieterVenter](https://github.com/Pieter-stack)
+* **Dylan Vanhout** - [DylanVanhout](https://github.com/hellodvh)
 
 <!-- LICENSE -->
 ## License
@@ -282,13 +281,14 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 ## Contact
 
 * **Pieter Venter**  - pieterven12@gmail.com
+* **Dylan Vanhout**  - 190160@virtualwindow.co.za
 * **Project Link** - https://github.com/Pieter-stack/EduCube2
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [Expo](https://expo.dev/)
-* [Mockups](https://www.freepik.com)
+* [Microsoft](https://www.microsoft.com/)
+* [Mockups](https://www.freepik.com/free-psd/desktop-screen-with-website-presentation-mockup-isolated_23126508.htm#query=slides%20mockup%20screen%20mockup&position=13&from_view=search)
 * [Lecturer](https://github.com/ArmandPret)
 
 
