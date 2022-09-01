@@ -22,37 +22,59 @@
         <mynamespace:Navbar/>
 
         <!--Main Container-->
-        <Frame Grid.Column="1" BackgroundColor="Transparent" BorderColor="Transparent">
-            <Grid ColumnSpacing="30" RowSpacing="30">
-                <!--New Grid Definitions-->
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1.5*"/>
-                    <RowDefinition Height="2.8*"/>
-                    <RowDefinition Height="2*"/>
-                </Grid.RowDefinitions>
+            <Frame Grid.Column="1"
+                   BackgroundColor="Transparent"
+                   BorderColor="Transparent">
+                <Grid ColumnSpacing="30" 
+                      RowSpacing="30">
+                    <!--New Grid Definitions-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="2.8*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
 
-                <!--Grid Content-->
-                <Frame Grid.Column="0" Grid.Row="0" BackgroundColor="#120B29" BorderColor="Transparent"  CornerRadius="30" >
-                    <Grid>
+                    <!--Grid Content-->
+                    <Frame Grid.Column="0"
+                           Grid.Row="0" 
+                           BackgroundColor="#120B29"
+                           BorderColor="Transparent"
+                           CornerRadius="30" >
+                        <Grid>
                             <!--New Grid Definitions-->
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1.5*"/>
                                 <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
-                            <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
+                            <Frame  Grid.Row="0"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="Transparent"
+                                    CornerRadius="0"
+                                    Margin="-20,-20,-20,0" >
                                 <VerticalStackLayout>
-                                    <Label Text="Staff" TextColor="White" FontSize="20" FontFamily="Roboto-Regular"/>
-                                    <Label Text="{Binding TotalStaffText}" TextColor="White" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
+                                    <Label Text="Admin"
+                                           TextColor="White"
+                                           FontSize="20"
+                                           FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding TotalAdminText}"
+                                           TextColor="White"
+                                           FontSize="60"
+                                           FontAttributes="Bold"
+                                           FontFamily="Roboto-Regular"/>
                                 </VerticalStackLayout>
                             </Frame>
 
-                            <Frame  Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,0,-20,-20"  >
+                            <Frame  Grid.Row="1"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="Transparent" 
+                                    CornerRadius="0" 
+                                    Margin="-20,0,-20,-20"  >
                                 <lvc:CartesianChart
                                     Series="{Binding LineOne}"
                                     XAxes="{Binding XAxes}"
@@ -62,23 +84,42 @@
                                 </lvc:CartesianChart>
                             </Frame>
                         </Grid>
-                </Frame>
+                    </Frame>
 
-                <Frame Grid.Column="1" Grid.Row="0" BackgroundColor="#F2F1F8" BorderColor="Transparent" CornerRadius="30" >
+                    <Frame Grid.Column="1"
+                           Grid.Row="0"
+                           BackgroundColor="#F2F1F8"
+                           BorderColor="Transparent"
+                           CornerRadius="30" >
                         <Grid>
                             <!--New Grid Definitions-->
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1.5*"/>
                                 <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
-                            <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
+                            <Frame  Grid.Row="0"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="Transparent" 
+                                    CornerRadius="0"
+                                    Margin="-20,-20,-20,0" >
                                 <VerticalStackLayout>
-                                    <Label Text="Students" TextColor="#120B29" FontSize="20" FontFamily="Roboto-Regular"/>
-                                    <Label Text="{Binding TotalStudentText}" TextColor="#120B29" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
+                                    <Label Text="Students"
+                                           TextColor="#120B29" 
+                                           FontSize="20"
+                                           FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding TotalStudentText}"
+                                           TextColor="#120B29" 
+                                           FontSize="60" 
+                                           FontAttributes="Bold"
+                                           FontFamily="Roboto-Regular"/>
                                 </VerticalStackLayout>
                             </Frame>
 
-                            <Frame  Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,0,-20,-20"  >
+                            <Frame  Grid.Row="1"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="Transparent" 
+                                    CornerRadius="0" 
+                                    Margin="-20,0,-20,-20"  >
                                 <lvc:CartesianChart
                                     Series="{Binding LineTwo}"
                                     XAxes="{Binding XAxes}"
@@ -90,21 +131,40 @@
                         </Grid>
                     </Frame>
 
-                <Frame Grid.Column="2" Grid.Row="0" BackgroundColor="#F2F1F8" BorderColor="Transparent" CornerRadius="30" >
+                    <Frame Grid.Column="2"
+                           Grid.Row="0"
+                           BackgroundColor="#F2F1F8"
+                           BorderColor="Transparent" 
+                           CornerRadius="30" >
                         <Grid>
                             <!--New Grid Definitions-->
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1.5*"/>
                                 <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
-                            <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
+                            <Frame  Grid.Row="0"
+                                    BackgroundColor="Transparent" 
+                                    BorderColor="Transparent" 
+                                    CornerRadius="0"
+                                    Margin="-20,-20,-20,0" >
                                 <VerticalStackLayout>
-                                    <Label Text="Teachers" TextColor="#120B29" FontSize="20" FontFamily="Roboto-Regular"/>
-                                    <Label Text="{Binding TotalLecturerText}" TextColor="#120B29" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
+                                    <Label Text="Teachers" 
+                                           TextColor="#120B29" 
+                                           FontSize="20" 
+                                           FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding TotalLecturerText}"
+                                           TextColor="#120B29"
+                                           FontSize="60"
+                                           FontAttributes="Bold"
+                                           FontFamily="Roboto-Regular"/>
                                 </VerticalStackLayout>
                             </Frame>
 
-                            <Frame  Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,0,-20,-20"  >
+                            <Frame  Grid.Row="1"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="Transparent" 
+                                    CornerRadius="0"
+                                    Margin="-20,0,-20,-20"  >
                                 <lvc:CartesianChart
                                     Series="{Binding LineThree}"
                                     XAxes="{Binding XAxes}"
@@ -116,21 +176,40 @@
                         </Grid>
                     </Frame>
 
-                <Frame Grid.Column="3" Grid.Row="0" BackgroundColor="#F2F1F8" BorderColor="Transparent" CornerRadius="30" >
+                    <Frame Grid.Column="3" 
+                           Grid.Row="0" 
+                           BackgroundColor="#F2F1F8" 
+                           BorderColor="Transparent" 
+                           CornerRadius="30" >
                         <Grid>
                             <!--New Grid Definitions-->
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1.5*"/>
                                 <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
-                            <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
+                            <Frame  Grid.Row="0"
+                                    BackgroundColor="Transparent" 
+                                    BorderColor="Transparent" 
+                                    CornerRadius="0"
+                                    Margin="-20,-20,-20,0" >
                                 <VerticalStackLayout>
-                                    <Label Text="Admin" TextColor="#120B29" FontSize="20" FontFamily="Roboto-Regular"/>
-                                    <Label Text="{Binding TotalAdminText}" TextColor="#120B29" FontSize="60" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
+                                    <Label Text="Subjects"
+                                           TextColor="#120B29" 
+                                           FontSize="20" 
+                                           FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding SubjectsText}"
+                                           TextColor="#120B29"
+                                           FontSize="60" 
+                                           FontAttributes="Bold" 
+                                           FontFamily="Roboto-Regular"/>
                                 </VerticalStackLayout>
                             </Frame>
 
-                            <Frame  Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,0,-20,-20"  >
+                            <Frame  Grid.Row="1" 
+                                    BackgroundColor="Transparent"
+                                    BorderColor="Transparent" 
+                                    CornerRadius="0"
+                                    Margin="-20,0,-20,-20"  >
                                 <lvc:CartesianChart
                                     Series="{Binding LineFour}"
                                     XAxes="{Binding XAxes}"
@@ -142,48 +221,81 @@
                         </Grid>
                     </Frame>
 
-                <Frame Grid.ColumnSpan="4" Grid.Row="1" BorderColor="Transparent" BackgroundColor="Transparent" >
-                    <Grid ColumnSpacing="30">
-                        <!--New Grid Definitions-->
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1.5*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+                    <Frame Grid.ColumnSpan="4"
+                           Grid.Row="1"
+                           BorderColor="Transparent" 
+                           BackgroundColor="Transparent" >
+                        <Grid ColumnSpacing="30">
+                            <!--New Grid Definitions-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-                        <!--Grid Content-->
-                        <Frame Grid.Column="0" Grid.Row="0" BackgroundColor="#F2F1F8" BorderColor="Transparent" CornerRadius="30" Margin="-20,-20,0,-20" >
+                            <!--Grid Content-->
+                            <Frame Grid.Column="0"
+                                   Grid.Row="0" 
+                                   BackgroundColor="#F2F1F8"
+                                   BorderColor="Transparent" 
+                                   CornerRadius="30" 
+                                   Margin="-20,-20,0,-20" >
                                 <Grid>
                                     <!--New Grid Definitions-->
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="0.8*"/>
                                         <RowDefinition Height="2*"/>
                                     </Grid.RowDefinitions>
-                                    <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
+                                    <Frame  Grid.Row="0"
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent" 
+                                            CornerRadius="0"
+                                            Margin="-20,-20,-20,0" >
                                         <VerticalStackLayout >
-                                            <Label Text="Total Expenses 2022" TextColor="#828282" FontSize="16" FontFamily="Roboto-Regular"/>
-                                            <Label Text="{Binding TotalFundsText}" TextColor="#120B29" FontSize="40" FontAttributes="Bold" FontFamily="Roboto-Regular"/>
+                                            <Label Text="Total Individuals"
+                                                   TextColor="#828282" 
+                                                   FontSize="16"
+                                                   FontFamily="Roboto-Regular"/>
+                                            <Label Text="{Binding TotalUsersText}"
+                                                   TextColor="#120B29"
+                                                   FontSize="40"
+                                                   FontAttributes="Bold"
+                                                   FontFamily="Roboto-Regular"/>
                                         </VerticalStackLayout>
                                     </Frame>
 
-                                    <Frame  Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,0,-20,-20"  >
+                                    <Frame  Grid.Row="1" 
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent"
+                                            CornerRadius="0" 
+                                            Margin="-20,0,-20,-20"  >
                                         <lvc:CartesianChart
-                                    Series="{Binding BarOne}"
-                                            XAxes="{Binding XAxesBar}"
-                                            AnimationsSpeed="00:00:01.500"
-                                            EasingFunction="{Binding Source={x:Static lvcore:EasingFunctions.EaseInOut}}">
+                                    Series="{Binding Series}"
+                                    XAxes="{Binding XAxes}"
+                                    YAxes="{Binding YAxes}">
                                         </lvc:CartesianChart>
                                     </Frame>
                                 </Grid>
                             </Frame>
 
-                        <Frame Grid.Column="1" Grid.Row="0" BackgroundColor="#F2F1F8" BorderColor="Transparent" CornerRadius="30" Margin="0,-20,-20,-20" >
+                            <Frame Grid.Column="1"
+                                   Grid.Row="0"
+                                   BackgroundColor="#F2F1F8"
+                                   BorderColor="Transparent"
+                                   CornerRadius="30" 
+                                   Margin="0,-20,-20,-20" >
                                 <VerticalStackLayout>
-                                    <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
-                                        <VerticalStackLayout BackgroundColor="Transparent" Margin="-10,-10,-10,-10">
-                                            <Image Source="backdropadmin.png" Aspect="Fill"/>
+                                    <Frame  Grid.Row="0" 
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent" 
+                                            CornerRadius="0" 
+                                            Margin="-20,-20,-20,0" >
+                                        <VerticalStackLayout BackgroundColor="Transparent"
+                                                             Margin="-10,-10,-10,-10">
+                                            <Image Source="backdropadmin.png" 
+                                                   Aspect="Fill"/>
                                             <Border 
                                                Padding="8"
                                                Stroke="#F2F1F8"
@@ -197,18 +309,37 @@
                                                     <RoundRectangle CornerRadius="20,20,20,20"/>
                                                 </Border.StrokeShape>
                                                 <StackLayout>
-                                                    <Image Source="profilepic.png" Aspect="Fill"/>
-                                                    
+                                                    <Image Source="{Binding ProfilePic}" 
+                                                           Aspect="Fill"/>
+
                                                 </StackLayout>
                                             </Border>
                                         </VerticalStackLayout>
                                     </Frame>
 
-                                    <Frame  Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,0,-20,-20">
+                                    <Frame  Grid.Row="1"
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent"
+                                            CornerRadius="0"
+                                            Margin="-20,0,-20,-20">
                                         <HorizontalStackLayout>
-                                            <Label Text="{Binding FirstNameText}" FontSize="46" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="20,-20,0,0" TextColor="#120B29"/>
-                                            <Label Text="{Binding LastNameText}" FontSize="46" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="20,-20,0,0" TextColor="#120B29"/>
-                                            <Label Text="Admin"  FontSize="42"  FontFamily="Roboto-Bold" Margin="20,-17,0,0" TextColor="#120B29"/>
+                                            <Label Text="{Binding FirstNameText}"
+                                                   FontSize="46"
+                                                   FontAttributes="Bold" 
+                                                   FontFamily="Roboto-Bold"
+                                                   Margin="20,-20,0,0" 
+                                                   TextColor="#120B29"/>
+                                            <Label Text="{Binding LastNameText}" 
+                                                   FontSize="46" 
+                                                   FontAttributes="Bold"
+                                                   FontFamily="Roboto-Bold"
+                                                   Margin="20,-20,0,0" 
+                                                   TextColor="#120B29"/>
+                                            <Label Text="Admin" 
+                                                   FontSize="42" 
+                                                   FontFamily="Roboto-Bold"
+                                                   Margin="20,-17,0,0" 
+                                                   TextColor="#120B29"/>
                                         </HorizontalStackLayout>
                                     </Frame>
                                 </VerticalStackLayout>
@@ -218,40 +349,60 @@
 
 
 
-                    </Grid>
+                        </Grid>
 
-                </Frame>
-
-
+                    </Frame>
 
 
-                <Frame Grid.ColumnSpan="4" Grid.Row="2" BorderColor="Transparent" BackgroundColor="Transparent"  >
-                    <Grid ColumnSpacing="30">
-                        <!--New Grid Definitions-->
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
 
-                        <!--Grid Content-->
-                        <Frame Grid.Column="0" Grid.Row="0" BackgroundColor="#F2F1F8" BorderColor="Transparent" CornerRadius="30" Margin="-20,-20,0,-20" >
+
+                    <Frame Grid.ColumnSpan="4"
+                           Grid.Row="2"
+                           BorderColor="Transparent"
+                           BackgroundColor="Transparent"  >
+                        <Grid ColumnSpacing="30">
+                            <!--New Grid Definitions-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <!--Grid Content-->
+                            <Frame Grid.Column="0" 
+                                   Grid.Row="0" 
+                                   BackgroundColor="#F2F1F8"
+                                   BorderColor="Transparent" 
+                                   CornerRadius="30"
+                                   Margin="-20,-20,0,-20" >
                                 <Grid>
                                     <!--New Grid Definitions-->
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="1*"/>
                                         <RowDefinition Height="2*"/>
                                     </Grid.RowDefinitions>
-                                    <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
+                                    <Frame  Grid.Row="0"
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent"
+                                            CornerRadius="0"
+                                            Margin="-20,-20,-20,0" >
                                         <VerticalStackLayout>
-                                            <Label Text="Students" TextColor="#828282" FontSize="46" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                            <Label Text="Students"
+                                                   TextColor="#828282" 
+                                                   FontSize="46"
+                                                   FontFamily="Roboto-Regular"
+                                                   FontAttributes="Bold"/>
                                         </VerticalStackLayout>
                                     </Frame>
 
-                                    <Frame  Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,0,-20,-20"  >
+                                    <Frame  Grid.Row="1" 
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent" 
+                                            CornerRadius="0" 
+                                            Margin="-20,0,-20,-20"  >
                                         <lvc:PieChart
                                     Series="{Binding PieOne}" Margin="-20,-20,-20,-20"
                                             AnimationsSpeed="00:00:00.800" 
@@ -261,20 +412,37 @@
                                 </Grid>
                             </Frame>
 
-                        <Frame Grid.Column="1" Grid.Row="0" BackgroundColor="#F2F1F8" BorderColor="Transparent" CornerRadius="30" Margin="0,-20,0,-20" >
+                            <Frame Grid.Column="1" 
+                                   Grid.Row="0" 
+                                   BackgroundColor="#F2F1F8"
+                                   BorderColor="Transparent"
+                                   CornerRadius="30" 
+                                   Margin="0,-20,0,-20" >
                                 <Grid>
                                     <!--New Grid Definitions-->
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="1*"/>
                                         <RowDefinition Height="2*"/>
                                     </Grid.RowDefinitions>
-                                    <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
+                                    <Frame  Grid.Row="0" 
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent" 
+                                            CornerRadius="0" 
+                                            Margin="-20,-20,-20,0" >
                                         <VerticalStackLayout>
-                                            <Label Text="Staff" TextColor="#828282" FontSize="46" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                            <Label Text="Staff"
+                                                   TextColor="#828282"
+                                                   FontSize="46" 
+                                                   FontFamily="Roboto-Regular" 
+                                                   FontAttributes="Bold"/>
                                         </VerticalStackLayout>
                                     </Frame>
 
-                                    <Frame  Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,0,-20,-20"  >
+                                    <Frame  Grid.Row="1" 
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent" 
+                                            CornerRadius="0" 
+                                            Margin="-20,0,-20,-20"  >
                                         <lvc:PieChart
                                     Series="{Binding PieTwo}" Margin="-20,-20,-20,-20"  
                                             AnimationsSpeed="00:00:01.000" 
@@ -284,20 +452,37 @@
                                 </Grid>
                             </Frame>
 
-                        <Frame Grid.Column="2" Grid.Row="0" BackgroundColor="#F2F1F8" BorderColor="Transparent" CornerRadius="30" Margin="0,-20,-20,-20" >
+                            <Frame Grid.Column="2"
+                                   Grid.Row="0" 
+                                   BackgroundColor="#F2F1F8"
+                                   BorderColor="Transparent"
+                                   CornerRadius="30" 
+                                   Margin="0,-20,-20,-20" >
                                 <Grid>
                                     <!--New Grid Definitions-->
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="1*"/>
                                         <RowDefinition Height="2*"/>
                                     </Grid.RowDefinitions>
-                                    <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,-20,-20,0" >
+                                    <Frame  Grid.Row="0"
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent"
+                                            CornerRadius="0"
+                                            Margin="-20,-20,-20,0" >
                                         <VerticalStackLayout>
-                                            <Label Text="Funds Pool" TextColor="#828282" FontSize="46" FontFamily="Roboto-Regular" FontAttributes="Bold"/>
+                                            <Label Text="Funds Pool"
+                                                   TextColor="#828282"
+                                                   FontSize="46"
+                                                   FontFamily="Roboto-Regular"
+                                                   FontAttributes="Bold"/>
                                         </VerticalStackLayout>
                                     </Frame>
 
-                                    <Frame  Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="-20,0,-20,-20"  >
+                                    <Frame  Grid.Row="1"
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent"
+                                            CornerRadius="0"
+                                            Margin="-20,0,-20,-20"  >
                                         <lvc:PieChart
                                     Series="{Binding PieThree}" Margin="-20,-20,-20,-20"
                                             AnimationsSpeed="00:00:01.200" 
@@ -306,29 +491,13 @@
                                     </Frame>
                                 </Grid>
                             </Frame>
+                        </Grid>
+                    </Frame>
 
-
-
-                    </Grid>
-
-
-
-
-
-                </Frame>
-
-            </Grid>
-        </Frame>
-
-
-
-
-
-        <!--- Reminder for later work with grids on all pages and have row and column defined-->
-    </Grid>
+                </Grid>
+            </Frame>
+        </Grid>
     </ContentPage.Content> 
     
-
 </ContentPage>
     
-<!-- :::::  xmlns:mynamespace="clr-namespace:EduCube" :::::::   Add die om componets in te sit in jou pages-->

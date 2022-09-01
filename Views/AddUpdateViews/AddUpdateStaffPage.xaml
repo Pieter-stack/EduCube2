@@ -6,11 +6,12 @@
              xmlns:models="clr-namespace:EduCube.Models"
              x:DataType="viewModel:AddUpdateStaffViewModel">
 
+
+    <!--New Grid Definitions-->
     <Grid>
-        <!-- Grid Definitions -->
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="6*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -19,106 +20,356 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Frame Grid.RowSpan="3" Grid.ColumnSpan="3" BackgroundColor="Transparent" CornerRadius="0">
-            <Image Source="background.png" Aspect="AspectFill" Margin="-20,-20,-20,-20"/>
+        <!--Main Container-->
+        <Frame Grid.RowSpan="3" 
+               Grid.ColumnSpan="3" 
+               BackgroundColor="Transparent"
+               CornerRadius="0">
+            <Image Source="background.png"
+                   Aspect="AspectFill"
+                   Margin="-20,-20,-20,-20"/>
         </Frame>
-
-        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" Opacity="0.5" BorderColor="Transparent" CornerRadius="30" Margin="0,0,0,40"/>
-
-        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" Opacity="1" BorderColor="Transparent" CornerRadius="30">
-
+        <!--Blur Container-->
+        <Frame Grid.Row="1" 
+               Grid.Column="1" 
+               BackgroundColor="White"
+               Opacity="0.35"
+               BorderColor="Transparent"
+               CornerRadius="30"
+               Margin="0,0,0,40"/>
+        <Frame Grid.Row="1"
+               Grid.Column="1" 
+               BackgroundColor="Transparent"
+               Opacity="1"
+               BorderColor="Transparent"
+               CornerRadius="30">
+            <!--Entries Container-->
             <VerticalStackLayout>
-                <Label Text="Update/Edit Staff" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="0,20,0,20"/>
-                <Frame BackgroundColor="Transparent" BorderColor="Transparent">
+                <Label Text="Add/Edit Staff"
+                       HorizontalOptions="Center" 
+                       FontSize="36" FontAttributes="Bold"
+                       TextColor="White"
+                       FontFamily="Roboto-Regular"
+                       Margin="0,20,0,20"></Label>
+                <Border 
+                     Padding="2"
+                     Stroke="White"
+                     StrokeThickness="2"
+                     Background="Transparent"
+                     HorizontalOptions="Center"
+                     Margin="0,0,0,0" >
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20,20,20,20"/>
+                    </Border.StrokeShape>
+                    <Image Source="{Binding Source={x:Reference pickerimg}, Path=SelectedItem}" 
+                           HeightRequest="120"
+                           WidthRequest="120"
+                           Margin="0,0,10,0"/>
+                </Border>
+                <Frame BackgroundColor="Transparent"
+                       BorderColor="Transparent">
                     <ScrollView MaximumHeightRequest="680">
                         <VerticalStackLayout>
-                            <!-- Staff PersonalID Number -->
-                            <Label Text="Staff ID Number" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
+                            <HorizontalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="First Name" 
+                                           HorizontalOptions="Start"
+                                           FontSize="18"
+                                           FontAttributes="Bold" 
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular" 
+                                           Margin="10,10,0,10"></Label>
+                                    <Border 
+                                           Padding="2"
+                                           Stroke="White"
+                                           StrokeThickness="2"
+                                           Background="Transparent"
+                                           HorizontalOptions="StartAndExpand"
+                                           Margin="0,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding StaffDetail.StaffFirstName}" 
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White" 
+                                               MinimumWidthRequest="270"
+                                               HeightRequest="10" 
+                                               FontSize="12"></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Last Name" 
+                                           HorizontalOptions="Start"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="40,10,0,10"></Label>
+                                    <Border 
+                                           Padding="2"
+                                           Stroke="White"
+                                           StrokeThickness="2"
+                                           Background="Transparent"
+                                           HorizontalOptions="StartAndExpand"
+                                           Margin="30,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding StaffDetail.StaffLastName}" 
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="270" ></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Personal ID Number"
+                                           HorizontalOptions="Start"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="10,10,0,10"></Label>
+                                    <Border 
+                                           Padding="2"
+                                           Stroke="White"
+                                           StrokeThickness="2"
+                                           Background="Transparent"
+                                           HorizontalOptions="StartAndExpand"
+                                           Margin="0,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding StaffDetail.StaffPersonalID}"
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="270" ></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Email"
+                                           HorizontalOptions="Start"
+                                           FontSize="18"
+                                           FontAttributes="Bold" 
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="40,10,0,10"></Label>
+                                    <Border 
+                                           Padding="2"
+                                           Stroke="White"
+                                           StrokeThickness="2"
+                                           Background="Transparent"
+                                           HorizontalOptions="StartAndExpand"
+                                           Margin="30,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding StaffDetail.StaffEmail}"
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="270" ></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Role" 
+                                           HorizontalOptions="Start" 
+                                           FontSize="18" 
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular" 
+                                           Margin="10,10,0,10"></Label>
+                                    <Border 
+                                           Padding="2"
+                                           Stroke="White"
+                                           StrokeThickness="2"
+                                           Background="Transparent"
+                                           HorizontalOptions="StartAndExpand"
+                                           Margin="0,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Picker WidthRequest="270"
+                                    TextColor="White"
+                                    SelectedItem="{Binding  StaffDetail.StaffRole}">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>Admin</x:String>
+                                                    <x:String>Lecturer</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                        </Picker>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout>
+                                    <Label Text="Profile Image"
+                                           HorizontalOptions="Start"
+                                           FontSize="18" 
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="30,10,0,10"></Label>
+                                    <Border 
+                                       Padding="2"
+                                       Stroke="White"
+                                       StrokeThickness="2"
+                                       Background="Transparent"
+                                       HorizontalOptions="StartAndExpand"
+                                       Margin="30,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <HorizontalStackLayout>
+                                            <Picker WidthRequest="270"
+                                                    TextColor="White"
+                                                    SelectedItem="{Binding StaffDetail.StaffImage}" 
+                                                    x:Name="pickerimg">
+                                                <Picker.ItemsSource>
+                                                    <x:Array Type="{x:Type x:String}" >
+                                                        <x:String>profilepic.png</x:String>
+                                                        <x:String>profilepictwo.png</x:String>
+                                                        <x:String>profilepicthree.png</x:String>
+                                                        <x:String>profilepicfour.png</x:String>
+                                                    </x:Array>
+                                                </Picker.ItemsSource>
+                                            </Picker>
+                                        </HorizontalStackLayout>
+                                    </Border>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Label Text="Hours:"
+                                               HorizontalOptions="Start" 
+                                               FontSize="18" 
+                                               FontAttributes="Bold" 
+                                               TextColor="White" 
+                                               FontFamily="Monserrat-Regular"
+                                               Margin="10,10,0,10"></Label>
+                                        <Label Text="{Binding Totalhours}" 
+                                               HorizontalOptions="Start"
+                                               FontSize="16" 
+                                               FontAttributes="None" 
+                                               TextColor="White"
+                                               FontFamily="Monserrat-Regular"
+                                               Margin="10,12,0,10"></Label>
+                                        <Label Text="Total"
+                                               HorizontalOptions="Start"
+                                               FontSize="16"
+                                               FontAttributes="None" 
+                                               TextColor="White"
+                                               FontFamily="Monserrat-Regular"
+                                               Margin="5,12,0,10"></Label>
+                                    </HorizontalStackLayout>
+                                    <Border 
+                                           Padding="2"
+                                           Stroke="White"
+                                           StrokeThickness="2"
+                                           Background="Transparent"
+                                           HorizontalOptions="StartAndExpand"
+                                           Margin="0,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+
+                                        <Entry Text="{Binding StaffDetail.StaffHours}"
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="270"></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Label Text="Salary:" 
+                                               HorizontalOptions="Start"
+                                               FontSize="18"
+                                               FontAttributes="Bold"
+                                               TextColor="White"
+                                               FontFamily="Monserrat-Regular"
+                                               Margin="30,10,0,10"></Label>
+                                        <Label Text="R"
+                                               HorizontalOptions="Start"
+                                               FontSize="16"
+                                               FontAttributes="None" 
+                                               TextColor="White"
+                                               FontFamily="Monserrat-Regular" 
+                                               Margin="5,12,0,0"></Label>
+                                        <Label Text="{Binding TotalSalary}" 
+                                               HorizontalOptions="Start"
+                                               FontSize="16" 
+                                               FontAttributes="None" 
+                                               TextColor="White"
+                                               FontFamily="Monserrat-Regular"
+                                               Margin="3,12,0,10"></Label>
+                                        <Label Text="Total"
+                                               HorizontalOptions="Start"
+                                               FontSize="16" 
+                                               FontAttributes="None"
+                                               TextColor="White"
+                                               FontFamily="Monserrat-Regular"
+                                               Margin="5,12,0,10"></Label>
+                                    </HorizontalStackLayout>
+                                    <Border 
+                                           Padding="2"
+                                           Stroke="White"
+                                           StrokeThickness="2"
+                                           Background="Transparent"
+                                           HorizontalOptions="StartAndExpand"
+                                           Margin="20,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding StaffDetail.StaffSalary}"
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="270"></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="Password"
+                                   HorizontalOptions="Start" 
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="White" 
+                                   FontFamily="Monserrat-Regular"
+                                   Margin="10,10,0,10"></Label>
+                            <Border 
+                                   Padding="2"
+                                   Stroke="White"
+                                   StrokeThickness="2"
+                                   Background="Transparent"
+                                   HorizontalOptions="StartAndExpand"
+                                            Margin="0,0,0,0" >
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <!-- Staff PersonalID Number Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffPersonalID}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"/>
+                                <Entry Text="{Binding StaffDetail.StaffPassword}" 
+                                       FontFamily="Monserrat-Regular"
+                                       TextColor="White"
+                                       MinimumWidthRequest="900"
+                                       IsPassword="True"></Entry>
                             </Border>
-
-                            <!-- Staff FirstName -->
-                            <Label Text="First Name" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff FirstName Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffFirstName}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Staff LastName -->
-                            <Label Text="Last Name" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff LastName Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffLastName}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Staff Email -->
-                            <Label Text="Email" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff Email Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffEmail}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Staff Role -->
-                            <Label Text="Role" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff Role Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffRole}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Staff Hours -->
-                            <Label Text="Hours" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff Hours Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffHours}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Staff Salary -->
-                            <Label Text="Salary" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff Hours Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffSalary}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Staff Image -->
-                            <Label Text="Profile Image" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="10,10,0,10"/>
-                            <Border Padding="2" Stroke="White" StrokeThickness="3" Background="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <!-- Staff Image Entry -->
-                                <Entry Text="{Binding StaffDetail.StaffImage}" FontFamily="Roboto-Regular" TextColor="White" MinimumWidthRequest="900"/>
-                            </Border>
-
-                            <!-- Update Staff Button -->
-                            <Button Command="{Binding AddUpdateStaffCommand}" Margin="50,35,50,0" BackgroundColor="#FC6923" TextColor="White" CornerRadius="35" Padding="20" Text="Save" FontFamily="Roboto-Regular" FontSize="15"/>
-
                         </VerticalStackLayout>
                     </ScrollView>
                 </Frame>
+                <Button Command="{Binding AddUpdateStaffCommand}" 
+                        Margin="50,85,50,0"
+                        BackgroundColor="#FC6923"
+                        TextColor="White" 
+                        CornerRadius="35" 
+                        Padding="20" 
+                        Text="Save" 
+                        FontFamily="Monserrat-Regular"
+                        FontSize="15"></Button>
             </VerticalStackLayout>
         </Frame>
     </Grid>
-</ContentPage> 
+</ContentPage>
+
+
+
+

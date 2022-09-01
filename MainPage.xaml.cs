@@ -4,11 +4,22 @@ namespace EduCube;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage(LoginViewModel vm)
+    //link viewmodel to view
+    private LoginViewModel _viewModel;
+    public MainPage(LoginViewModel vm)
 	{
 		InitializeComponent();
-		this.BindingContext = vm;
+        _viewModel = vm;
+        //bind viewmodel
+        this.BindingContext = vm;
 	}
+
+    protected override void OnAppearing()
+    {
+        //run getsubjects when page loads
+        base.OnAppearing();
+        _viewModel.GoToDashboardCommand.Execute(null);
+    }
 
 }
 

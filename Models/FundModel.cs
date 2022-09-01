@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace EduCube.Models
 {
+    //initialize table
     [Table("funds")]
     public class FundModel
     {
+        //primary key as an ID
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int FundsID { get; set; }
 
@@ -21,5 +23,9 @@ namespace EduCube.Models
 
         [MaxLength(255)]
         public int TotalSalary { get; set; }
+
+        [MaxLength(255)]
+        public string Date { get; set; }
+
     }
 }

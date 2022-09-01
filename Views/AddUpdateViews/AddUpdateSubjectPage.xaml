@@ -7,9 +7,10 @@
              x:DataType="viewModel:AddUpdateSubjectViewModel">
 
     <Grid>
+        <!--New Grid Definitions-->
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="6*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -17,217 +18,373 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-
-        <Frame Grid.RowSpan="3" Grid.ColumnSpan="3" BackgroundColor="Transparent" CornerRadius="0">
-            <Image Source="background.png" Aspect="AspectFill" Margin="-20,-20,-20,-20"/>
+        <!--Main Container-->
+        <Frame Grid.RowSpan="3"
+               Grid.ColumnSpan="3"
+               BackgroundColor="Transparent" 
+               CornerRadius="0">
+            <Image Source="background.png"
+                   Aspect="AspectFill" 
+                   Margin="-20,-20,-20,-20"/>
         </Frame>
-
-
-        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" Opacity="0.5" BorderColor="Transparent" CornerRadius="30" Margin="0,0,0,40"/>
-
-        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" Opacity="1" BorderColor="Transparent" CornerRadius="30">
-          
-                <VerticalStackLayout>
-                <Label Text="Add/Edit Subjects" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" TextColor="White" FontFamily="Roboto-Regular" Margin="0,20,0,20"></Label>
-
-                <Frame BackgroundColor="Transparent" BorderColor="Transparent">
+        <!--Blur Container-->
+        <Frame Grid.Row="1"
+               Grid.Column="1" 
+               BackgroundColor="White" 
+               Opacity="0.35"
+               BorderColor="Transparent"
+               CornerRadius="30"
+               Margin="0,0,0,40"/>
+        <Frame Grid.Row="1" 
+               Grid.Column="1" 
+               BackgroundColor="Transparent"
+               Opacity="1" 
+               BorderColor="Transparent"
+               CornerRadius="30">
+            <!--Entries Container-->
+            <VerticalStackLayout>
+                <Label Text="Add/Edit Subjects"
+                       HorizontalOptions="Center"
+                       FontSize="36"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       FontFamily="Roboto-Regular"
+                       Margin="0,20,0,20"></Label>
+                <Border 
+                     Padding="2"
+                     Stroke="White"
+                     StrokeThickness="2"
+                     Background="Transparent"
+                     HorizontalOptions="Center"
+                     Margin="0,0,0,0" >
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20,20,20,20"/>
+                    </Border.StrokeShape>
+                    <Image Source="{Binding Source={x:Reference pickerimg}, Path=SelectedItem}" 
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           Margin="10,10,10,10"/>
+                </Border>
+                <Frame BackgroundColor="Transparent" 
+                       BorderColor="Transparent">
                     <ScrollView MaximumHeightRequest="680">
                         <VerticalStackLayout>
-                            <Label Text="Subject Title" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectTitle}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900" HeightRequest="10" FontSize="12"></Entry>
-                            </Border>
+                            <HorizontalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Subject Title" 
+                                           HorizontalOptions="Start" 
+                                           FontSize="18"
+                                           FontAttributes="Bold" 
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="10,10,0,10"></Label>
+                                    <Border 
+                                           Padding="2"
+                                           Stroke="White"
+                                           StrokeThickness="2"
+                                           Background="Transparent"
+                                           HorizontalOptions="StartAndExpand"
+                                           Margin="0,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding SubjectDetail.SubjectTitle}"
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="270" 
+                                               HeightRequest="10"
+                                               FontSize="12"></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Subject Code" 
+                                           HorizontalOptions="Start"
+                                           FontSize="18"
+                                           FontAttributes="Bold" 
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="40,10,0,10"></Label>
+                                    <Border 
+                                           Padding="2"
+                                           Stroke="White"
+                                           StrokeThickness="2"
+                                           Background="Transparent"
+                                           HorizontalOptions="StartAndExpand"
+                                           Margin="30,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding SubjectDetail.SubjectCode}" 
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="270" ></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Subject Lecturer"
+                                           HorizontalOptions="Start"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="White" 
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="10,10,0,10"></Label>
+                                    <Border 
+                                           Padding="2"
+                                           Stroke="White"
+                                           StrokeThickness="2"
+                                           Background="Transparent"
+                                           HorizontalOptions="StartAndExpand"
+                                           Margin="0,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
 
-                            <Label Text="Subject Code" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectCode}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
-                            </Border>
-
-                            
-                            <Label Text="Subject Lecturer" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-
-                                <Picker x:Name="picker"
+                                        <Picker x:Name="picker"
                                     TextColor="White"
-                                    MinimumWidthRequest="900"
+                                    WidthRequest="270"
                                     ItemsSource="{Binding Lec}"
                                     ItemDisplayBinding="{Binding StaffFirstName}"
                                     SelectedItem="{Binding SelectedLecturer}"
                                     />
-                            </Border>
+                                    </Border>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Subject Image"
+                                           HorizontalOptions="Start" 
+                                           FontSize="18" 
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="40,10,0,10"></Label>
+                                    <Border 
+                                       Padding="2"
+                                       Stroke="White"
+                                       StrokeThickness="2"
+                                       Background="Transparent"
+                                       HorizontalOptions="StartAndExpand"
+                                       Margin="30,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <HorizontalStackLayout>
+                                            <Picker WidthRequest="270"
+                                                    TextColor="White"
+                                                    SelectedItem="{Binding SubjectDetail.SubjectImage}" 
+                                                    x:Name="pickerimg">
+                                                <Picker.ItemsSource>
+                                                    <x:Array Type="{x:Type x:String}" >
+                                                        <x:String>devmajor.png</x:String>
+                                                        <x:String>threedmajor.png</x:String>
+                                                        <x:String>designmajor.png</x:String>
+                                                        <x:String>creativecomputing.png</x:String>
+                                                        <x:String>vctheory.png</x:String>
+                                                        <x:String>filmtheory.png</x:String>
+                                                        <x:String>threedmodeling.png</x:String>
+                                                        <x:String>mobiledevelopment.png</x:String>
+                                                        <x:String>meanstack.png</x:String>
+                                                        <x:String>designsystems.png</x:String>
+                                                        <x:String>biomimicty.png</x:String>
+                                                        <x:String>presentation.png</x:String>
+                                                        <x:String>informationarchitecture.png</x:String>
+                                                    </x:Array>
+                                                </Picker.ItemsSource>
+                                            </Picker>
+                                        </HorizontalStackLayout>
+                                    </Border>
 
-                            <Label Text="Subject Description" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="Subject Price"
+                                   HorizontalOptions="Start"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   FontFamily="Monserrat-Regular"
+                                   Margin="10,10,0,10"></Label>
                             <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+                                       Padding="2"
+                                       Stroke="White"
+                                       StrokeThickness="2"
+                                       Background="Transparent"
+                                       HorizontalOptions="StartAndExpand"
+                                       Margin="0,0,0,0" >
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectDescription}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <Entry Text="{Binding SubjectDetail.SubjectPrice}" 
+                                               FontFamily="Monserrat-Regular" 
+                                               TextColor="White"
+                                               MinimumWidthRequest="900"></Entry>
                             </Border>
+                            <HorizontalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Subject Date" 
+                                           HorizontalOptions="Start" 
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="10,10,0,10"></Label>
+                                    <Border 
+                                       Padding="2"
+                                       Stroke="White"
+                                       StrokeThickness="2"
+                                       Background="Transparent"
+                                       HorizontalOptions="StartAndExpand"
+                                       Margin="0,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding SubjectDetail.SubjectDate}"
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="175"></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Subject Time"
+                                           HorizontalOptions="Start"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="30,10,0,10"></Label>
+                                    <Border 
+                                       Padding="2"
+                                       Stroke="White"
+                                       StrokeThickness="2"
+                                       Background="Transparent"
+                                       HorizontalOptions="StartAndExpand"
+                                       Margin="20,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding SubjectDetail.SubjectTime}"
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="175"></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Subject Hours"
+                                           HorizontalOptions="Start"
+                                           FontSize="18" 
+                                           FontAttributes="Bold"
+                                           TextColor="White" 
+                                           FontFamily="Monserrat-Regular" 
+                                           Margin="30,10,0,10"></Label>
+                                    <Border 
+                                       Padding="2"
+                                       Stroke="White"
+                                       StrokeThickness="2"
+                                       Background="Transparent"
+                                       HorizontalOptions="StartAndExpand"
+                                       Margin="20,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding SubjectDetail.SubjectHours}"
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="173"></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Subject Venue" 
+                                           HorizontalOptions="Start"
+                                           FontSize="18" 
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="10,10,0,10"></Label>
+                                    <Border 
+                                       Padding="2"
+                                       Stroke="White"
+                                       StrokeThickness="2"
+                                       Background="Transparent"
+                                       HorizontalOptions="StartAndExpand"
+                                       Margin="0,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
+                                        <Entry Text="{Binding SubjectDetail.SubjectVenue}"
+                                               FontFamily="Monserrat-Regular"
+                                               TextColor="White"
+                                               MinimumWidthRequest="270"></Entry>
+                                    </Border>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="Subject Category"
+                                           HorizontalOptions="Start"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           FontFamily="Monserrat-Regular"
+                                           Margin="40,10,0,10"></Label>
+                                    <Border 
+                                       Padding="2"
+                                       Stroke="White"
+                                       StrokeThickness="2"
+                                       Background="Transparent"
+                                       HorizontalOptions="StartAndExpand"
+                                       Margin="30,0,0,0" >
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40,40,40,40"/>
+                                        </Border.StrokeShape>
 
-                            <Label Text="Subject Credits" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
+                                        <Picker WidthRequest="270"
+                                    TextColor="White"
+                                    SelectedItem="{Binding SubjectDetail.SubjectCategory}">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>Major</x:String>
+                                                    <x:String>Theory</x:String>
+                                                    <x:String>Module</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                        </Picker>
+                                    </Border>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="Subject Description"
+                                   HorizontalOptions="Start" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   FontFamily="Monserrat-Regular" 
+                                   Margin="10,10,0,10"></Label>
                             <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
+                                   Padding="2"
+                                   Stroke="White"
+                                   StrokeThickness="2"
+                                   Background="Transparent"
+                                   HorizontalOptions="StartAndExpand"
+                                   Margin="0,0,0,0" >
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="40,40,40,40"/>
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectCredits}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
+                                <Entry Text="{Binding SubjectDetail.SubjectDescription}"
+                                       FontFamily="Monserrat-Regular"
+                                       TextColor="White"
+                                       MinimumWidthRequest="900"></Entry>
                             </Border>
-
-                            <Label Text="Subject Price" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectPrice}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
-                            </Border>
-
-
-                            <Label Text="Subject Date" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectDate}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
-                            </Border>
-
-
-                            <Label Text="Subject Time" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectTime}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
-                            </Border>
-
-
-                            <Label Text="Subject Image" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectImage}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
-                            </Border>
-
-
-                            <Label Text="Subject Hours" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectHours}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
-                            </Border>
-
-                            <Label Text="Subject Venue" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectVenue}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
-                            </Border>
-
-                            <Label Text="Subject Category" HorizontalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" FontFamily="Monserrat-Regular" Margin="10,10,0,10"></Label>
-                            <Border 
-                       Padding="2"
-                       Stroke="White"
-                    StrokeThickness="3"
-                       Background="Transparent"
-                       HorizontalOptions="StartAndExpand"
-                                Margin="0,0,0,0" >
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="40,40,40,40"/>
-                                </Border.StrokeShape>
-                                <Entry Text="{Binding SubjectDetail.SubjectCategory}" FontFamily="Monserrat-Regular" TextColor="White" MinimumWidthRequest="900"></Entry>
-                            </Border>
-
                         </VerticalStackLayout>
                     </ScrollView>
                 </Frame>
-
-
-                <Button Command="{Binding AddUpdateSubjectCommand}" Margin="50,35,50,0" BackgroundColor="#FC6923" TextColor="White" CornerRadius="35" Padding="20" Text="Save" FontFamily="Monserrat-Regular" FontSize="15"></Button>
-
+                <Button Command="{Binding AddUpdateSubjectCommand}"
+                        Margin="50,5,50,0"
+                        BackgroundColor="#FC6923"
+                        TextColor="White"
+                        CornerRadius="35"
+                        Padding="20"
+                        Text="Save" 
+                        FontFamily="Monserrat-Regular" 
+                        FontSize="15"></Button>
             </VerticalStackLayout>
-                   
         </Frame>
-
-
-
-
-        
     </Grid>
 </ContentPage>

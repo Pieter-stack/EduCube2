@@ -13,7 +13,7 @@
             <!-- Grid Definitions -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="400"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -25,11 +25,10 @@
                 <Image Source="background.png" Aspect="AspectFill" Scale="1" Margin="-20,-20,-20,-20"/>
             </Frame>
 
-            <!--Navbar-->
-            <mynamespace:Navbar/>
 
-            <Frame Grid.Column="1" Grid.Row="0" CornerRadius="20" BackgroundColor="#FFFFFF" Opacity="0.3" MaximumHeightRequest="400"/>
-            <Frame Grid.Column="1" Grid.Row="0" CornerRadius="20" BackgroundColor="Transparent" MaximumHeightRequest="400">
+
+            <Frame Grid.Column="1" Grid.Row="0" CornerRadius="20" BackgroundColor="#FFFFFF" Opacity="0.3" MaximumHeightRequest="500" BorderColor="Transparent" Margin="0,-40,0,0"/>
+            <Frame Grid.Column="1" Grid.Row="0" CornerRadius="20" BackgroundColor="Transparent" MaximumHeightRequest="500"  BorderColor="Transparent">
 
                 <VerticalStackLayout Grid.Column="1" BackgroundColor="Transparent">
                     <Image Source="logo.png" WidthRequest="90">
@@ -37,41 +36,41 @@
                             <Shadow Brush="Black" Offset="1,2" Radius="5" Opacity="0.2"/>
                         </Image.Shadow>
                     </Image>
-
+                    <Label Text="EduCube" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" TextColor="White" FontFamily="Rubik-Regular" Margin="0,0,0,20"></Label>
                     <VerticalStackLayout Spacing="5">
-                        <Label Text="Email" FontSize="12" FontAttributes="Bold" TextColor="#FFFFFF"/>
+                        <Label Text="Email" FontSize="16" FontAttributes="Bold" TextColor="#FFFFFF" Margin="10,0,0,0"/>
                         <Border Stroke="White" StrokeThickness="1.5" Background="Transparent">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="40,40,40,40"/>
                             </Border.StrokeShape>
-                            <Entry Text="{Binding Email}" Placeholder="Email" PlaceholderColor="Gray" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            <Entry Text="{Binding Email}"  FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                         </Border>
 
-                        <Label Text="Password" FontSize="12" FontAttributes="Bold" TextColor="#FFFFFF"/>
+                        <Label Text="Password" FontSize="16" FontAttributes="Bold" TextColor="#FFFFFF" Margin="10,10,0,0"/>
                         <Border Stroke="White" StrokeThickness="1.5" Background="Transparent">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="40,40,40,40"/>
                             </Border.StrokeShape>
-                            <Entry Text="{Binding Password}" Placeholder="Password" PlaceholderColor="Gray" IsPassword="True" Keyboard="Text" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            <Entry Text="{Binding Password}" IsPassword="True" Keyboard="Text" FontSize="12" TextColor="White" FontAutoScalingEnabled="True" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                         </Border>
                     </VerticalStackLayout>
 
                     <VerticalStackLayout Spacing="5">
                         
-                        <HorizontalStackLayout HorizontalOptions="Fill" VerticalOptions="Center" Spacing="80">
-                            <Label Text="Stay Logged In" HorizontalOptions="Start" Margin="0,10,0,0"/>
-                            <Switch IsToggled="{Binding StayLoggedOn}" OnColor="Orange" ThumbColor="White" HorizontalOptions="EndAndExpand"/>
-                        </HorizontalStackLayout>
-                        
-                        <!-- Forgotten Password Button -->
-                        <Button FontAttributes="None" FontSize="12" BackgroundColor="Transparent" BorderColor="Transparent" Text="Forgot Password?" TextColor="Gray" HorizontalOptions="Center"/>
-                        <!--Sign In Button-->
-                        <Button Command="{Binding LoginValidCommand}" CornerRadius="18" WidthRequest="120" HeightRequest="35" Text="Sign In" FontSize="12" TextColor="#FFFFFF" FontAutoScalingEnabled="True" FontAttributes="Bold" BackgroundColor="#FC6923" Padding="3"/>
-                        <!-- Sign Up Button -->
-                        <!--<Button CornerRadius="18" WidthRequest="120" HeightRequest="35" Text="Sign Up" FontSize="12" TextColor="#FFFFFF" FontAutoScalingEnabled="True" FontAttributes="None" BackgroundColor="Transparent" BorderColor="#FFBC24" BorderWidth="1.5" Padding="3"/>-->
+                        <HorizontalStackLayout HorizontalOptions="Fill" VerticalOptions="Center" Spacing="180">
+                            <Label Text="Stay Logged In" HorizontalOptions="Start" Margin="0,10,0,0" TextColor="White"/>
+                            <Switch IsToggled="{Binding StayLoggedOn}" OnColor="#FC6923" ThumbColor="#FFBC24" HorizontalOptions="EndAndExpand"/>
+                            
 
+                        </HorizontalStackLayout>
                         <!--Error Message -->
-                        <Label Text="{Binding ErrorMessage, Mode=TwoWay}" TextColor="Red"/>
+                        <Label Text="{Binding ErrorMessage, Mode=TwoWay}" TextColor="Red" HorizontalOptions="Center" Margin="0,20,0,0"/>
+
+
+                        <!--Sign In Button-->
+                        <Button Command="{Binding LoginValidCommand}" Margin="0,60,0,0" CornerRadius="25"  HeightRequest="50" Text="Login" FontSize="18" TextColor="#FFFFFF" FontAutoScalingEnabled="True" FontAttributes="Bold" BackgroundColor="#FC6923" Padding="3"/>
+               
+
                     </VerticalStackLayout>
 
                 </VerticalStackLayout>

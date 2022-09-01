@@ -18,7 +18,9 @@
         <mynamespace:Navbar/>
 
         <!--Main Container-->
-        <Frame Grid.Column="1" BackgroundColor="Transparent" BorderColor="Transparent">
+        <Frame Grid.Column="1"
+               BackgroundColor="Transparent"
+               BorderColor="Transparent">
             <Grid ColumnSpacing="30" RowSpacing="30">
                 <!--New Grid Definitions-->
                 <Grid.ColumnDefinitions>
@@ -30,10 +32,15 @@
                 </Grid.RowDefinitions>
 
                 <!--Grid Content-->
-                <Frame  Grid.Row="0" BackgroundColor="Transparent" BorderColor="Transparent"  CornerRadius="0" Margin="0,0,-20,0" >
+                <Frame  Grid.Row="0"
+                        BackgroundColor="Transparent" 
+                        BorderColor="Transparent" 
+                        CornerRadius="0"
+                        Margin="0,0,-20,0" >
                     <FlexLayout Direction="Column"
                 AlignItems="End"
-                JustifyContent="SpaceBetween" BackgroundColor="Transparent">
+                JustifyContent="SpaceBetween"
+                                BackgroundColor="Transparent">
                         <StackLayout BackgroundColor="Transparent">
                             <Border 
                        Padding="35"
@@ -55,15 +62,24 @@
                         </StackLayout>
                         <FlexLayout Direction="Row"
                 AlignItems="End"
-                JustifyContent="SpaceBetween" BackgroundColor="Transparent">
-                            <Label  Text="Funds Pool" TextColor="#29233E" FontSize="48" FontAttributes="Bold" FontFamily="Roboto-Bold" Margin="0,0,0,0" />
-                           
+                JustifyContent="SpaceBetween"
+                                    BackgroundColor="Transparent">
+                            <Label  Text="Funds Pool"
+                                    TextColor="#29233E"
+                                    FontSize="48"
+                                    FontAttributes="Bold"
+                                    FontFamily="Roboto-Bold"
+                                    Margin="0,0,0,0" />
+
                         </FlexLayout>
                     </FlexLayout>
 
                 </Frame>
 
-                <Frame  Grid.Row="1" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
+                <Frame  Grid.Row="1"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        CornerRadius="0" >
                     <Grid ColumnSpacing="20" RowSpacing="20">
                         <!--New Grid Definitions-->
                         <Grid.ColumnDefinitions>
@@ -76,9 +92,12 @@
                             <RowDefinition Height="2*"/>
                         </Grid.RowDefinitions>
 
-
-
-                        <Frame  Grid.Row="0"  Grid.Column="0" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0" Padding="0" >
+                        <Frame  Grid.Row="0"
+                                Grid.Column="0"
+                                BackgroundColor="Transparent"
+                                BorderColor="Transparent"
+                                CornerRadius="0"
+                                Padding="0" >
                             <Border
                                             Padding="0"
                                             Stroke="Transparent"
@@ -89,9 +108,18 @@
                                     <RoundRectangle CornerRadius="15,15,15,15"/>
                                 </Border.StrokeShape>
 
-                                <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
-                                    <Image Margin="20" Source="cashin.png" WidthRequest="90"/>
-                                    <Label Text="{Binding TotalTuition}" Margin="20" TextColor="White" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" />
+                                <FlexLayout Direction="Row"
+                                            AlignItems="Center"
+                                            JustifyContent="SpaceBetween">
+                                    <Image Margin="20" 
+                                           Source="cashin.png"
+                                           WidthRequest="90"/>
+                                    <Label Text="{Binding TotalTuition}"
+                                           Margin="20" 
+                                           TextColor="White"
+                                           FontFamily="Rubik-Bold"
+                                           FontSize="36"
+                                           FontAttributes="Bold" />
                                 </FlexLayout>
 
 
@@ -100,7 +128,12 @@
 
 
 
-                        <Frame  Grid.Row="0"  Grid.Column="1" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0" Padding="0" >
+                        <Frame  Grid.Row="0"
+                                Grid.Column="1" 
+                                BackgroundColor="Transparent"
+                                BorderColor="Transparent"
+                                CornerRadius="0" 
+                                Padding="0" >
                             <Border
                                             Padding="0"
                                             Stroke="Transparent"
@@ -111,18 +144,27 @@
                                     <RoundRectangle CornerRadius="15,15,15,15"/>
                                 </Border.StrokeShape>
 
-                                <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
-                                    <Image Margin="20" Source="cashout.png" WidthRequest="90"/>
-                                    <Label Margin="20"  Text="{Binding TotalSalary}" TextColor="White" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" />
+                                <FlexLayout Direction="Row"
+                                            AlignItems="Center" 
+                                            JustifyContent="SpaceBetween">
+                                    <Image Margin="20"
+                                           Source="cashout.png"
+                                           WidthRequest="90"/>
+                                    <Label Margin="20"
+                                           Text="{Binding TotalSalary}" 
+                                           TextColor="White"
+                                           FontFamily="Rubik-Bold"
+                                           FontSize="36"
+                                           FontAttributes="Bold" />
                                 </FlexLayout>
-
-
                             </Border>
                         </Frame>
-
-
-
-                        <Frame  Grid.Row="1"  Grid.ColumnSpan="2" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0" Padding="0" >
+                        <Frame  Grid.Row="1" 
+                                Grid.ColumnSpan="2"
+                                BackgroundColor="Transparent" 
+                                BorderColor="Transparent"
+                                CornerRadius="0" 
+                                Padding="0" >
                             <Border
                                             Padding="0"
                                             Stroke="#5D3AF3"
@@ -136,40 +178,107 @@
 
                                 <FlexLayout Direction="Row" AlignItems="Center">
                                     <FlexLayout FlexLayout.Grow="1" AlignItems="Center">
-                                        <Image FlexLayout.Basis="Auto" FlexLayout.Order="-1"  Source="logo.png"/>
-                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="-1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="E" TextColor="#5D3AF3" FontFamily="Rubik-Bold" FontSize="36"></Label>
-                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="-1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="du" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36"></Label>
-                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="-1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="C" TextColor="#FC6923" FontFamily="Rubik-Bold" FontSize="36"></Label>
-                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="-1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="ube" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36"></Label>
-                                        <Label FontSize="18" BackgroundColor="Transparent" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FlexLayout.Grow="1" />
-                                        <Label FlexLayout.Basis="Auto" FlexLayout.Order="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding TotalFunds}" TextColor="Black" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" ></Label>
-                                        <Label FlexLayout.Basis="20" FlexLayout.Order="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  TextColor="Black" FontFamily="Rubik-Bold" FontSize="36" FontAttributes="Bold" ></Label>
+                                        <Image FlexLayout.Basis="Auto"
+                                               FlexLayout.Order="-1" 
+                                               Source="logo.png"/>
+                                        <Label FlexLayout.Basis="Auto"
+                                               FlexLayout.Order="-1" 
+                                               HorizontalTextAlignment="Center" 
+                                               VerticalTextAlignment="Center"
+                                               Text="E" TextColor="#5D3AF3"
+                                               FontFamily="Rubik-Bold" 
+                                               FontSize="36"></Label>
+                                        <Label FlexLayout.Basis="Auto"
+                                               FlexLayout.Order="-1" 
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Text="du"
+                                               TextColor="Black" 
+                                               FontFamily="Rubik-Bold"
+                                               FontSize="36"></Label>
+                                        <Label FlexLayout.Basis="Auto"
+                                               FlexLayout.Order="-1"
+                                               HorizontalTextAlignment="Center" 
+                                               VerticalTextAlignment="Center"
+                                               Text="C"
+                                               TextColor="#FC6923"
+                                               FontFamily="Rubik-Bold"
+                                               FontSize="36"></Label>
+                                        <Label FlexLayout.Basis="Auto" 
+                                               FlexLayout.Order="-1"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Text="ube"
+                                               TextColor="Black"
+                                               FontFamily="Rubik-Bold"
+                                               FontSize="36"></Label>
+                                        <Label FontSize="18"
+                                               BackgroundColor="Transparent"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               FlexLayout.Grow="1" />
+                                        <Label FlexLayout.Basis="Auto"
+                                               FlexLayout.Order="1" 
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Text="{Binding TotalFunds}" 
+                                               TextColor="Black" 
+                                               FontFamily="Rubik-Bold"
+                                               FontSize="36" 
+                                               FontAttributes="Bold" ></Label>
+                                        <Label FlexLayout.Basis="20"
+                                               FlexLayout.Order="2"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               TextColor="Black"
+                                               FontFamily="Rubik-Bold"
+                                               FontSize="36" 
+                                               FontAttributes="Bold" ></Label>
                                     </FlexLayout>
                                 </FlexLayout>
 
 
                             </Border>
                         </Frame>
-                        <Frame  Grid.Row="2" Grid.Column="2" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="0" >
-                            <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="End" Spacing="20">
-                                <Button Command="{Binding AddUpdateFundsCommand}" Text="Start Month" CornerRadius="10" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#FC6923" Padding="15" HorizontalOptions="End" WidthRequest="220"  HeightRequest="80"/>
-                                <Button Text="End Month" CornerRadius="10" TextColor="White" FontAttributes="Bold" FontFamily="Roboto-Regular" FontSize="20" BackgroundColor="#5D3AF3" Padding="15" HorizontalOptions="End" WidthRequest="220" HeightRequest="80" />
+                        <Frame  Grid.Row="2"
+                                Grid.Column="2"
+                                BorderColor="Transparent"
+                                BackgroundColor="Transparent"
+                                CornerRadius="0" >
+                            <HorizontalStackLayout HorizontalOptions="End" 
+                                                   VerticalOptions="End" 
+                                                   Spacing="20">
+                                <Button Command="{Binding AddUpdateFundsCommand}"
+                                        Text="Start Month"
+                                        CornerRadius="10" 
+                                        TextColor="White" 
+                                        FontAttributes="Bold"
+                                        FontFamily="Roboto-Regular" 
+                                        FontSize="20"
+                                        BackgroundColor="#FC6923" 
+                                        Padding="15"
+                                        HorizontalOptions="End"
+                                        WidthRequest="220" 
+                                        HeightRequest="80"/>
+                                <Button Command="{Binding EndMonthFundsCommand}" 
+                                        Text="End Month"
+                                        CornerRadius="10" 
+                                        TextColor="White"
+                                        FontAttributes="Bold"
+                                        FontFamily="Roboto-Regular"
+                                        FontSize="20"
+                                        BackgroundColor="#5D3AF3"
+                                        Padding="15"
+                                        HorizontalOptions="End" 
+                                        WidthRequest="220"
+                                        HeightRequest="80" />
                             </HorizontalStackLayout>
                         </Frame>
 
-                        
                     </Grid>
-
-
                 </Frame>
             </Grid>
         </Frame>
-
-
-
-
-
-        <!--- Reminder for later work with grids on all pages and have row and column defined-->
     </Grid>
 
 </ContentPage>
