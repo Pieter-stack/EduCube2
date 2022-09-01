@@ -93,7 +93,6 @@ namespace EduCube.ViewModels.AddUpdateViewModels
                 SubjectHours = SubjectDetail.SubjectHours,
                 SubjectVenue = SubjectDetail.SubjectVenue,
                 SubjectCategory = SubjectDetail.SubjectCategory,
-                SubjectStudentCount = "0",
             });
         }
             //respond if added to table or error occured
