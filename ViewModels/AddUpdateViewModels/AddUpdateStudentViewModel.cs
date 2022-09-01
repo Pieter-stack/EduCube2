@@ -136,8 +136,8 @@ namespace EduCube.ViewModels.AddUpdateViewModels
                     StudentSubjectsModule6 = StudentDetail.StudentType == "Diploma" ? "No Module Due to Diploma status" : SelectedSubjectModule6.SubjectCode,
                     StudentImage = StudentDetail.StudentImage,
                     StudentCredits = StudentDetail.StudentType == "Diploma" ? 60 : 180,
-                    StudentTuition = SelectedSubjectMajor.SubjectPrice + SelectedSubjectTheory.SubjectPrice + StudentDetail.StudentType == "Diploma" ? 0 : 
-                    SelectedSubjectModule1.SubjectPrice  + SelectedSubjectModule2.SubjectPrice  + SelectedSubjectModule3.SubjectPrice  + SelectedSubjectModule4.SubjectPrice 
+                    StudentTuition = StudentDetail.StudentType == "Diploma" ? SelectedSubjectMajor.SubjectPrice + SelectedSubjectTheory.SubjectPrice :
+                   SelectedSubjectMajor.SubjectPrice + SelectedSubjectTheory.SubjectPrice + SelectedSubjectModule1.SubjectPrice  + SelectedSubjectModule2.SubjectPrice  + SelectedSubjectModule3.SubjectPrice  + SelectedSubjectModule4.SubjectPrice 
                     + SelectedSubjectModule5.SubjectPrice  + SelectedSubjectModule6.SubjectPrice,
                     StudentType = StudentDetail.StudentType
                 });
