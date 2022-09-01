@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace EduCube.Models
 {
+    //initialize table
     [Table("subject")]
     public class SubjectModel
     {
-
+        //primary key as an ID
         [PrimaryKey, AutoIncrement]
         public int SubjectID { get; set; }
 
@@ -42,12 +43,17 @@ namespace EduCube.Models
         public string SubjectImage { get; set; }
 
         [MaxLength(100)]
-        public string SubjectHours { get; set; }
+        public int SubjectHours { get; set; }
 
         [MaxLength(100)]
         public string SubjectVenue { get; set; }
 
         [MaxLength(100)]
         public string SubjectCategory { get; set; }
+
+        [MaxLength(100)]
+        public string SubjectStudentCount { get; set; }
+
+
     }
 }

@@ -5,6 +5,7 @@ namespace EduCube;
 
 public partial class App : Application
 {
+    //initializing repos form interfaces
     public static IStaffService StaffRepo { get; private set; }
     public static IStudentService StudentRepo { get; private set; }
     public static ISubjectService SubjectRepo { get; private set; }
@@ -29,4 +30,5 @@ public partial class App : Application
     }
 }
 
+//article that helped solve borderless entries on windows
 //https://docs.microsoft.com/en-us/answers/questions/893844/how-to-remove-underline-when-entry-receives-focus.html

@@ -2,62 +2,118 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EduCube.Navbar">
+    <!--Grid Layout-->
     <Grid HorizontalOptions="Start">
+        <!--Navbar background Image-->
         <Image Source="navbarbackground.png" Margin="-85,0,0,0"/>
+        <!--Main COntainer-->
         <VerticalStackLayout VerticalOptions="Start">
+            <!--Logo-->
             <HorizontalStackLayout ZIndex="2" HorizontalOptions="Center" Margin="-45,50,0,0">
                 <Label Text="E" TextColor="#5D3AF3" FontFamily="Rubik-Bold" FontSize="30" ></Label>
                 <Label Text="du" TextColor="White"  FontFamily="Rubik-Bold" FontSize="30"></Label>
                 <Label Text="C" TextColor="#FC6923" FontFamily="Rubik-Bold" FontSize="30"></Label>
                 <Label Text="ube" TextColor="White" FontFamily="Rubik-Bold" FontSize="30"></Label>
             </HorizontalStackLayout>
-
-            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Start" Margin="40,120,0,0">
-                <Image Source="dashboardicon.png" WidthRequest="15" HeightRequest="15" Margin="0,40,0,0"></Image>
-                <Label Text="Dashboard" TextColor="White"  FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" Margin="15,40,0,0"></Label>
+            <!--Dashboard navigation link-->
+            <HorizontalStackLayout ZIndex="2"
+                                   HorizontalOptions="Start"
+                                   Margin="40,120,0,0">
+                <Image Source="dashboardicon.png"
+                       WidthRequest="15"
+                       HeightRequest="15"
+                       Margin="0,40,0,0"/>
+                <Label Text="Dashboard"
+                       TextColor="White" 
+                       FontFamily="Roboto-Bold"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       Margin="15,40,0,0"/>
                 <HorizontalStackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="mainpageroute"/>
                 </HorizontalStackLayout.GestureRecognizers>
             </HorizontalStackLayout>
-
-
-            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Start" Margin="40,0,0,0">
-                <Image Source="stafficon.png" WidthRequest="15" HeightRequest="15" Margin="0,40,0,0"></Image>
-                <Label Text="Staff" TextColor="White"  FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" Margin="15,40,0,0"></Label>
+            
+            <!--Staff navigation link-->
+            <HorizontalStackLayout ZIndex="2"
+                                   HorizontalOptions="Start"
+                                   Margin="40,0,0,0">
+                <Image Source="stafficon.png"
+                       WidthRequest="15"
+                       HeightRequest="15"
+                       Margin="0,40,0,0"/>
+                <Label Text="Staff"
+                       TextColor="White" 
+                       FontFamily="Roboto-Bold"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       Margin="15,40,0,0"/>
                 <HorizontalStackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="teacherpageroute"/>
                 </HorizontalStackLayout.GestureRecognizers>
             </HorizontalStackLayout>
-
-            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Start" Margin="40,0,0,0">
-                <Image Source="studenticon.png" WidthRequest="15" HeightRequest="15"  Margin="0,40,0,0"></Image>
-                <Label Text="Students" TextColor="White"  FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" Margin="15,40,0,0"></Label>
+            
+            <!--Students navigation link-->
+            <HorizontalStackLayout ZIndex="2"
+                                   HorizontalOptions="Start"
+                                   Margin="40,0,0,0">
+                <Image Source="studenticon.png"
+                       WidthRequest="15"
+                       HeightRequest="15"
+                       Margin="0,40,0,0"/>
+                <Label Text="Students"
+                       TextColor="White"
+                       FontFamily="Roboto-Bold"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       Margin="15,40,0,0"/>
                 <HorizontalStackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="studentpageroute"/>
                 </HorizontalStackLayout.GestureRecognizers>
             </HorizontalStackLayout>
 
-            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Start" Margin="40,0,0,0">
-                <Image Source="subjecticon.png" WidthRequest="15" HeightRequest="15"  Margin="0,40,0,0"></Image>
-                <Label Text="Subjects" TextColor="White"  FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" Margin="15,40,0,0"></Label>
+            <!--Subjects navigation link-->
+            <HorizontalStackLayout ZIndex="2"
+                                   HorizontalOptions="Start"
+                                   Margin="40,0,0,0">
+                <Image Source="subjecticon.png"
+                       WidthRequest="15"
+                       HeightRequest="15"
+                       Margin="0,40,0,0"/>
+                <Label Text="Subjects"
+                       TextColor="White"
+                       FontFamily="Roboto-Bold"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       Margin="15,40,0,0"/>
                 <HorizontalStackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="subjectpageroute"/>
                 </HorizontalStackLayout.GestureRecognizers>
             </HorizontalStackLayout>
 
-            <HorizontalStackLayout ZIndex="2" HorizontalOptions="Start" Margin="40,0,0,0">
-                <Image Source="fundsicon.png" WidthRequest="15" HeightRequest="15"  Margin="0,40,0,0"></Image>
-                <Label Text="Funds" TextColor="White"  FontFamily="Roboto-Bold" FontAttributes="Bold" FontSize="20" Margin="15,40,0,0"></Label>
+            <!--Funds navigation link-->
+            <HorizontalStackLayout ZIndex="2"
+                                   HorizontalOptions="Start"
+                                   Margin="40,0,0,0">
+                <Image Source="fundsicon.png"
+                       WidthRequest="15" HeightRequest="15"
+                       Margin="0,40,0,0"/>
+                <Label Text="Funds"
+                       TextColor="White"
+                       FontFamily="Roboto-Bold"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       Margin="15,40,0,0"/>
                 <HorizontalStackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="fundspageroute"/>
                 </HorizontalStackLayout.GestureRecognizers>
             </HorizontalStackLayout>
-
-
-
         </VerticalStackLayout>
+        <!--End of navLink container-->
 
-        <VerticalStackLayout VerticalOptions="End" Margin="0,0,0,50">
+        <!--Logout Button-->
+        <VerticalStackLayout VerticalOptions="End" 
+                             Margin="0,0,0,50">
             <Border 
                 Padding="15"
                 Stroke="Transparent"
@@ -79,6 +135,6 @@
                 <TapGestureRecognizer Tapped="logoutroute"/>
             </VerticalStackLayout.GestureRecognizers>
         </VerticalStackLayout>
-
-        </Grid>
+        <!--End of main container-->
+    </Grid>
 </ContentView>

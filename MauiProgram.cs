@@ -17,6 +17,7 @@ public static class MauiProgram
             .UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
+                //initalizing fonts for project
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 fonts.AddFont("Roboto-Bold.ttf", "Roboto-Bold");
@@ -26,7 +27,6 @@ public static class MauiProgram
             });
 
         //Services
-        builder.Services.AddSingleton<IAdminService, AdminRepository>();
         builder.Services.AddSingleton<IFundService, FundRepository>();
         builder.Services.AddSingleton<IStudentService, StudentRepository>();
         builder.Services.AddSingleton<IStaffService, StaffRepository>();
@@ -50,8 +50,6 @@ public static class MauiProgram
         
 
         //Viewmodels
-        builder.Services.AddSingleton<AdminViewModel>();
-
         builder.Services.AddSingleton<FundViewModel>();
 
         builder.Services.AddSingleton<StaffViewModel>();
@@ -64,6 +62,7 @@ public static class MauiProgram
         builder.Services.AddTransient<AddUpdateSubjectViewModel>();
 
         builder.Services.AddSingleton<LoginViewModel>();
+
 
         return builder.Build();
 	}

@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace EduCube.Models
 {
+    //initialize table
     [Table("staff")]
     public class StaffModel
     {
-
+        //primary key as an ID
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int StaffID { get; set; }
 

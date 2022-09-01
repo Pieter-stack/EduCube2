@@ -9,4 +9,5 @@ public partial class AddUpdateStaffPage : ContentPage
 		InitializeComponent();
         this.BindingContext = vm;
     }
+
 }
