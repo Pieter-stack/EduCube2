@@ -24,7 +24,7 @@
       <a href="https://github.com/Pieter-stack/EduCube2"><strong>Explore the docs »</strong></a>
       <br />
       <br />
-      <a href="add video">View Demo</a>
+      <a href="https://youtu.be/JSSbovDRFPE">View Demo</a>
        ·
        <a href="https://github.com/Pieter-stack/EduCube2/issues">Report Bug</a>
        ·
@@ -218,23 +218,21 @@ The `Development Process` is the technical implementations and functionality don
 * `MVVM` (Model-View-ViewModel) software desing pattern used to seperate the program logic and user interface controls.
 #### Highlights
 
-* 
-* 
-* 
-* 
+* Learning OOP with .NET 6 and MAUI.
+* Building a application that works on Windows and MacOs.
 
 #### Challenges
 
-* Was a challenge because of the scale of the project but I got all of the functionality in and also added a couple of golf courses for v1.0 to test.
+* Initial problems with GitHub repo and pull requests.
+* Not having one central database to work from, instead each developer had a local db.
 
 ### Reviews and Testing
-The `Reviews and Testing` consists of `in class`, reviews.
+
 
 #### Future Implementation
 
-* 
-* 
-* 
+* Implement image uploading to the database.
+* Fix some UI elements.
 
 <!-- MOCKUPS -->
 ## Final Outcome
@@ -248,7 +246,7 @@ The `Reviews and Testing` consists of `in class`, reviews.
 
 To see the promotional video, click below:
 
-[View Promotional Video](https://www.youtube.com/)
+[View Promotional Video](https://youtu.be/JSSbovDRFPE)
 
 <!-- ROADMAP -->
 ## Roadmap
