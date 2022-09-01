@@ -90,16 +90,17 @@ namespace EduCube.ViewModels
                     Subjects.Add(subject);
                     //looping through students
                     foreach (var listOfStudents in studentList)
-                    { 
-                        if (subject.SubjectTitle == listOfStudents.StudentSubjectsMajor)
+                    {
+                        if (subject.SubjectCode == listOfStudents.StudentSubjectsMajor)
                         {
                            //get total student that have the subject
                             totalStudentsMajor += 1;
+                           
                             //set subjectcount to new total
                             subject.SubjectStudentCount = totalStudentsMajor.ToString();
 
                         }
-                        if (subject.SubjectTitle == listOfStudents.StudentSubjectsTheory)
+                        if (subject.SubjectCode == listOfStudents.StudentSubjectsTheory)
                         {
                             //get total student that have the subject
                             totalStudentsTheory += 1;
@@ -107,7 +108,7 @@ namespace EduCube.ViewModels
                             subject.SubjectStudentCount = totalStudentsTheory.ToString();
 
                         }
-                        if (subject.SubjectTitle == listOfStudents.StudentSubjectsModule1)
+                        if (subject.SubjectCode == listOfStudents.StudentSubjectsModule1)
                         {
                             //get total student that have the subject
                             totalStudentsModule1 += 1;
@@ -115,7 +116,7 @@ namespace EduCube.ViewModels
                             subject.SubjectStudentCount = totalStudentsModule1.ToString();
 
                         }
-                        if (subject.SubjectTitle == listOfStudents.StudentSubjectsModule2)
+                        if (subject.SubjectCode == listOfStudents.StudentSubjectsModule2)
                         {
                             //get total student that have the subject
                             totalStudentsModule2 += 1;
@@ -123,7 +124,7 @@ namespace EduCube.ViewModels
                             subject.SubjectStudentCount = totalStudentsModule2.ToString();
 
                         }
-                        if (subject.SubjectTitle == listOfStudents.StudentSubjectsModule3)
+                        if (subject.SubjectCode == listOfStudents.StudentSubjectsModule3)
                         {
                             //get total student that have the subject
                             totalStudentsModule3 += 1;
@@ -131,7 +132,7 @@ namespace EduCube.ViewModels
                             subject.SubjectStudentCount = totalStudentsModule3.ToString();
 
                         }
-                        if (subject.SubjectTitle == listOfStudents.StudentSubjectsModule4)
+                        if (subject.SubjectCode == listOfStudents.StudentSubjectsModule4)
                         {
                             //get total student that have the subject
                             totalStudentsModule4 += 1;
@@ -139,7 +140,7 @@ namespace EduCube.ViewModels
                             subject.SubjectStudentCount = totalStudentsModule4.ToString();
 
                         }
-                        if (subject.SubjectTitle == listOfStudents.StudentSubjectsModule5)
+                        if (subject.SubjectCode == listOfStudents.StudentSubjectsModule5)
                         {
                             //get total student that have the subject
                             totalStudentsModule5 += 1;
@@ -147,7 +148,7 @@ namespace EduCube.ViewModels
                             subject.SubjectStudentCount = totalStudentsModule5.ToString();
 
                         }
-                        if (subject.SubjectTitle == listOfStudents.StudentSubjectsModule6)
+                        if (subject.SubjectCode == listOfStudents.StudentSubjectsModule6)
                         {
                             //get total student that have the subject
                             totalStudentsModule6 += 1;
