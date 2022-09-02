@@ -168,7 +168,7 @@ namespace EduCube.ViewModels
             //get list of subjects
             var subjectList = await _subjectRepository.GetSubjectList();
             //filter through list and get new list containing the keyword from the entry
-            var filteredItems = subjectList.Where(value => value.SubjectTitle.ToLowerInvariant().Contains(Search)).ToList();
+            var filteredItems = subjectList.Where(value => value.SubjectTitle.Contains(Search)).ToList();
 
             //clear subjects
             Subjects.Clear();
